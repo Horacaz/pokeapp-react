@@ -1,0 +1,29 @@
+import {
+  IUnparsedPokemonAbility,
+  IParsedPokemonAbility,
+} from "../types/pokemonAbility";
+import capitalizeString from "../utils/capitalizeString";
+import PokemonAbility from "../entities/pokemonAbility";
+
+export default function mapPokemonAbility(
+  pokemonAbilityData: IUnparsedPokemonAbility
+): IParsedPokemonAbility {
+  const abilityEntries = pokemonAbilityData.effect_entries.filter(
+    (effect) => effect.language.name === "en"
+  )[0];
+  const ability = {
+    description: abilityEntries.effect,
+    effect: abilityEntries.short_effect,
+  };
+  const generation = {
+    name: capitalizeString(pokemonAbilityData.generation.name),
+    url: pokemonAbilityData.generation.url,
+  };
+  const id = pokemonAbilityData.id;
+  const displayName = capitalizeString(pokemonAbilityData.name);
+  const pokemon = pokemonAbilityData.pokemon.map((pokemon) => ({
+    name: capitalizeString(pokemon.pokemon.name),
+    url: pokemon.pokemon.url,
+  }));
+  return new PokemonAbility({ ability, generation, id, displayName, pokemon });
+}
