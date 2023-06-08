@@ -1,12 +1,16 @@
 import "./App.css";
-import ModalTest from "./components/Modal/Modal.tsx";
-import Test from "./components/Test/Test.tsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PokemonAbility from "./components/PokemonAbility/PokemonAbility";
 
 function App() {
   return (
     <>
-      <ModalTest />
-      <Test />
+      <h1>PokeApp</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/ability/:id" element={<PokemonAbility />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
