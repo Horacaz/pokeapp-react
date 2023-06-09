@@ -11,7 +11,7 @@ export default class PokemonMove implements IParsedPokemonMove {
   name: string;
   power: number;
   pp: number;
-  type: { name: string; url: string };
+  type: { name: string; url: string }[];
   constructor(moveData: IParsedPokemonMove) {
     this.accuracy = moveData.accuracy;
     this.damageClass = moveData.damageClass;

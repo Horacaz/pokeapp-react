@@ -1,5 +1,6 @@
 import { IUnparsedPokemonMove, IParsedPokemonMove } from "../types/pokemonMove";
 import capitalizeString from "../utils/capitalizeString";
+import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import PokemonMove from "../entities/pokemonMove";
 
 export default function mapPokemonMove(
@@ -19,20 +20,22 @@ export default function mapPokemonMove(
   const description = capitalizeString(descriptionFilter.flavor_text);
   const generation = {
     name: capitalizeString(moveData.generation.name),
-    url: moveData.generation.url,
+    url: retrievePathFromUrl(moveData.generation.url),
   };
   const id = moveData.id;
   const learnedBy = moveData.learned_by_pokemon.map((pokemon) => ({
     name: capitalizeString(pokemon.name),
-    url: pokemon.url,
+    url: retrievePathFromUrl(pokemon.url),
   }));
   const name = capitalizeString(moveData.name);
   const power = 100;
   const pp = 10;
-  const type = {
-    name: capitalizeString(moveData.type.name),
-    url: moveData.type.url,
-  };
+  const type = [
+    {
+      name: capitalizeString(moveData.type.name),
+      url: retrievePathFromUrl(moveData.type.url),
+    },
+  ];
 
   return new PokemonMove({
     accuracy,
