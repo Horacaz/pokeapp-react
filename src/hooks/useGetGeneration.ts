@@ -1,20 +1,22 @@
-import { useReducer, useEffect } from "react";
-import mapPokemonAbility from "../mappers/pokemonAbilityMapper";
-import PokemonAbility from "../entities/pokemonAbility";
-import { IParsedPokemonAbility } from "../types/pokemonAbility";
-import fetchAbilityFromApi from "../api/abilityFetch";
+import { useEffect, useReducer } from "react";
+import mapGeneration from "../mappers/generationMapper";
+import Generation from "../entities/generation";
+import fetchGenerationFromApi from "../api/generationFetch";
+import geneterationMock from "../../fixtures/generation.json";
+import { IParsedGeneration } from "../types/generation";
 
 type State = {
   loading: boolean | null;
-  data: IParsedPokemonAbility | null;
   error: Error | null;
+  data: IParsedGeneration | null;
 };
 type Action = {
   type: string;
-  payload: IParsedPokemonAbility | null | Error;
+  payload: Error | null | IParsedGeneration;
 };
 const initialState = { loading: null, data: null, error: null };
-const fetchReducer = (state: State, action: Action): State => {
+
+const generationReducer = (state: State, action: Action) => {
   const { type, payload } = action;
   switch (type) {
     case "LOADING":
@@ -23,7 +25,7 @@ const fetchReducer = (state: State, action: Action): State => {
       return {
         ...state,
         loading: false,
-        data: payload as IParsedPokemonAbility,
+        data: payload as IParsedGeneration,
         error: null,
       };
     case "ERROR":
@@ -32,15 +34,16 @@ const fetchReducer = (state: State, action: Action): State => {
       return state;
   }
 };
-export default function useGetAbility(params: string) {
-  const [state, dispatch] = useReducer(fetchReducer, initialState);
+
+export default function useGetGeneration(params: number) {
+  const [state, dispatch] = useReducer(generationReducer, initialState);
 
   useEffect(() => {
-    const getAbility = async () => {
+    const getGeneration = async () => {
       dispatch({ type: "LOADING", payload: null });
       try {
-        const resource = await fetchAbilityFromApi(params);
-        const Ability = new PokemonAbility(mapPokemonAbility(resource));
+        const resource = await fetchGenerationFromApi(params);
+        const Ability = new Generation(mapGeneration(resource));
 
         dispatch({ type: "SUCCESS", payload: Ability });
       } catch (error) {
@@ -48,7 +51,7 @@ export default function useGetAbility(params: string) {
       }
     };
     if (params) {
-      getAbility();
+      getGeneration();
     }
   }, [params]);
   return state;
