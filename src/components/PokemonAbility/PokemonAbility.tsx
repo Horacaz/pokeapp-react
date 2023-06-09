@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useGetAbility from "../../hooks/useGetAbility";
 import { Container, Heading, Text, Box, Link, Spinner } from "@chakra-ui/react";
-import ListOfPokemon from "./ListOfPokemon";
+import ListOfPokemon from "../ListOfPokemon/ListOfPokemon";
 
 export default function PokemonAbility() {
   const id = useParams().id;
