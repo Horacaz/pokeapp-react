@@ -15,7 +15,7 @@ export default function ListOfPokemon({ list }: { list: PokemonList }) {
           variant="solid"
           key={`${pokemon.name}-${i}`}
         >
-          <Link href={`../${pokemon.url}`}>{pokemon.name}</Link>
+          <Link href={`../../${pokemon.url}`}>{pokemon.name}</Link>
         </Button>
       ))}
     </>

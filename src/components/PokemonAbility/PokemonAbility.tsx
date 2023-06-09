@@ -59,7 +59,9 @@ export default function PokemonAbility() {
           </Heading>
           <Text p={2}>
             This ability was first introduced on{" "}
-            <Link href="/">{PokemonAbility.generation.name}</Link>
+            <Link href={`../../${PokemonAbility.generation.url}`}>
+              {PokemonAbility.generation.name}
+            </Link>
           </Text>
           <Heading
             borderBottom="5px solid black"
