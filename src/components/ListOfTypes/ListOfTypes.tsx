@@ -25,6 +25,7 @@ const colors: Colors = {
   Flying: "#8683FC",
   Shadow: "#3c4440",
   Unknown: "#636363",
+  None: "#3a3a3a",
 };
 
 type TypeList = {
@@ -32,7 +33,15 @@ type TypeList = {
   url: string;
 }[];
 
-export default function ListOfTypes({ list }: { list: TypeList }) {
+export default function ListOfTypes({ list }: { list: TypeList | string }) {
+  if (typeof list === "string") {
+    return (
+      <Button bg={colors[list]} m={1} variant="solid">
+        {list}
+      </Button>
+    );
+  }
+
   return (
     <>
       {list.map((list, i) => (
@@ -42,7 +51,8 @@ export default function ListOfTypes({ list }: { list: TypeList }) {
           variant="solid"
           key={`${list.name}-${i}`}
         >
-          <Link href={`../../${list.url}`}>{list.name}</Link>
+          {(list.url && <Link href={`../../${list.url}`}>{list.name}</Link>) ||
+            list.name}
         </Button>
       ))}
     </>

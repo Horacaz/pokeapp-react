@@ -1,7 +1,7 @@
 import { IParsedType, ParsedDamageRelations } from "../types/pokemonType";
 
 export default class PokemonType implements IParsedType {
-  damageRelation: ParsedDamageRelations;
+  damageRelations: ParsedDamageRelations;
   generation: { name: string; url: string };
   id: number;
   moveDamageClass: { name: string; url: string };
@@ -10,7 +10,7 @@ export default class PokemonType implements IParsedType {
   pokemon: { name: string; url: string }[];
 
   constructor(typeData: IParsedType) {
-    this.damageRelation = typeData.damageRelation;
+    this.damageRelations = typeData.damageRelations;
     this.generation = typeData.generation;
     this.id = typeData.id;
     this.moveDamageClass = typeData.moveDamageClass;

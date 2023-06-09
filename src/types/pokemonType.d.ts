@@ -10,7 +10,7 @@ interface Pokemon {
   pokemon: { name: string; url: string };
 }
 
-export interface ParsedDamageRelations {
+interface ParsedDamageRelations {
   doubleDamageFrom: { name: string; url: string }[] | [];
   doubleDamageTo: { name: string; url: string }[] | [];
   halfDamageFrom: { name: string; url: string }[] | [];
@@ -19,7 +19,7 @@ export interface ParsedDamageRelations {
   noDamageTo: { name: string; url: string }[] | [];
 }
 export interface IUnparsedType {
-  damage_relation: DamageRelations;
+  damage_relations: DamageRelations;
   generation: { name: string; url: string };
   id: number;
   move_damage_class: { name: string; url: string };
@@ -29,7 +29,7 @@ export interface IUnparsedType {
 }
 
 export interface IParsedType {
-  damageRelation: ParsedDamageRelations;
+  damageRelations: ParsedDamageRelations;
   generation: { name: string; url: string };
   id: number;
   moveDamageClass: { name: string; url: string };
