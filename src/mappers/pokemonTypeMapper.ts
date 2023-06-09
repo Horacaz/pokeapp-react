@@ -1,11 +1,15 @@
 import { IUnparsedType, IParsedType } from "../types/pokemonType";
 import capitalizeString from "../utils/capitalizeString";
+import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import PokemonType from "../entities/pokemonType";
 
 function mapDamage(damage: { name: string; url: string }[]) {
+  if (damage.length === 0) {
+    return [{ name: "None", url: "" }];
+  }
   const damages = damage.map((type) => ({
     name: capitalizeString(type.name),
-    url: type.url,
+    url: retrievePathFromUrl(type.url),
   }));
   return damages;
 }
@@ -21,21 +25,25 @@ export default function mapPokemonType(typeData: IUnparsedType): IParsedType {
   };
   const generation = {
     name: capitalizeString(typeData.generation.name),
-    url: typeData.generation.url,
+    url: retrievePathFromUrl(typeData.generation.url),
   };
   const id = typeData.id;
-  const moveDamageClass = {
-    name: capitalizeString(typeData.move_damage_class.name),
-    url: typeData.move_damage_class.url,
-  };
+
+  const moveDamageClass = typeData.move_damage_class
+    ? {
+        name: capitalizeString(typeData.move_damage_class.name),
+        url: retrievePathFromUrl(typeData.move_damage_class.url),
+      }
+    : { name: "None", url: "" };
+
   const moves = typeData.moves.map((move) => ({
     name: capitalizeString(move.name),
-    url: move.url,
+    url: retrievePathFromUrl(move.url),
   }));
   const name = capitalizeString(typeData.name);
   const pokemon = typeData.pokemon.map((pokemon) => ({
     name: capitalizeString(pokemon.pokemon.name),
-    url: pokemon.pokemon.url,
+    url: retrievePathFromUrl(pokemon.pokemon.url),
   }));
   return new PokemonType({
     damageRelations,

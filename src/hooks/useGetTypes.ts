@@ -2,8 +2,7 @@ import { useEffect, useReducer } from "react";
 import { IParsedType } from "../types/pokemonType";
 import mapPokemonType from "../mappers/pokemonTypeMapper";
 import PokemonType from "../entities/pokemonType";
-import typeMock from "../../fixtures/type.json";
-// import fetchTypesFromApi from "../api/typesFetch";
+import fetchTypesFromApi from "../api/typesFetch";
 
 type State = {
   loading: boolean | null;
@@ -43,7 +42,7 @@ export default function useGetTypes(params: number) {
     const getType = async () => {
       dispatch({ type: "LOADING", payload: null });
       try {
-        const resource = typeMock;
+        const resource = await fetchTypesFromApi(params);
         const Type = new PokemonType(mapPokemonType(resource));
         dispatch({ type: "SUCCESS", payload: Type });
       } catch (error) {
