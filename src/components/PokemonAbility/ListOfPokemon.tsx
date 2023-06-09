@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Link } from "@chakra-ui/react";
 
 type PokemonList = {
   name: string;
@@ -9,7 +9,14 @@ export default function ListOfPokemon({ list }: { list: PokemonList }) {
   return (
     <>
       {list.map((pokemon, i) => (
-        <Button key={`${pokemon.name}-${i}`}>{pokemon.name}</Button>
+        <Button
+          m={1}
+          colorScheme="teal"
+          variant="solid"
+          key={`${pokemon.name}-${i}`}
+        >
+          <Link href={`../${pokemon.url}`}>{pokemon.name}</Link>
+        </Button>
       ))}
     </>
   );

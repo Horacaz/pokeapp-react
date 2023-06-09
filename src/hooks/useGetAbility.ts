@@ -3,8 +3,8 @@
 import { useReducer, useEffect } from "react";
 import mapPokemonAbility from "../mappers/pokemonAbilityMapper";
 import PokemonAbility from "../entities/pokemonAbility";
-import abilityData from "../../fixtures/pokemonAbility.json";
 import { IParsedPokemonAbility } from "../types/pokemonAbility";
+import fetchAbilityFromApi from "../api/abilityFetch";
 
 type State = {
   loading: boolean | null;
@@ -41,7 +41,7 @@ export default function useGetAbility(params: string) {
     const getAbility = async () => {
       dispatch({ type: "LOADING", payload: null });
       try {
-        const resource = abilityData;
+        const resource = await fetchAbilityFromApi(params);
         const Ability = new PokemonAbility(mapPokemonAbility(resource));
 
         dispatch({ type: "SUCCESS", payload: Ability });
