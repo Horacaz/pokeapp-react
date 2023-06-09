@@ -2,7 +2,7 @@ import { IParsedType } from "../../types/pokemonType";
 import PokemonType from "../pokemonType";
 
 const pokemonTypeMock: IParsedType = {
-  damageRelation: {
+  damageRelations: {
     doubleDamageFrom: [{ name: "Fire", url: "url" }],
     doubleDamageTo: [{ name: "Fire", url: "url" }],
     halfDamageFrom: [{ name: "Fire", url: "url" }],

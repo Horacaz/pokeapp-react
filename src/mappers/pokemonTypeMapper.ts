@@ -2,14 +2,16 @@ import { IUnparsedType, IParsedType } from "../types/pokemonType";
 import capitalizeString from "../utils/capitalizeString";
 import PokemonType from "../entities/pokemonType";
 
+function mapDamage(damage: { name: string; url: string }[]) {
+  const damages = damage.map((type) => ({
+    name: capitalizeString(type.name),
+    url: type.url,
+  }));
+  return damages;
+}
 export default function mapPokemonType(typeData: IUnparsedType): IParsedType {
-  const mapDamage = (damage: { name: string; url: string }[]) =>
-    damage.map((type) => ({
-      name: capitalizeString(type.name),
-      url: type.url,
-    }));
-  const damages = typeData.damage_relation;
-  const damageRelation = {
+  const damages = typeData.damage_relations;
+  const damageRelations = {
     doubleDamageFrom: mapDamage(damages.double_damage_from),
     doubleDamageTo: mapDamage(damages.double_damage_to),
     halfDamageFrom: mapDamage(damages.half_damage_from),
@@ -36,7 +38,7 @@ export default function mapPokemonType(typeData: IUnparsedType): IParsedType {
     url: pokemon.pokemon.url,
   }));
   return new PokemonType({
-    damageRelation,
+    damageRelations,
     generation,
     id,
     moveDamageClass,

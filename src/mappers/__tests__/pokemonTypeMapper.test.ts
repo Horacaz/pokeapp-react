@@ -2,7 +2,7 @@ import { IUnparsedType, IParsedType } from "../../types/pokemonType";
 import mapPokemonType from "../pokemonTypeMapper";
 
 const pokemonTypeMock: IUnparsedType = {
-  damage_relation: {
+  damage_relations: {
     double_damage_from: [{ name: "fire", url: "url" }],
     double_damage_to: [{ name: "fire", url: "url" }],
     half_damage_from: [{ name: "fire", url: "url" }],
@@ -19,7 +19,7 @@ const pokemonTypeMock: IUnparsedType = {
 };
 
 const expectTypeMap: IParsedType = {
-  damageRelation: {
+  damageRelations: {
     doubleDamageFrom: [{ name: "Fire", url: "url" }],
     doubleDamageTo: [{ name: "Fire", url: "url" }],
     halfDamageFrom: [{ name: "Fire", url: "url" }],
