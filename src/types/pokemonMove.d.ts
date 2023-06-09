@@ -25,5 +25,5 @@ export interface IParsedPokemonMove {
   name: string;
   power: number;
   pp: number;
-  type: { name: string; url: string };
+  type: { name: string; url: string }[];
 }

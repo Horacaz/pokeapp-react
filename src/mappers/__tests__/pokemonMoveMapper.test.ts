@@ -12,13 +12,13 @@ const pokemonMoveMock: IUnparsedPokemonMove = {
   flavor_text_entries: [
     { flavor_text: "effect description", language: { name: "en" } },
   ],
-  generation: { name: "generation", url: "url" },
+  generation: { name: "generation", url: "url/v2/generation/1" },
   id: 3,
-  learned_by_pokemon: [{ name: "pokemon", url: "url" }],
+  learned_by_pokemon: [{ name: "pokemon", url: "url/v2/pokemon/1" }],
   name: "move",
   power: 100,
   pp: 10,
-  type: { name: "fire", url: "url" },
+  type: { name: "fire", url: "url/v2/type/1" },
 };
 const expectedPokemonMoveMap: IParsedPokemonMove = {
   accuracy: 100,
@@ -26,13 +26,13 @@ const expectedPokemonMoveMap: IParsedPokemonMove = {
   effectChance: 10,
   effect: "Effect text",
   description: "Effect description",
-  generation: { name: "Generation", url: "url" },
+  generation: { name: "Generation", url: "generation/1" },
   id: 3,
-  learnedBy: [{ name: "Pokemon", url: "url" }],
+  learnedBy: [{ name: "Pokemon", url: "pokemon/1" }],
   name: "Move",
   power: 100,
   pp: 10,
-  type: { name: "Fire", url: "url" },
+  type: [{ name: "Fire", url: "type/1" }],
 };
 
 describe("mapPokemonMove()", () => {
