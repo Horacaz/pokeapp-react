@@ -4,6 +4,7 @@ import PokemonAbility from "./components/PokemonAbility/PokemonAbility";
 import PokemonGeneration from "./components/PokemonGeneration/PokemonGeneration";
 import PokemonMoves from "./components/PokemonMoves/PokemonMoves";
 import PokemonTypes from "./components/PokemonTypes/PokemonTypes";
+import PokemonPage from "./components/PokemonPage/PokemonPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/generation/:id" element={<PokemonGeneration />} />
           <Route path="/move/:id" element={<PokemonMoves />} />
           <Route path="/type/:id" element={<PokemonTypes />} />
+          <Route path="/pokemon/:id" element={<PokemonPage />} />
         </Routes>
       </BrowserRouter>
     </>
