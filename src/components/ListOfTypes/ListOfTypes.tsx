@@ -46,6 +46,8 @@ export default function ListOfTypes({ list }: { list: TypeList | string }) {
     <>
       {list.map((list, i) => (
         <Button
+          fontWeight="bold"
+          p={2}
           bg={colors[list.name]}
           m={1}
           variant="solid"

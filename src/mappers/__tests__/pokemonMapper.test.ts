@@ -2,32 +2,32 @@ import { IParsedPokemon, IUnparsedPokemon } from "../../types/pokemon";
 import mapPokemon from "../pokemonMapper";
 
 const pokemonMockFixture: IUnparsedPokemon = {
-  abilities: [{ ability: { name: "ability", url: "url" } }],
+  abilities: [{ ability: { name: "ability", url: "url/v2/ability/1" } }],
   base_experience: 100,
   height: 100,
   id: 0,
-  moves: [{ move: { name: "move", url: "url" } }],
+  moves: [{ move: { name: "move", url: "url/v2/move/1" } }],
   name: "foo",
   sprites: {
     other: { "official-artwork": { front_default: "url", front_shiny: "url" } },
   },
   species: { name: "species", url: "url" },
   stats: [{ base_stat: 100, stat: { name: "stat", url: "url" } }],
-  types: [{ type: { name: "fire", url: "url" } }],
+  types: [{ type: { name: "fire", url: "url/v2/type/1" } }],
   weight: 100,
 };
 
 const expectedPokemonMap: IParsedPokemon = {
   displayName: "Foo",
-  abilities: [{ name: "Ability", url: "url" }],
+  abilities: [{ name: "Ability", url: "ability/1" }],
   baseExperience: 100,
   height: 100,
   id: 0,
-  moves: [{ name: "Move", url: "url" }],
+  moves: [{ name: "Move", url: "move/1" }],
   name: "foo",
   species: { name: "species", url: "url" },
-  stats: [{ baseStat: 100, name: "stat" }],
-  types: [{ name: "Fire", url: "url" }],
+  stats: [{ baseStat: 100, name: "Stat" }],
+  types: [{ name: "Fire", url: "type/1" }],
   pictures: { default: "url", shiny: "url" },
   weight: 100,
 };

@@ -13,18 +13,18 @@ const pokemonSpeciesMock: IUnparsedPokemonSpecies = {
     },
   ],
   genera: [{ genus: "genus", language: { name: "en", url: "url" } }],
-  generation: { name: "generation", url: "url" },
+  generation: { name: "generation", url: "url/v2/generation/1" },
   id: 3,
   name: "species",
-  varieties: [{ pokemon: { name: "pokemon", url: "url" } }],
+  varieties: [{ pokemon: { name: "pokemon", url: "url/v2/pokemon/1" } }],
 };
 const expectedSpeciesMap: IParsedPokemonSpecies = {
   description: "Description of species",
   genus: "Genus",
-  generation: { name: "Generation", url: "url" },
+  generation: { name: "Generation", url: "generation/1" },
   id: 3,
   name: "Species",
-  varieties: [{ name: "Pokemon", url: "url" }],
+  varieties: [{ name: "Pokemon", url: "pokemon/1" }],
 };
 
 describe("mapPokemonSpecies", () => {

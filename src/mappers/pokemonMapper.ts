@@ -1,5 +1,5 @@
 import { IUnparsedPokemon, IParsedPokemon } from "../types/pokemon";
-import Pokemon from "../entities/pokemon";
+import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import capitalizeString from "../utils/capitalizeString";
 
 export default function mapPokemon(
@@ -8,14 +8,14 @@ export default function mapPokemon(
   const displayName = capitalizeString(pokemonData.name);
   const abilities = pokemonData.abilities.map((ability) => ({
     name: capitalizeString(ability.ability.name),
-    url: ability.ability.url,
+    url: retrievePathFromUrl(ability.ability.url),
   }));
   const baseExperience = pokemonData.base_experience;
   const height = pokemonData.height;
   const id = pokemonData.id;
   const moves = pokemonData.moves.map((move) => ({
     name: capitalizeString(move.move.name),
-    url: move.move.url,
+    url: retrievePathFromUrl(move.move.url),
   }));
   const name = pokemonData.name;
   const species = pokemonData.species;
@@ -25,14 +25,14 @@ export default function mapPokemon(
   };
   const stats = pokemonData.stats.map((stat) => ({
     baseStat: stat.base_stat,
-    name: stat.stat.name,
+    name: capitalizeString(stat.stat.name),
   }));
   const types = pokemonData.types.map((type) => ({
     name: capitalizeString(type.type.name),
-    url: type.type.url,
+    url: retrievePathFromUrl(type.type.url),
   }));
   const weight = pokemonData.weight;
-  return new Pokemon({
+  return {
     displayName,
     abilities,
     baseExperience,
@@ -45,5 +45,5 @@ export default function mapPokemon(
     stats,
     types,
     weight,
-  });
+  };
 }

@@ -10,7 +10,9 @@ export default function ListOfPokemon({ list }: { list: PokemonList }) {
     <>
       {list.map((pokemon, i) => (
         <Button
+          fontWeight="bold"
           m={1}
+          p={2}
           colorScheme="teal"
           variant="solid"
           key={`${pokemon.name}-${i}`}

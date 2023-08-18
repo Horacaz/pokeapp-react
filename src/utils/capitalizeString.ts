@@ -1,6 +1,11 @@
 export default function capitalizeString(string: string) {
-  const upperCase = string[0].toUpperCase();
-  const slicedString = string.slice(1);
-  const capitalizedString = upperCase + slicedString;
-  return capitalizedString;
+  const filteredString = string.split("-");
+  const capitalizedString = filteredString.map((string) => {
+    const upperCaseLetter = string[0].toUpperCase();
+    const slicedString = string.slice(1);
+    const upperCasedString = upperCaseLetter + slicedString;
+    return upperCasedString;
+  });
+
+  return capitalizedString.join(" ");
 }

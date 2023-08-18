@@ -1,18 +1,20 @@
-import { IParsedPokemon } from "../types/pokemon";
+import { TPokemon } from "../types/pokemon";
 import { useEffect, useReducer } from "react";
 import mapPokemon from "../mappers/pokemonMapper";
+import mapPokemonSpecies from "../mappers/pokemonSpeciesMapper";
 import fetchPokemonFromApi from "../api/pokemonFetch";
 import Pokemon from "../entities/pokemon";
+import fetchPokemonSpeciesFromApi from "../api/pokemonSpeciesFetch";
 
 type State = {
   loading: boolean | null;
   error: Error | null;
-  data: IParsedPokemon | null;
+  data: TPokemon | null;
 };
 
 type Action = {
   type: string;
-  payload: Error | null | IParsedPokemon;
+  payload: Error | null | TPokemon;
 };
 
 const initialState = { loading: null, data: null, error: null };
@@ -25,7 +27,7 @@ const pokemonReducer = (state: State, action: Action) => {
       return {
         ...state,
         loading: false,
-        data: payload as IParsedPokemon,
+        data: payload as TPokemon,
         error: null,
       };
     case "ERROR":
@@ -41,8 +43,12 @@ export default function useGetPokemon(params: string) {
     const getPokemon = async () => {
       dispatch({ type: "LOADING", payload: null });
       try {
-        const resource = await fetchPokemonFromApi(params);
-        const pokemon = new Pokemon(mapPokemon(resource));
+        const pokemonData = await fetchPokemonFromApi(params);
+        const speciesData = await fetchPokemonSpeciesFromApi(params);
+        const pokemon = new Pokemon(
+          mapPokemon(pokemonData),
+          mapPokemonSpecies(speciesData)
+        );
 
         dispatch({ type: "SUCCESS", payload: pokemon });
       } catch (error) {
