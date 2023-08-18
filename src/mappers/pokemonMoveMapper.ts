@@ -28,8 +28,8 @@ export default function mapPokemonMove(
     url: retrievePathFromUrl(pokemon.url),
   }));
   const name = capitalizeString(moveData.name);
-  const power = 100;
-  const pp = 10;
+  const power = moveData.power;
+  const pp = moveData.pp;
   const type = [
     {
       name: capitalizeString(moveData.type.name),

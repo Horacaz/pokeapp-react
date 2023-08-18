@@ -3,6 +3,7 @@ import {
   IParsedPokemonSpecies,
 } from "../types/pokemonSpecies";
 import capitalizeString from "../utils/capitalizeString";
+import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import PokemonSpecies from "../entities/pokemonSpecies";
 
 export default function mapPokemonSpecies(
@@ -20,13 +21,13 @@ export default function mapPokemonSpecies(
 
   const generation = {
     name: capitalizeString(speciesData.generation.name),
-    url: speciesData.generation.url,
+    url: retrievePathFromUrl(speciesData.generation.url),
   };
   const id = speciesData.id;
   const name = capitalizeString(speciesData.name);
   const varieties = speciesData.varieties.map((variety) => ({
     name: capitalizeString(variety.pokemon.name),
-    url: variety.pokemon.url,
+    url: retrievePathFromUrl(variety.pokemon.url),
   }));
 
   return new PokemonSpecies({

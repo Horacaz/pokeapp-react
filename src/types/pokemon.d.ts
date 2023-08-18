@@ -1,3 +1,5 @@
+import { IParsedPokemonSpecies } from "../types/pokemonSpecies";
+
 interface Abilities {
   ability: { name: string; url: string };
 }
@@ -47,3 +49,5 @@ export interface IParsedPokemon {
   types: { name: string; url: string }[];
   weight: number;
 }
+
+type TPokemon = IParsedPokemon & IParsedPokemonSpecies;

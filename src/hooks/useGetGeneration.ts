@@ -2,7 +2,6 @@ import { useEffect, useReducer } from "react";
 import mapGeneration from "../mappers/generationMapper";
 import Generation from "../entities/generation";
 import fetchGenerationFromApi from "../api/generationFetch";
-import geneterationMock from "../../fixtures/generation.json";
 import { IParsedGeneration } from "../types/generation";
 
 type State = {

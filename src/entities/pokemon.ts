@@ -1,6 +1,7 @@
-import { IParsedPokemon } from "../types/pokemon";
+import { IParsedPokemon, TPokemon } from "../types/pokemon";
+import { IParsedPokemonSpecies } from "../types/pokemonSpecies";
 
-export default class Pokemon implements IParsedPokemon {
+export default class Pokemon implements TPokemon {
   displayName: string;
   abilities: { name: string; url: string }[];
   baseExperience: number;
@@ -13,8 +14,12 @@ export default class Pokemon implements IParsedPokemon {
   stats: { baseStat: number; name: string }[];
   types: { name: string; url: string }[];
   weight: number;
+  description: string;
+  generation: { name: string; url: string };
+  genus: string;
+  varieties: { name: string; url: string }[];
 
-  constructor(pokemonData: IParsedPokemon) {
+  constructor(pokemonData: IParsedPokemon, speciesData: IParsedPokemonSpecies) {
     this.displayName = pokemonData.displayName;
     this.abilities = pokemonData.abilities;
     this.baseExperience = pokemonData.baseExperience;
@@ -27,5 +32,9 @@ export default class Pokemon implements IParsedPokemon {
     this.stats = pokemonData.stats;
     this.types = pokemonData.types;
     this.weight = pokemonData.weight;
+    this.description = speciesData.description;
+    this.generation = speciesData.generation;
+    this.genus = speciesData.genus;
+    this.varieties = speciesData.varieties;
   }
 }
