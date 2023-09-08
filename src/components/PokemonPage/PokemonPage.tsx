@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useGetPokemon from "../../hooks/useGetPokemon";
 import ListOfMoves from "../ListOfMoves/ListOfMoves";
 import ListOfTypes from "../ListOfTypes/ListOfTypes";
@@ -17,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 export default function PokemonPage() {
+  const [shiny, setShiny] = useState(false);
   const id = useParams().id as string;
   const { loading, data } = useGetPokemon(id);
   return (
@@ -29,9 +31,8 @@ export default function PokemonPage() {
               <GridItem>
                 <PokemonSection title="Information" />
                 <PokemonSectionSubtitle subTitle="Pokémon description from Pokédex" />
-                <Text marginY={1} fontSize={"xl"}>
-                  Spits fire that is hot enough to melt boulders. <br></br>Known
-                  to cause forest fires unintentionally.
+                <Text marginY={1} fontSize={"2xl"}>
+                  {data.description}
                 </Text>
                 <Grid marginY={4} templateColumns={"repeat(3, 0.2fr)"}>
                   <GridItem>
@@ -60,7 +61,11 @@ export default function PokemonPage() {
                 </Grid>
               </GridItem>
               <GridItem>
-                <PokemonCard pokemon={data} />
+                <PokemonCard
+                  pokemon={data}
+                  onClick={() => setShiny(!shiny)}
+                  isShiny={shiny}
+                />
               </GridItem>
             </Grid>
           </GridItem>
@@ -81,7 +86,11 @@ export default function PokemonPage() {
   );
 }
 
-function PokemonCard(props: { pokemon: TPokemon }) {
+function PokemonCard(props: {
+  pokemon: TPokemon;
+  onClick: () => void;
+  isShiny: boolean;
+}) {
   const { pokemon } = props;
   return (
     <Stack>
@@ -97,12 +106,16 @@ function PokemonCard(props: { pokemon: TPokemon }) {
       </Box>
       <Box>
         <Image
+          _hover={{ cursor: "pointer" }}
+          onClick={props.onClick}
           p={2}
           boxSize="250px"
           margin="auto"
           borderRadius={10}
           backgroundColor="gray.300"
-          src={pokemon.pictures.default}
+          src={
+            props.isShiny ? pokemon.pictures.shiny : pokemon.pictures.default
+          }
           alt={pokemon.name}
         />
       </Box>
