@@ -8,13 +8,17 @@ import {
 const pokemonFixtureMock: IParsedPokemonList = {
   count: 100,
   next: "url",
-  results: [{ displayName: "Foo", name: "foo", url: "pokemonUrl" }],
+  results: [
+    {
+      name: "bulbasaur",
+      url: "url/v2/pokemon/1",
+    },
+  ],
 };
 
 const parsedPokemonListObject = pokemonFixtureMock.results.map((pokemon) => ({
-  displayName: capitalizeString(pokemon.name),
-  name: pokemon.name,
-  url: pokemon.url,
+  name: capitalizeString(pokemon.name),
+  url: "pokemon/1",
 }));
 
 const expectedPokemonListMap: IUnparsedPokemonList = {

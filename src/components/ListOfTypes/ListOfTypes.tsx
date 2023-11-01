@@ -4,6 +4,11 @@ type Colors = {
   [key: string]: string;
 };
 
+type Type = {
+  name: string;
+  url: string;
+};
+
 const colors: Colors = {
   Grass: "#7AC74C",
   Fire: "#EE8130",
@@ -28,15 +33,10 @@ const colors: Colors = {
   None: "#3a3a3a",
 };
 
-type TypeList = {
-  name: string;
-  url: string;
-}[];
-
-export default function ListOfTypes({ list }: { list: TypeList | string }) {
+export default function ListOfTypes({ list }: { list: Type[] | string }) {
   if (typeof list === "string") {
     return (
-      <Button bg={colors[list]} m={1} variant="solid">
+      <Button bg={colors[list]} fontWeight="bold" m={1} p={2} variant="solid">
         {list}
       </Button>
     );
@@ -45,18 +45,24 @@ export default function ListOfTypes({ list }: { list: TypeList | string }) {
   return (
     <>
       {list.map((list, i) => (
-        <Button
-          fontWeight="bold"
-          p={2}
-          bg={colors[list.name]}
-          m={1}
-          variant="solid"
-          key={`${list.name}-${i}`}
-        >
-          {(list.url && <Link href={`../../${list.url}`}>{list.name}</Link>) ||
-            list.name}
-        </Button>
+        <TypeButton name={list.name} url={list.url} key={`${list.name}-${i}`} />
       ))}
     </>
+  );
+}
+
+function TypeButton(props: Type) {
+  return (
+    <Button
+      fontWeight="bold"
+      m={1}
+      p={2}
+      backgroundColor={colors[props.name]}
+      variant="solid"
+    >
+      <Link color={"brand.primary"} href={`../../${props.url}`}>
+        {props.name}
+      </Link>
+    </Button>
   );
 }

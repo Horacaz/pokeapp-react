@@ -1,54 +1,26 @@
-import { useEffect, useReducer } from "react";
+import { useEffect } from "react";
 import { IParsedPokemonMove } from "../types/pokemonMove";
+import usePokeApp from "./usePokeApp";
 import mapPokemonMove from "../mappers/pokemonMoveMapper";
 import PokemonMove from "../entities/pokemonMove";
-import fetchMovesFromApi from "../api/movesFetch";
-
-type State = {
-  loading: boolean | null;
-  data: IParsedPokemonMove | null;
-  error: Error | null;
-};
-
-type Action = {
-  type: string;
-  payload: IParsedPokemonMove | null | Error;
-};
-const initalState: State = { loading: null, data: null, error: null };
-
-const pokemonMoveReducer = (state: State, action: Action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case "LOADING":
-      return { ...state, loading: true, data: null, error: null };
-    case "SUCCESS":
-      return {
-        ...state,
-        loading: false,
-        data: payload as IParsedPokemonMove,
-        error: null,
-      };
-    case "ERROR":
-      return { ...state, loading: false, data: null, error: payload as Error };
-    default:
-      return state;
-  }
-};
+import fetchMoveFromApi from "../api/movesFetch";
 
 export default function usePokemonMove(params: number) {
-  const [state, dispatch] = useReducer(pokemonMoveReducer, initalState);
+  const { state, handleLoadingAction, handleSuccessAction, handleErrorAction } =
+    usePokeApp<IParsedPokemonMove>();
+
   useEffect(() => {
     const getPokemonMove = async () => {
-      dispatch({ type: "LOADING", payload: null });
+      handleLoadingAction();
       try {
-        const resource = await fetchMovesFromApi(params);
-        const Moves = new PokemonMove(mapPokemonMove(resource));
-        dispatch({ type: "SUCCESS", payload: Moves });
+        const resource = await fetchMoveFromApi(params);
+        const move = new PokemonMove(mapPokemonMove(resource));
+        handleSuccessAction(move);
       } catch (error) {
-        dispatch({ type: "ERROR", payload: error as Error });
+        handleErrorAction(error as Error);
       }
     };
     getPokemonMove();
-  }, [params]);
+  }, [params, handleLoadingAction, handleSuccessAction, handleErrorAction]);
   return state;
 }

@@ -1,0 +1,23 @@
+{
+  "abilities": [],
+  "id": 1,
+  "mainRegion": "Kanto",
+  "moves": [
+    {
+      "name": "Pound",
+      "url": "move/1/"
+    }
+  ],
+  "pokemonSpecies": [
+    {
+      "name": "Bulbasaur",
+      "url": "pokemon-species/1/"
+    }
+  ],
+  "types": [
+    {
+      "name": "Normal",
+      "url": "type/1/"
+    }
+  ]
+}

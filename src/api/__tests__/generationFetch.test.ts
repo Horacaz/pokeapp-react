@@ -1,14 +1,6 @@
 import fetchGenerationFromApi from "../generationFetch";
-
-const fetchMock = (global.fetch = vi.fn().mockImplementation(
-  () =>
-    new Promise((resolve) => {
-      const jsonPromise = new Promise((r) => {
-        r({});
-      });
-      resolve({ json: () => jsonPromise });
-    })
-));
+import { setupFetchMock } from "../../../__utils__/testHelpers";
+const fetchMock = setupFetchMock();
 const expectedUrl = "https://pokeapi.co/api/v2/generation/3";
 describe("fetchGenerationFromApi", () => {
   test("succesfully sends a request to api with valid parameters", () => {

@@ -1,55 +1,30 @@
-import { useReducer, useEffect } from "react";
+import { useEffect } from "react";
+import usePokeApp from "./usePokeApp";
 import mapPokemonAbility from "../mappers/pokemonAbilityMapper";
 import PokemonAbility from "../entities/pokemonAbility";
 import { IParsedPokemonAbility } from "../types/pokemonAbility";
 import fetchAbilityFromApi from "../api/abilityFetch";
 
-type State = {
-  loading: boolean | null;
-  data: IParsedPokemonAbility | null;
-  error: Error | null;
-};
-type Action = {
-  type: string;
-  payload: IParsedPokemonAbility | null | Error;
-};
-const initialState = { loading: null, data: null, error: null };
-const fetchReducer = (state: State, action: Action): State => {
-  const { type, payload } = action;
-  switch (type) {
-    case "LOADING":
-      return { ...state, loading: true, data: null, error: null };
-    case "SUCCESS":
-      return {
-        ...state,
-        loading: false,
-        data: payload as IParsedPokemonAbility,
-        error: null,
-      };
-    case "ERROR":
-      return { ...state, loading: false, data: null, error: payload as Error };
-    default:
-      return state;
-  }
-};
 export default function useGetAbility(params: string) {
-  const [state, dispatch] = useReducer(fetchReducer, initialState);
+  const { state, handleLoadingAction, handleSuccessAction, handleErrorAction } =
+    usePokeApp<IParsedPokemonAbility>();
 
   useEffect(() => {
     const getAbility = async () => {
-      dispatch({ type: "LOADING", payload: null });
+      handleLoadingAction();
       try {
         const resource = await fetchAbilityFromApi(params);
-        const Ability = new PokemonAbility(mapPokemonAbility(resource));
-
-        dispatch({ type: "SUCCESS", payload: Ability });
+        const ability: IParsedPokemonAbility = new PokemonAbility(
+          mapPokemonAbility(resource)
+        );
+        handleSuccessAction(ability);
       } catch (error) {
-        dispatch({ type: "ERROR", payload: error as Error });
+        handleErrorAction(error as Error);
       }
     };
     if (params) {
       getAbility();
     }
-  }, [params]);
+  }, [params, handleLoadingAction, handleSuccessAction, handleErrorAction]);
   return state;
 }

@@ -7,5 +7,5 @@ export interface IUnparsedPokemonList {
 export interface IParsedPokemonList {
   count: number;
   next: string;
-  results: { displayName: string; name: string; url: string }[];
+  results: { name: string; url: string }[];
 }

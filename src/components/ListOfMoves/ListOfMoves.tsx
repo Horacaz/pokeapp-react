@@ -1,25 +1,32 @@
 import { Button, Link, Grid } from "@chakra-ui/react";
 
-type MovesList = {
+type Move = {
   name: string;
   url: string;
-}[];
+};
 
-export default function ListOfMoves({ list }: { list: MovesList }) {
+export default function ListOfMoves({ list }: { list: Move[] }) {
   return (
     <Grid gridTemplateColumns="repeat(6, 1fr)" gap={2}>
       {list.map((move, i) => (
-        <Button
-          fontWeight="bold"
-          m={1}
-          p={2}
-          colorScheme="blue"
-          variant="solid"
-          key={`${move.name}-${i}`}
-        >
-          <Link href={`../../${move.url}`}>{move.name}</Link>
-        </Button>
+        <MoveButton name={move.name} url={move.url} key={`${move.name}-${i}`} />
       ))}
     </Grid>
+  );
+}
+
+function MoveButton(props: Move) {
+  return (
+    <Button
+      fontWeight="bold"
+      m={1}
+      p={2}
+      backgroundColor={"brand.secondary"}
+      variant="solid"
+    >
+      <Link color={"brand.background"} href={`../../${props.url}`}>
+        {props.name}
+      </Link>
+    </Button>
   );
 }

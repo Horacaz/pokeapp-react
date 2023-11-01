@@ -1,47 +1,19 @@
 import { TPokemon } from "../types/pokemon";
-import { useEffect, useReducer } from "react";
+import { useEffect } from "react";
+import usePokeApp from "./usePokeApp";
 import mapPokemon from "../mappers/pokemonMapper";
 import mapPokemonSpecies from "../mappers/pokemonSpeciesMapper";
 import fetchPokemonFromApi from "../api/pokemonFetch";
 import Pokemon from "../entities/pokemon";
 import fetchPokemonSpeciesFromApi from "../api/pokemonSpeciesFetch";
 
-type State = {
-  loading: boolean | null;
-  error: Error | null;
-  data: TPokemon | null;
-};
-
-type Action = {
-  type: string;
-  payload: Error | null | TPokemon;
-};
-
-const initialState = { loading: null, data: null, error: null };
-const pokemonReducer = (state: State, action: Action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case "LOADING":
-      return { ...state, loading: true, data: null, error: null };
-    case "SUCCESS":
-      return {
-        ...state,
-        loading: false,
-        data: payload as TPokemon,
-        error: null,
-      };
-    case "ERROR":
-      return { ...state, loading: false, data: null, error: payload as Error };
-    default:
-      return state;
-  }
-};
-
 export default function useGetPokemon(params: string) {
-  const [state, dispatch] = useReducer(pokemonReducer, initialState);
+  const { state, handleLoadingAction, handleSuccessAction, handleErrorAction } =
+    usePokeApp<TPokemon>();
+
   useEffect(() => {
     const getPokemon = async () => {
-      dispatch({ type: "LOADING", payload: null });
+      handleLoadingAction();
       try {
         const pokemonData = await fetchPokemonFromApi(params);
         const speciesData = await fetchPokemonSpeciesFromApi(params);
@@ -49,15 +21,14 @@ export default function useGetPokemon(params: string) {
           mapPokemon(pokemonData),
           mapPokemonSpecies(speciesData)
         );
-
-        dispatch({ type: "SUCCESS", payload: pokemon });
+        handleSuccessAction(pokemon);
       } catch (error) {
-        dispatch({ type: "ERROR", payload: null });
+        handleErrorAction(error as Error);
       }
     };
     if (params) {
       getPokemon();
     }
-  }, [params]);
+  }, [params, handleLoadingAction, handleSuccessAction, handleErrorAction]);
   return state;
 }

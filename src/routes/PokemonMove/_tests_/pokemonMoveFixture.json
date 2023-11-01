@@ -1,0 +1,27 @@
+{
+  "accuracy": 100,
+  "damageClass": "Physical",
+  "effectChance": null,
+  "effect": "Inflicts regular damage.",
+  "description": "Pounds with fore­\nlegs or tail.",
+  "generation": {
+    "name": "Generation I",
+    "url": "generation/1/"
+  },
+  "id": 1,
+  "learnedBy": [
+    {
+      "name": "Clefairy",
+      "url": "pokemon/35/"
+    }
+  ],
+  "name": "Pound",
+  "power": 40,
+  "pp": 35,
+  "type": [
+    {
+      "name": "Normal",
+      "url": "type/1/"
+    }
+  ]
+}
