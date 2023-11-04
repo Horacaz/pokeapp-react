@@ -1,0 +1,1079 @@
+{
+  "accuracy": 100,
+  "damageClass": "Special",
+  "effectChance": 10,
+  "effect": "Inflicts regular damage.  Has a $effect_chance% chance to burn the target.",
+  "description": "An attack that may\ninflict a burn.",
+  "generation": {
+    "name": "Generation I",
+    "url": "generation/1/"
+  },
+  "id": 53,
+  "learnedBy": [
+    {
+      "name": "Charmander",
+      "url": "pokemon/4/"
+    },
+    {
+      "name": "Charmeleon",
+      "url": "pokemon/5/"
+    },
+    {
+      "name": "Charizard",
+      "url": "pokemon/6/"
+    },
+    {
+      "name": "Nidoqueen",
+      "url": "pokemon/31/"
+    },
+    {
+      "name": "Nidoking",
+      "url": "pokemon/34/"
+    },
+    {
+      "name": "Clefairy",
+      "url": "pokemon/35/"
+    },
+    {
+      "name": "Clefable",
+      "url": "pokemon/36/"
+    },
+    {
+      "name": "Vulpix",
+      "url": "pokemon/37/"
+    },
+    {
+      "name": "Ninetales",
+      "url": "pokemon/38/"
+    },
+    {
+      "name": "Jigglypuff",
+      "url": "pokemon/39/"
+    },
+    {
+      "name": "Wigglytuff",
+      "url": "pokemon/40/"
+    },
+    {
+      "name": "Growlithe",
+      "url": "pokemon/58/"
+    },
+    {
+      "name": "Arcanine",
+      "url": "pokemon/59/"
+    },
+    {
+      "name": "Machop",
+      "url": "pokemon/66/"
+    },
+    {
+      "name": "Machoke",
+      "url": "pokemon/67/"
+    },
+    {
+      "name": "Machamp",
+      "url": "pokemon/68/"
+    },
+    {
+      "name": "Geodude",
+      "url": "pokemon/74/"
+    },
+    {
+      "name": "Graveler",
+      "url": "pokemon/75/"
+    },
+    {
+      "name": "Golem",
+      "url": "pokemon/76/"
+    },
+    {
+      "name": "Ponyta",
+      "url": "pokemon/77/"
+    },
+    {
+      "name": "Rapidash",
+      "url": "pokemon/78/"
+    },
+    {
+      "name": "Slowpoke",
+      "url": "pokemon/79/"
+    },
+    {
+      "name": "Slowbro",
+      "url": "pokemon/80/"
+    },
+    {
+      "name": "Grimer",
+      "url": "pokemon/88/"
+    },
+    {
+      "name": "Muk",
+      "url": "pokemon/89/"
+    },
+    {
+      "name": "Cubone",
+      "url": "pokemon/104/"
+    },
+    {
+      "name": "Marowak",
+      "url": "pokemon/105/"
+    },
+    {
+      "name": "Lickitung",
+      "url": "pokemon/108/"
+    },
+    {
+      "name": "Koffing",
+      "url": "pokemon/109/"
+    },
+    {
+      "name": "Weezing",
+      "url": "pokemon/110/"
+    },
+    {
+      "name": "Rhyhorn",
+      "url": "pokemon/111/"
+    },
+    {
+      "name": "Rhydon",
+      "url": "pokemon/112/"
+    },
+    {
+      "name": "Chansey",
+      "url": "pokemon/113/"
+    },
+    {
+      "name": "Kangaskhan",
+      "url": "pokemon/115/"
+    },
+    {
+      "name": "Magmar",
+      "url": "pokemon/126/"
+    },
+    {
+      "name": "Tauros",
+      "url": "pokemon/128/"
+    },
+    {
+      "name": "Gyarados",
+      "url": "pokemon/130/"
+    },
+    {
+      "name": "Flareon",
+      "url": "pokemon/136/"
+    },
+    {
+      "name": "Aerodactyl",
+      "url": "pokemon/142/"
+    },
+    {
+      "name": "Snorlax",
+      "url": "pokemon/143/"
+    },
+    {
+      "name": "Moltres",
+      "url": "pokemon/146/"
+    },
+    {
+      "name": "Dratini",
+      "url": "pokemon/147/"
+    },
+    {
+      "name": "Dragonair",
+      "url": "pokemon/148/"
+    },
+    {
+      "name": "Dragonite",
+      "url": "pokemon/149/"
+    },
+    {
+      "name": "Mewtwo",
+      "url": "pokemon/150/"
+    },
+    {
+      "name": "Mew",
+      "url": "pokemon/151/"
+    },
+    {
+      "name": "Cyndaquil",
+      "url": "pokemon/155/"
+    },
+    {
+      "name": "Quilava",
+      "url": "pokemon/156/"
+    },
+    {
+      "name": "Typhlosion",
+      "url": "pokemon/157/"
+    },
+    {
+      "name": "Sentret",
+      "url": "pokemon/161/"
+    },
+    {
+      "name": "Furret",
+      "url": "pokemon/162/"
+    },
+    {
+      "name": "Cleffa",
+      "url": "pokemon/173/"
+    },
+    {
+      "name": "Igglybuff",
+      "url": "pokemon/174/"
+    },
+    {
+      "name": "Togepi",
+      "url": "pokemon/175/"
+    },
+    {
+      "name": "Togetic",
+      "url": "pokemon/176/"
+    },
+    {
+      "name": "Slowking",
+      "url": "pokemon/199/"
+    },
+    {
+      "name": "Dunsparce",
+      "url": "pokemon/206/"
+    },
+    {
+      "name": "Snubbull",
+      "url": "pokemon/209/"
+    },
+    {
+      "name": "Granbull",
+      "url": "pokemon/210/"
+    },
+    {
+      "name": "Slugma",
+      "url": "pokemon/218/"
+    },
+    {
+      "name": "Magcargo",
+      "url": "pokemon/219/"
+    },
+    {
+      "name": "Remoraid",
+      "url": "pokemon/223/"
+    },
+    {
+      "name": "Octillery",
+      "url": "pokemon/224/"
+    },
+    {
+      "name": "Houndour",
+      "url": "pokemon/228/"
+    },
+    {
+      "name": "Houndoom",
+      "url": "pokemon/229/"
+    },
+    {
+      "name": "Magby",
+      "url": "pokemon/240/"
+    },
+    {
+      "name": "Blissey",
+      "url": "pokemon/242/"
+    },
+    {
+      "name": "Entei",
+      "url": "pokemon/244/"
+    },
+    {
+      "name": "Tyranitar",
+      "url": "pokemon/248/"
+    },
+    {
+      "name": "Ho Oh",
+      "url": "pokemon/250/"
+    },
+    {
+      "name": "Torchic",
+      "url": "pokemon/255/"
+    },
+    {
+      "name": "Combusken",
+      "url": "pokemon/256/"
+    },
+    {
+      "name": "Blaziken",
+      "url": "pokemon/257/"
+    },
+    {
+      "name": "Slakoth",
+      "url": "pokemon/287/"
+    },
+    {
+      "name": "Vigoroth",
+      "url": "pokemon/288/"
+    },
+    {
+      "name": "Slaking",
+      "url": "pokemon/289/"
+    },
+    {
+      "name": "Whismur",
+      "url": "pokemon/293/"
+    },
+    {
+      "name": "Loudred",
+      "url": "pokemon/294/"
+    },
+    {
+      "name": "Exploud",
+      "url": "pokemon/295/"
+    },
+    {
+      "name": "Mawile",
+      "url": "pokemon/303/"
+    },
+    {
+      "name": "Aggron",
+      "url": "pokemon/306/"
+    },
+    {
+      "name": "Electrike",
+      "url": "pokemon/309/"
+    },
+    {
+      "name": "Manectric",
+      "url": "pokemon/310/"
+    },
+    {
+      "name": "Numel",
+      "url": "pokemon/322/"
+    },
+    {
+      "name": "Camerupt",
+      "url": "pokemon/323/"
+    },
+    {
+      "name": "Torkoal",
+      "url": "pokemon/324/"
+    },
+    {
+      "name": "Flygon",
+      "url": "pokemon/330/"
+    },
+    {
+      "name": "Altaria",
+      "url": "pokemon/334/"
+    },
+    {
+      "name": "Zangoose",
+      "url": "pokemon/335/"
+    },
+    {
+      "name": "Seviper",
+      "url": "pokemon/336/"
+    },
+    {
+      "name": "Solrock",
+      "url": "pokemon/338/"
+    },
+    {
+      "name": "Castform",
+      "url": "pokemon/351/"
+    },
+    {
+      "name": "Kecleon",
+      "url": "pokemon/352/"
+    },
+    {
+      "name": "Absol",
+      "url": "pokemon/359/"
+    },
+    {
+      "name": "Bagon",
+      "url": "pokemon/371/"
+    },
+    {
+      "name": "Shelgon",
+      "url": "pokemon/372/"
+    },
+    {
+      "name": "Salamence",
+      "url": "pokemon/373/"
+    },
+    {
+      "name": "Groudon",
+      "url": "pokemon/383/"
+    },
+    {
+      "name": "Rayquaza",
+      "url": "pokemon/384/"
+    },
+    {
+      "name": "Chimchar",
+      "url": "pokemon/390/"
+    },
+    {
+      "name": "Monferno",
+      "url": "pokemon/391/"
+    },
+    {
+      "name": "Infernape",
+      "url": "pokemon/392/"
+    },
+    {
+      "name": "Cranidos",
+      "url": "pokemon/408/"
+    },
+    {
+      "name": "Rampardos",
+      "url": "pokemon/409/"
+    },
+    {
+      "name": "Shieldon",
+      "url": "pokemon/410/"
+    },
+    {
+      "name": "Bastiodon",
+      "url": "pokemon/411/"
+    },
+    {
+      "name": "Stunky",
+      "url": "pokemon/434/"
+    },
+    {
+      "name": "Skuntank",
+      "url": "pokemon/435/"
+    },
+    {
+      "name": "Happiny",
+      "url": "pokemon/440/"
+    },
+    {
+      "name": "Gible",
+      "url": "pokemon/443/"
+    },
+    {
+      "name": "Gabite",
+      "url": "pokemon/444/"
+    },
+    {
+      "name": "Garchomp",
+      "url": "pokemon/445/"
+    },
+    {
+      "name": "Munchlax",
+      "url": "pokemon/446/"
+    },
+    {
+      "name": "Lickilicky",
+      "url": "pokemon/463/"
+    },
+    {
+      "name": "Rhyperior",
+      "url": "pokemon/464/"
+    },
+    {
+      "name": "Electivire",
+      "url": "pokemon/466/"
+    },
+    {
+      "name": "Magmortar",
+      "url": "pokemon/467/"
+    },
+    {
+      "name": "Togekiss",
+      "url": "pokemon/468/"
+    },
+    {
+      "name": "Azelf",
+      "url": "pokemon/482/"
+    },
+    {
+      "name": "Dialga",
+      "url": "pokemon/483/"
+    },
+    {
+      "name": "Palkia",
+      "url": "pokemon/484/"
+    },
+    {
+      "name": "Heatran",
+      "url": "pokemon/485/"
+    },
+    {
+      "name": "Arceus",
+      "url": "pokemon/493/"
+    },
+    {
+      "name": "Victini",
+      "url": "pokemon/494/"
+    },
+    {
+      "name": "Tepig",
+      "url": "pokemon/498/"
+    },
+    {
+      "name": "Pignite",
+      "url": "pokemon/499/"
+    },
+    {
+      "name": "Emboar",
+      "url": "pokemon/500/"
+    },
+    {
+      "name": "Watchog",
+      "url": "pokemon/505/"
+    },
+    {
+      "name": "Pansear",
+      "url": "pokemon/513/"
+    },
+    {
+      "name": "Simisear",
+      "url": "pokemon/514/"
+    },
+    {
+      "name": "Audino",
+      "url": "pokemon/531/"
+    },
+    {
+      "name": "Darumaka",
+      "url": "pokemon/554/"
+    },
+    {
+      "name": "Darmanitan Standard",
+      "url": "pokemon/555/"
+    },
+    {
+      "name": "Zoroark",
+      "url": "pokemon/571/"
+    },
+    {
+      "name": "Eelektross",
+      "url": "pokemon/604/"
+    },
+    {
+      "name": "Litwick",
+      "url": "pokemon/607/"
+    },
+    {
+      "name": "Lampent",
+      "url": "pokemon/608/"
+    },
+    {
+      "name": "Chandelure",
+      "url": "pokemon/609/"
+    },
+    {
+      "name": "Druddigon",
+      "url": "pokemon/621/"
+    },
+    {
+      "name": "Heatmor",
+      "url": "pokemon/631/"
+    },
+    {
+      "name": "Hydreigon",
+      "url": "pokemon/635/"
+    },
+    {
+      "name": "Larvesta",
+      "url": "pokemon/636/"
+    },
+    {
+      "name": "Volcarona",
+      "url": "pokemon/637/"
+    },
+    {
+      "name": "Reshiram",
+      "url": "pokemon/643/"
+    },
+    {
+      "name": "Genesect",
+      "url": "pokemon/649/"
+    },
+    {
+      "name": "Fennekin",
+      "url": "pokemon/653/"
+    },
+    {
+      "name": "Braixen",
+      "url": "pokemon/654/"
+    },
+    {
+      "name": "Delphox",
+      "url": "pokemon/655/"
+    },
+    {
+      "name": "Fletchinder",
+      "url": "pokemon/662/"
+    },
+    {
+      "name": "Talonflame",
+      "url": "pokemon/663/"
+    },
+    {
+      "name": "Litleo",
+      "url": "pokemon/667/"
+    },
+    {
+      "name": "Pyroar",
+      "url": "pokemon/668/"
+    },
+    {
+      "name": "Swirlix",
+      "url": "pokemon/684/"
+    },
+    {
+      "name": "Slurpuff",
+      "url": "pokemon/685/"
+    },
+    {
+      "name": "Inkay",
+      "url": "pokemon/686/"
+    },
+    {
+      "name": "Malamar",
+      "url": "pokemon/687/"
+    },
+    {
+      "name": "Goodra",
+      "url": "pokemon/706/"
+    },
+    {
+      "name": "Pumpkaboo Average",
+      "url": "pokemon/710/"
+    },
+    {
+      "name": "Gourgeist Average",
+      "url": "pokemon/711/"
+    },
+    {
+      "name": "Noivern",
+      "url": "pokemon/715/"
+    },
+    {
+      "name": "Volcanion",
+      "url": "pokemon/721/"
+    },
+    {
+      "name": "Litten",
+      "url": "pokemon/725/"
+    },
+    {
+      "name": "Torracat",
+      "url": "pokemon/726/"
+    },
+    {
+      "name": "Incineroar",
+      "url": "pokemon/727/"
+    },
+    {
+      "name": "Salandit",
+      "url": "pokemon/757/"
+    },
+    {
+      "name": "Salazzle",
+      "url": "pokemon/758/"
+    },
+    {
+      "name": "Silvally",
+      "url": "pokemon/773/"
+    },
+    {
+      "name": "Turtonator",
+      "url": "pokemon/776/"
+    },
+    {
+      "name": "Drampa",
+      "url": "pokemon/780/"
+    },
+    {
+      "name": "Kommo O",
+      "url": "pokemon/784/"
+    },
+    {
+      "name": "Solgaleo",
+      "url": "pokemon/791/"
+    },
+    {
+      "name": "Celesteela",
+      "url": "pokemon/797/"
+    },
+    {
+      "name": "Guzzlord",
+      "url": "pokemon/799/"
+    },
+    {
+      "name": "Naganadel",
+      "url": "pokemon/804/"
+    },
+    {
+      "name": "Blacephalon",
+      "url": "pokemon/806/"
+    },
+    {
+      "name": "Scorbunny",
+      "url": "pokemon/813/"
+    },
+    {
+      "name": "Raboot",
+      "url": "pokemon/814/"
+    },
+    {
+      "name": "Cinderace",
+      "url": "pokemon/815/"
+    },
+    {
+      "name": "Carkol",
+      "url": "pokemon/838/"
+    },
+    {
+      "name": "Coalossal",
+      "url": "pokemon/839/"
+    },
+    {
+      "name": "Centiskorch",
+      "url": "pokemon/851/"
+    },
+    {
+      "name": "Dracozolt",
+      "url": "pokemon/880/"
+    },
+    {
+      "name": "Drakloak",
+      "url": "pokemon/886/"
+    },
+    {
+      "name": "Dragapult",
+      "url": "pokemon/887/"
+    },
+    {
+      "name": "Eternatus",
+      "url": "pokemon/890/"
+    },
+    {
+      "name": "Fuecoco",
+      "url": "pokemon/909/"
+    },
+    {
+      "name": "Crocalor",
+      "url": "pokemon/910/"
+    },
+    {
+      "name": "Skeledirge",
+      "url": "pokemon/911/"
+    },
+    {
+      "name": "Charcadet",
+      "url": "pokemon/935/"
+    },
+    {
+      "name": "Armarouge",
+      "url": "pokemon/936/"
+    },
+    {
+      "name": "Ceruledge",
+      "url": "pokemon/937/"
+    },
+    {
+      "name": "Scovillain",
+      "url": "pokemon/952/"
+    },
+    {
+      "name": "Dudunsparce",
+      "url": "pokemon/982/"
+    },
+    {
+      "name": "Scream Tail",
+      "url": "pokemon/985/"
+    },
+    {
+      "name": "Iron Jugulis",
+      "url": "pokemon/993/"
+    },
+    {
+      "name": "Iron Moth",
+      "url": "pokemon/994/"
+    },
+    {
+      "name": "Iron Thorns",
+      "url": "pokemon/995/"
+    },
+    {
+      "name": "Chi Yu",
+      "url": "pokemon/1004/"
+    },
+    {
+      "name": "Roaring Moon",
+      "url": "pokemon/1005/"
+    },
+    {
+      "name": "Koraidon",
+      "url": "pokemon/1007/"
+    },
+    {
+      "name": "Walking Wake",
+      "url": "pokemon/1009/"
+    },
+    {
+      "name": "Castform Sunny",
+      "url": "pokemon/10013/"
+    },
+    {
+      "name": "Castform Rainy",
+      "url": "pokemon/10014/"
+    },
+    {
+      "name": "Castform Snowy",
+      "url": "pokemon/10015/"
+    },
+    {
+      "name": "Darmanitan Zen",
+      "url": "pokemon/10017/"
+    },
+    {
+      "name": "Pumpkaboo Small",
+      "url": "pokemon/10027/"
+    },
+    {
+      "name": "Pumpkaboo Large",
+      "url": "pokemon/10028/"
+    },
+    {
+      "name": "Pumpkaboo Super",
+      "url": "pokemon/10029/"
+    },
+    {
+      "name": "Gourgeist Small",
+      "url": "pokemon/10030/"
+    },
+    {
+      "name": "Gourgeist Large",
+      "url": "pokemon/10031/"
+    },
+    {
+      "name": "Gourgeist Super",
+      "url": "pokemon/10032/"
+    },
+    {
+      "name": "Charizard Mega X",
+      "url": "pokemon/10034/"
+    },
+    {
+      "name": "Charizard Mega Y",
+      "url": "pokemon/10035/"
+    },
+    {
+      "name": "Kangaskhan Mega",
+      "url": "pokemon/10039/"
+    },
+    {
+      "name": "Gyarados Mega",
+      "url": "pokemon/10041/"
+    },
+    {
+      "name": "Aerodactyl Mega",
+      "url": "pokemon/10042/"
+    },
+    {
+      "name": "Mewtwo Mega X",
+      "url": "pokemon/10043/"
+    },
+    {
+      "name": "Mewtwo Mega Y",
+      "url": "pokemon/10044/"
+    },
+    {
+      "name": "Houndoom Mega",
+      "url": "pokemon/10048/"
+    },
+    {
+      "name": "Tyranitar Mega",
+      "url": "pokemon/10049/"
+    },
+    {
+      "name": "Blaziken Mega",
+      "url": "pokemon/10050/"
+    },
+    {
+      "name": "Mawile Mega",
+      "url": "pokemon/10052/"
+    },
+    {
+      "name": "Aggron Mega",
+      "url": "pokemon/10053/"
+    },
+    {
+      "name": "Manectric Mega",
+      "url": "pokemon/10055/"
+    },
+    {
+      "name": "Absol Mega",
+      "url": "pokemon/10057/"
+    },
+    {
+      "name": "Garchomp Mega",
+      "url": "pokemon/10058/"
+    },
+    {
+      "name": "Altaria Mega",
+      "url": "pokemon/10067/"
+    },
+    {
+      "name": "Audino Mega",
+      "url": "pokemon/10069/"
+    },
+    {
+      "name": "Slowbro Mega",
+      "url": "pokemon/10071/"
+    },
+    {
+      "name": "Groudon Primal",
+      "url": "pokemon/10078/"
+    },
+    {
+      "name": "Rayquaza Mega",
+      "url": "pokemon/10079/"
+    },
+    {
+      "name": "Camerupt Mega",
+      "url": "pokemon/10087/"
+    },
+    {
+      "name": "Salamence Mega",
+      "url": "pokemon/10089/"
+    },
+    {
+      "name": "Geodude Alola",
+      "url": "pokemon/10109/"
+    },
+    {
+      "name": "Graveler Alola",
+      "url": "pokemon/10110/"
+    },
+    {
+      "name": "Golem Alola",
+      "url": "pokemon/10111/"
+    },
+    {
+      "name": "Grimer Alola",
+      "url": "pokemon/10112/"
+    },
+    {
+      "name": "Muk Alola",
+      "url": "pokemon/10113/"
+    },
+    {
+      "name": "Exeggutor Alola",
+      "url": "pokemon/10114/"
+    },
+    {
+      "name": "Marowak Alola",
+      "url": "pokemon/10115/"
+    },
+    {
+      "name": "Salazzle Totem",
+      "url": "pokemon/10129/"
+    },
+    {
+      "name": "Kommo O Totem",
+      "url": "pokemon/10146/"
+    },
+    {
+      "name": "Marowak Totem",
+      "url": "pokemon/10149/"
+    },
+    {
+      "name": "Slowpoke Galar",
+      "url": "pokemon/10164/"
+    },
+    {
+      "name": "Slowbro Galar",
+      "url": "pokemon/10165/"
+    },
+    {
+      "name": "Weezing Galar",
+      "url": "pokemon/10167/"
+    },
+    {
+      "name": "Slowking Galar",
+      "url": "pokemon/10172/"
+    },
+    {
+      "name": "Darumaka Galar",
+      "url": "pokemon/10176/"
+    },
+    {
+      "name": "Darmanitan Galar Standard",
+      "url": "pokemon/10177/"
+    },
+    {
+      "name": "Darmanitan Galar Zen",
+      "url": "pokemon/10178/"
+    },
+    {
+      "name": "Eternatus Eternamax",
+      "url": "pokemon/10190/"
+    },
+    {
+      "name": "Growlithe Hisui",
+      "url": "pokemon/10229/"
+    },
+    {
+      "name": "Arcanine Hisui",
+      "url": "pokemon/10230/"
+    },
+    {
+      "name": "Typhlosion Hisui",
+      "url": "pokemon/10233/"
+    },
+    {
+      "name": "Zoroark Hisui",
+      "url": "pokemon/10239/"
+    },
+    {
+      "name": "Goodra Hisui",
+      "url": "pokemon/10242/"
+    },
+    {
+      "name": "Dialga Origin",
+      "url": "pokemon/10245/"
+    },
+    {
+      "name": "Palkia Origin",
+      "url": "pokemon/10246/"
+    },
+    {
+      "name": "Tauros Paldea Blaze Breed",
+      "url": "pokemon/10251/"
+    },
+    {
+      "name": "Dudunsparce Three Segment",
+      "url": "pokemon/10255/"
+    },
+    {
+      "name": "Koraidon Limited Build",
+      "url": "pokemon/10264/"
+    },
+    {
+      "name": "Koraidon Sprinting Build",
+      "url": "pokemon/10265/"
+    },
+    {
+      "name": "Koraidon Swimming Build",
+      "url": "pokemon/10266/"
+    },
+    {
+      "name": "Koraidon Gliding Build",
+      "url": "pokemon/10267/"
+    }
+  ],
+  "name": "Flamethrower",
+  "power": 90,
+  "pp": 15,
+  "type": [
+    {
+      "name": "Fire",
+      "url": "type/10/"
+    }
+  ]
+}

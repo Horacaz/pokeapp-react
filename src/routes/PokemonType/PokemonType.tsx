@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
-import ListOfTypes from "../../components/ListOfTypes";
-import ListOfMoves from "../../components/ListOfMoves";
-import ListOfPokemon from "../../components/ListOfPokemon";
 import useGetTypes from "../../hooks/useGetTypes";
 import { IParsedType } from "../../types/pokemonType";
-import Loading from "../../components/Loading";
-import ErrorMessage from "../../components/ErrorMessage";
 import { Container, Box, Heading, Text, Link } from "@chakra-ui/react";
+import {
+  ErrorMessage,
+  Loading,
+  ListOfTypes,
+  ListOfPokemon,
+  ListOfMoves,
+} from "../../components";
 export default function PokemonType() {
   const id = Number(useParams().id);
   const { loading, data, error } = useGetTypes(id);

@@ -1,11 +1,13 @@
 import usePokemonMove from "../../hooks/usePokemonMove";
-import ListOfPokemon from "../../components/ListOfPokemon";
-import ListOfTypes from "../../components/ListOfTypes";
-import Loading from "../../components/Loading";
-import ErrorMessage from "../../components/ErrorMessage";
 import { useParams } from "react-router-dom";
 import { Container, Box, Heading, Text, Link } from "@chakra-ui/react";
 import { IParsedPokemonMove } from "../../types/pokemonMove";
+import {
+  Loading,
+  ErrorMessage,
+  ListOfTypes,
+  ListOfPokemon,
+} from "../../components";
 export default function PokemonMove() {
   const id = Number(useParams().id);
   const { data, loading, error } = usePokemonMove(id as number);

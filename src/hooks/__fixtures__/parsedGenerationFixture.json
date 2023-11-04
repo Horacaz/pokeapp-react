@@ -1,0 +1,1335 @@
+{
+  "abilities": [],
+  "id": 1,
+  "mainRegion": "Kanto",
+  "moves": [
+    {
+      "name": "Pound",
+      "url": "move/1/"
+    },
+    {
+      "name": "Karate Chop",
+      "url": "move/2/"
+    },
+    {
+      "name": "Double Slap",
+      "url": "move/3/"
+    },
+    {
+      "name": "Comet Punch",
+      "url": "move/4/"
+    },
+    {
+      "name": "Mega Punch",
+      "url": "move/5/"
+    },
+    {
+      "name": "Pay Day",
+      "url": "move/6/"
+    },
+    {
+      "name": "Fire Punch",
+      "url": "move/7/"
+    },
+    {
+      "name": "Ice Punch",
+      "url": "move/8/"
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "move/9/"
+    },
+    {
+      "name": "Scratch",
+      "url": "move/10/"
+    },
+    {
+      "name": "Vice Grip",
+      "url": "move/11/"
+    },
+    {
+      "name": "Guillotine",
+      "url": "move/12/"
+    },
+    {
+      "name": "Razor Wind",
+      "url": "move/13/"
+    },
+    {
+      "name": "Swords Dance",
+      "url": "move/14/"
+    },
+    {
+      "name": "Cut",
+      "url": "move/15/"
+    },
+    {
+      "name": "Gust",
+      "url": "move/16/"
+    },
+    {
+      "name": "Wing Attack",
+      "url": "move/17/"
+    },
+    {
+      "name": "Whirlwind",
+      "url": "move/18/"
+    },
+    {
+      "name": "Fly",
+      "url": "move/19/"
+    },
+    {
+      "name": "Bind",
+      "url": "move/20/"
+    },
+    {
+      "name": "Slam",
+      "url": "move/21/"
+    },
+    {
+      "name": "Vine Whip",
+      "url": "move/22/"
+    },
+    {
+      "name": "Stomp",
+      "url": "move/23/"
+    },
+    {
+      "name": "Double Kick",
+      "url": "move/24/"
+    },
+    {
+      "name": "Mega Kick",
+      "url": "move/25/"
+    },
+    {
+      "name": "Jump Kick",
+      "url": "move/26/"
+    },
+    {
+      "name": "Rolling Kick",
+      "url": "move/27/"
+    },
+    {
+      "name": "Sand Attack",
+      "url": "move/28/"
+    },
+    {
+      "name": "Headbutt",
+      "url": "move/29/"
+    },
+    {
+      "name": "Horn Attack",
+      "url": "move/30/"
+    },
+    {
+      "name": "Fury Attack",
+      "url": "move/31/"
+    },
+    {
+      "name": "Horn Drill",
+      "url": "move/32/"
+    },
+    {
+      "name": "Tackle",
+      "url": "move/33/"
+    },
+    {
+      "name": "Body Slam",
+      "url": "move/34/"
+    },
+    {
+      "name": "Wrap",
+      "url": "move/35/"
+    },
+    {
+      "name": "Take Down",
+      "url": "move/36/"
+    },
+    {
+      "name": "Thrash",
+      "url": "move/37/"
+    },
+    {
+      "name": "Double Edge",
+      "url": "move/38/"
+    },
+    {
+      "name": "Tail Whip",
+      "url": "move/39/"
+    },
+    {
+      "name": "Poison Sting",
+      "url": "move/40/"
+    },
+    {
+      "name": "Twineedle",
+      "url": "move/41/"
+    },
+    {
+      "name": "Pin Missile",
+      "url": "move/42/"
+    },
+    {
+      "name": "Leer",
+      "url": "move/43/"
+    },
+    {
+      "name": "Bite",
+      "url": "move/44/"
+    },
+    {
+      "name": "Growl",
+      "url": "move/45/"
+    },
+    {
+      "name": "Roar",
+      "url": "move/46/"
+    },
+    {
+      "name": "Sing",
+      "url": "move/47/"
+    },
+    {
+      "name": "Supersonic",
+      "url": "move/48/"
+    },
+    {
+      "name": "Sonic Boom",
+      "url": "move/49/"
+    },
+    {
+      "name": "Disable",
+      "url": "move/50/"
+    },
+    {
+      "name": "Acid",
+      "url": "move/51/"
+    },
+    {
+      "name": "Ember",
+      "url": "move/52/"
+    },
+    {
+      "name": "Flamethrower",
+      "url": "move/53/"
+    },
+    {
+      "name": "Mist",
+      "url": "move/54/"
+    },
+    {
+      "name": "Water Gun",
+      "url": "move/55/"
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "move/56/"
+    },
+    {
+      "name": "Surf",
+      "url": "move/57/"
+    },
+    {
+      "name": "Ice Beam",
+      "url": "move/58/"
+    },
+    {
+      "name": "Blizzard",
+      "url": "move/59/"
+    },
+    {
+      "name": "Psybeam",
+      "url": "move/60/"
+    },
+    {
+      "name": "Bubble Beam",
+      "url": "move/61/"
+    },
+    {
+      "name": "Aurora Beam",
+      "url": "move/62/"
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "move/63/"
+    },
+    {
+      "name": "Peck",
+      "url": "move/64/"
+    },
+    {
+      "name": "Drill Peck",
+      "url": "move/65/"
+    },
+    {
+      "name": "Submission",
+      "url": "move/66/"
+    },
+    {
+      "name": "Low Kick",
+      "url": "move/67/"
+    },
+    {
+      "name": "Counter",
+      "url": "move/68/"
+    },
+    {
+      "name": "Seismic Toss",
+      "url": "move/69/"
+    },
+    {
+      "name": "Strength",
+      "url": "move/70/"
+    },
+    {
+      "name": "Absorb",
+      "url": "move/71/"
+    },
+    {
+      "name": "Mega Drain",
+      "url": "move/72/"
+    },
+    {
+      "name": "Leech Seed",
+      "url": "move/73/"
+    },
+    {
+      "name": "Growth",
+      "url": "move/74/"
+    },
+    {
+      "name": "Razor Leaf",
+      "url": "move/75/"
+    },
+    {
+      "name": "Solar Beam",
+      "url": "move/76/"
+    },
+    {
+      "name": "Poison Powder",
+      "url": "move/77/"
+    },
+    {
+      "name": "Stun Spore",
+      "url": "move/78/"
+    },
+    {
+      "name": "Sleep Powder",
+      "url": "move/79/"
+    },
+    {
+      "name": "Petal Dance",
+      "url": "move/80/"
+    },
+    {
+      "name": "String Shot",
+      "url": "move/81/"
+    },
+    {
+      "name": "Dragon Rage",
+      "url": "move/82/"
+    },
+    {
+      "name": "Fire Spin",
+      "url": "move/83/"
+    },
+    {
+      "name": "Thunder Shock",
+      "url": "move/84/"
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "move/85/"
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "move/86/"
+    },
+    {
+      "name": "Thunder",
+      "url": "move/87/"
+    },
+    {
+      "name": "Rock Throw",
+      "url": "move/88/"
+    },
+    {
+      "name": "Earthquake",
+      "url": "move/89/"
+    },
+    {
+      "name": "Fissure",
+      "url": "move/90/"
+    },
+    {
+      "name": "Dig",
+      "url": "move/91/"
+    },
+    {
+      "name": "Toxic",
+      "url": "move/92/"
+    },
+    {
+      "name": "Confusion",
+      "url": "move/93/"
+    },
+    {
+      "name": "Psychic",
+      "url": "move/94/"
+    },
+    {
+      "name": "Hypnosis",
+      "url": "move/95/"
+    },
+    {
+      "name": "Meditate",
+      "url": "move/96/"
+    },
+    {
+      "name": "Agility",
+      "url": "move/97/"
+    },
+    {
+      "name": "Quick Attack",
+      "url": "move/98/"
+    },
+    {
+      "name": "Rage",
+      "url": "move/99/"
+    },
+    {
+      "name": "Teleport",
+      "url": "move/100/"
+    },
+    {
+      "name": "Night Shade",
+      "url": "move/101/"
+    },
+    {
+      "name": "Mimic",
+      "url": "move/102/"
+    },
+    {
+      "name": "Screech",
+      "url": "move/103/"
+    },
+    {
+      "name": "Double Team",
+      "url": "move/104/"
+    },
+    {
+      "name": "Recover",
+      "url": "move/105/"
+    },
+    {
+      "name": "Harden",
+      "url": "move/106/"
+    },
+    {
+      "name": "Minimize",
+      "url": "move/107/"
+    },
+    {
+      "name": "Smokescreen",
+      "url": "move/108/"
+    },
+    {
+      "name": "Confuse Ray",
+      "url": "move/109/"
+    },
+    {
+      "name": "Withdraw",
+      "url": "move/110/"
+    },
+    {
+      "name": "Defense Curl",
+      "url": "move/111/"
+    },
+    {
+      "name": "Barrier",
+      "url": "move/112/"
+    },
+    {
+      "name": "Light Screen",
+      "url": "move/113/"
+    },
+    {
+      "name": "Haze",
+      "url": "move/114/"
+    },
+    {
+      "name": "Reflect",
+      "url": "move/115/"
+    },
+    {
+      "name": "Focus Energy",
+      "url": "move/116/"
+    },
+    {
+      "name": "Bide",
+      "url": "move/117/"
+    },
+    {
+      "name": "Metronome",
+      "url": "move/118/"
+    },
+    {
+      "name": "Mirror Move",
+      "url": "move/119/"
+    },
+    {
+      "name": "Self Destruct",
+      "url": "move/120/"
+    },
+    {
+      "name": "Egg Bomb",
+      "url": "move/121/"
+    },
+    {
+      "name": "Lick",
+      "url": "move/122/"
+    },
+    {
+      "name": "Smog",
+      "url": "move/123/"
+    },
+    {
+      "name": "Sludge",
+      "url": "move/124/"
+    },
+    {
+      "name": "Bone Club",
+      "url": "move/125/"
+    },
+    {
+      "name": "Fire Blast",
+      "url": "move/126/"
+    },
+    {
+      "name": "Waterfall",
+      "url": "move/127/"
+    },
+    {
+      "name": "Clamp",
+      "url": "move/128/"
+    },
+    {
+      "name": "Swift",
+      "url": "move/129/"
+    },
+    {
+      "name": "Skull Bash",
+      "url": "move/130/"
+    },
+    {
+      "name": "Spike Cannon",
+      "url": "move/131/"
+    },
+    {
+      "name": "Constrict",
+      "url": "move/132/"
+    },
+    {
+      "name": "Amnesia",
+      "url": "move/133/"
+    },
+    {
+      "name": "Kinesis",
+      "url": "move/134/"
+    },
+    {
+      "name": "Soft Boiled",
+      "url": "move/135/"
+    },
+    {
+      "name": "High Jump Kick",
+      "url": "move/136/"
+    },
+    {
+      "name": "Glare",
+      "url": "move/137/"
+    },
+    {
+      "name": "Dream Eater",
+      "url": "move/138/"
+    },
+    {
+      "name": "Poison Gas",
+      "url": "move/139/"
+    },
+    {
+      "name": "Barrage",
+      "url": "move/140/"
+    },
+    {
+      "name": "Leech Life",
+      "url": "move/141/"
+    },
+    {
+      "name": "Lovely Kiss",
+      "url": "move/142/"
+    },
+    {
+      "name": "Sky Attack",
+      "url": "move/143/"
+    },
+    {
+      "name": "Transform",
+      "url": "move/144/"
+    },
+    {
+      "name": "Bubble",
+      "url": "move/145/"
+    },
+    {
+      "name": "Dizzy Punch",
+      "url": "move/146/"
+    },
+    {
+      "name": "Spore",
+      "url": "move/147/"
+    },
+    {
+      "name": "Flash",
+      "url": "move/148/"
+    },
+    {
+      "name": "Psywave",
+      "url": "move/149/"
+    },
+    {
+      "name": "Splash",
+      "url": "move/150/"
+    },
+    {
+      "name": "Acid Armor",
+      "url": "move/151/"
+    },
+    {
+      "name": "Crabhammer",
+      "url": "move/152/"
+    },
+    {
+      "name": "Explosion",
+      "url": "move/153/"
+    },
+    {
+      "name": "Fury Swipes",
+      "url": "move/154/"
+    },
+    {
+      "name": "Bonemerang",
+      "url": "move/155/"
+    },
+    {
+      "name": "Rest",
+      "url": "move/156/"
+    },
+    {
+      "name": "Rock Slide",
+      "url": "move/157/"
+    },
+    {
+      "name": "Hyper Fang",
+      "url": "move/158/"
+    },
+    {
+      "name": "Sharpen",
+      "url": "move/159/"
+    },
+    {
+      "name": "Conversion",
+      "url": "move/160/"
+    },
+    {
+      "name": "Tri Attack",
+      "url": "move/161/"
+    },
+    {
+      "name": "Super Fang",
+      "url": "move/162/"
+    },
+    {
+      "name": "Slash",
+      "url": "move/163/"
+    },
+    {
+      "name": "Substitute",
+      "url": "move/164/"
+    },
+    {
+      "name": "Struggle",
+      "url": "move/165/"
+    }
+  ],
+  "pokemonSpecies": [
+    {
+      "name": "Bulbasaur",
+      "url": "pokemon-species/1/"
+    },
+    {
+      "name": "Charmander",
+      "url": "pokemon-species/4/"
+    },
+    {
+      "name": "Squirtle",
+      "url": "pokemon-species/7/"
+    },
+    {
+      "name": "Caterpie",
+      "url": "pokemon-species/10/"
+    },
+    {
+      "name": "Weedle",
+      "url": "pokemon-species/13/"
+    },
+    {
+      "name": "Pidgey",
+      "url": "pokemon-species/16/"
+    },
+    {
+      "name": "Rattata",
+      "url": "pokemon-species/19/"
+    },
+    {
+      "name": "Spearow",
+      "url": "pokemon-species/21/"
+    },
+    {
+      "name": "Ekans",
+      "url": "pokemon-species/23/"
+    },
+    {
+      "name": "Sandshrew",
+      "url": "pokemon-species/27/"
+    },
+    {
+      "name": "Nidoran F",
+      "url": "pokemon-species/29/"
+    },
+    {
+      "name": "Nidoran M",
+      "url": "pokemon-species/32/"
+    },
+    {
+      "name": "Vulpix",
+      "url": "pokemon-species/37/"
+    },
+    {
+      "name": "Zubat",
+      "url": "pokemon-species/41/"
+    },
+    {
+      "name": "Oddish",
+      "url": "pokemon-species/43/"
+    },
+    {
+      "name": "Paras",
+      "url": "pokemon-species/46/"
+    },
+    {
+      "name": "Venonat",
+      "url": "pokemon-species/48/"
+    },
+    {
+      "name": "Diglett",
+      "url": "pokemon-species/50/"
+    },
+    {
+      "name": "Meowth",
+      "url": "pokemon-species/52/"
+    },
+    {
+      "name": "Psyduck",
+      "url": "pokemon-species/54/"
+    },
+    {
+      "name": "Mankey",
+      "url": "pokemon-species/56/"
+    },
+    {
+      "name": "Growlithe",
+      "url": "pokemon-species/58/"
+    },
+    {
+      "name": "Poliwag",
+      "url": "pokemon-species/60/"
+    },
+    {
+      "name": "Abra",
+      "url": "pokemon-species/63/"
+    },
+    {
+      "name": "Machop",
+      "url": "pokemon-species/66/"
+    },
+    {
+      "name": "Bellsprout",
+      "url": "pokemon-species/69/"
+    },
+    {
+      "name": "Tentacool",
+      "url": "pokemon-species/72/"
+    },
+    {
+      "name": "Geodude",
+      "url": "pokemon-species/74/"
+    },
+    {
+      "name": "Venusaur",
+      "url": "pokemon-species/3/"
+    },
+    {
+      "name": "Charmeleon",
+      "url": "pokemon-species/5/"
+    },
+    {
+      "name": "Charizard",
+      "url": "pokemon-species/6/"
+    },
+    {
+      "name": "Wartortle",
+      "url": "pokemon-species/8/"
+    },
+    {
+      "name": "Blastoise",
+      "url": "pokemon-species/9/"
+    },
+    {
+      "name": "Metapod",
+      "url": "pokemon-species/11/"
+    },
+    {
+      "name": "Butterfree",
+      "url": "pokemon-species/12/"
+    },
+    {
+      "name": "Kakuna",
+      "url": "pokemon-species/14/"
+    },
+    {
+      "name": "Beedrill",
+      "url": "pokemon-species/15/"
+    },
+    {
+      "name": "Pidgeotto",
+      "url": "pokemon-species/17/"
+    },
+    {
+      "name": "Pidgeot",
+      "url": "pokemon-species/18/"
+    },
+    {
+      "name": "Raticate",
+      "url": "pokemon-species/20/"
+    },
+    {
+      "name": "Fearow",
+      "url": "pokemon-species/22/"
+    },
+    {
+      "name": "Arbok",
+      "url": "pokemon-species/24/"
+    },
+    {
+      "name": "Pikachu",
+      "url": "pokemon-species/25/"
+    },
+    {
+      "name": "Raichu",
+      "url": "pokemon-species/26/"
+    },
+    {
+      "name": "Sandslash",
+      "url": "pokemon-species/28/"
+    },
+    {
+      "name": "Nidorina",
+      "url": "pokemon-species/30/"
+    },
+    {
+      "name": "Nidoqueen",
+      "url": "pokemon-species/31/"
+    },
+    {
+      "name": "Nidorino",
+      "url": "pokemon-species/33/"
+    },
+    {
+      "name": "Nidoking",
+      "url": "pokemon-species/34/"
+    },
+    {
+      "name": "Clefairy",
+      "url": "pokemon-species/35/"
+    },
+    {
+      "name": "Clefable",
+      "url": "pokemon-species/36/"
+    },
+    {
+      "name": "Ninetales",
+      "url": "pokemon-species/38/"
+    },
+    {
+      "name": "Jigglypuff",
+      "url": "pokemon-species/39/"
+    },
+    {
+      "name": "Wigglytuff",
+      "url": "pokemon-species/40/"
+    },
+    {
+      "name": "Golbat",
+      "url": "pokemon-species/42/"
+    },
+    {
+      "name": "Gloom",
+      "url": "pokemon-species/44/"
+    },
+    {
+      "name": "Vileplume",
+      "url": "pokemon-species/45/"
+    },
+    {
+      "name": "Parasect",
+      "url": "pokemon-species/47/"
+    },
+    {
+      "name": "Venomoth",
+      "url": "pokemon-species/49/"
+    },
+    {
+      "name": "Dugtrio",
+      "url": "pokemon-species/51/"
+    },
+    {
+      "name": "Persian",
+      "url": "pokemon-species/53/"
+    },
+    {
+      "name": "Golduck",
+      "url": "pokemon-species/55/"
+    },
+    {
+      "name": "Primeape",
+      "url": "pokemon-species/57/"
+    },
+    {
+      "name": "Arcanine",
+      "url": "pokemon-species/59/"
+    },
+    {
+      "name": "Poliwhirl",
+      "url": "pokemon-species/61/"
+    },
+    {
+      "name": "Poliwrath",
+      "url": "pokemon-species/62/"
+    },
+    {
+      "name": "Kadabra",
+      "url": "pokemon-species/64/"
+    },
+    {
+      "name": "Alakazam",
+      "url": "pokemon-species/65/"
+    },
+    {
+      "name": "Machoke",
+      "url": "pokemon-species/67/"
+    },
+    {
+      "name": "Machamp",
+      "url": "pokemon-species/68/"
+    },
+    {
+      "name": "Weepinbell",
+      "url": "pokemon-species/70/"
+    },
+    {
+      "name": "Victreebel",
+      "url": "pokemon-species/71/"
+    },
+    {
+      "name": "Tentacruel",
+      "url": "pokemon-species/73/"
+    },
+    {
+      "name": "Graveler",
+      "url": "pokemon-species/75/"
+    },
+    {
+      "name": "Ponyta",
+      "url": "pokemon-species/77/"
+    },
+    {
+      "name": "Slowpoke",
+      "url": "pokemon-species/79/"
+    },
+    {
+      "name": "Magnemite",
+      "url": "pokemon-species/81/"
+    },
+    {
+      "name": "Farfetchd",
+      "url": "pokemon-species/83/"
+    },
+    {
+      "name": "Doduo",
+      "url": "pokemon-species/84/"
+    },
+    {
+      "name": "Seel",
+      "url": "pokemon-species/86/"
+    },
+    {
+      "name": "Grimer",
+      "url": "pokemon-species/88/"
+    },
+    {
+      "name": "Shellder",
+      "url": "pokemon-species/90/"
+    },
+    {
+      "name": "Gastly",
+      "url": "pokemon-species/92/"
+    },
+    {
+      "name": "Onix",
+      "url": "pokemon-species/95/"
+    },
+    {
+      "name": "Drowzee",
+      "url": "pokemon-species/96/"
+    },
+    {
+      "name": "Krabby",
+      "url": "pokemon-species/98/"
+    },
+    {
+      "name": "Voltorb",
+      "url": "pokemon-species/100/"
+    },
+    {
+      "name": "Exeggcute",
+      "url": "pokemon-species/102/"
+    },
+    {
+      "name": "Cubone",
+      "url": "pokemon-species/104/"
+    },
+    {
+      "name": "Lickitung",
+      "url": "pokemon-species/108/"
+    },
+    {
+      "name": "Koffing",
+      "url": "pokemon-species/109/"
+    },
+    {
+      "name": "Rhyhorn",
+      "url": "pokemon-species/111/"
+    },
+    {
+      "name": "Tangela",
+      "url": "pokemon-species/114/"
+    },
+    {
+      "name": "Kangaskhan",
+      "url": "pokemon-species/115/"
+    },
+    {
+      "name": "Horsea",
+      "url": "pokemon-species/116/"
+    },
+    {
+      "name": "Goldeen",
+      "url": "pokemon-species/118/"
+    },
+    {
+      "name": "Staryu",
+      "url": "pokemon-species/120/"
+    },
+    {
+      "name": "Scyther",
+      "url": "pokemon-species/123/"
+    },
+    {
+      "name": "Pinsir",
+      "url": "pokemon-species/127/"
+    },
+    {
+      "name": "Tauros",
+      "url": "pokemon-species/128/"
+    },
+    {
+      "name": "Magikarp",
+      "url": "pokemon-species/129/"
+    },
+    {
+      "name": "Lapras",
+      "url": "pokemon-species/131/"
+    },
+    {
+      "name": "Ditto",
+      "url": "pokemon-species/132/"
+    },
+    {
+      "name": "Eevee",
+      "url": "pokemon-species/133/"
+    },
+    {
+      "name": "Porygon",
+      "url": "pokemon-species/137/"
+    },
+    {
+      "name": "Omanyte",
+      "url": "pokemon-species/138/"
+    },
+    {
+      "name": "Kabuto",
+      "url": "pokemon-species/140/"
+    },
+    {
+      "name": "Aerodactyl",
+      "url": "pokemon-species/142/"
+    },
+    {
+      "name": "Articuno",
+      "url": "pokemon-species/144/"
+    },
+    {
+      "name": "Zapdos",
+      "url": "pokemon-species/145/"
+    },
+    {
+      "name": "Moltres",
+      "url": "pokemon-species/146/"
+    },
+    {
+      "name": "Dratini",
+      "url": "pokemon-species/147/"
+    },
+    {
+      "name": "Mewtwo",
+      "url": "pokemon-species/150/"
+    },
+    {
+      "name": "Rapidash",
+      "url": "pokemon-species/78/"
+    },
+    {
+      "name": "Slowbro",
+      "url": "pokemon-species/80/"
+    },
+    {
+      "name": "Magneton",
+      "url": "pokemon-species/82/"
+    },
+    {
+      "name": "Dodrio",
+      "url": "pokemon-species/85/"
+    },
+    {
+      "name": "Dewgong",
+      "url": "pokemon-species/87/"
+    },
+    {
+      "name": "Muk",
+      "url": "pokemon-species/89/"
+    },
+    {
+      "name": "Cloyster",
+      "url": "pokemon-species/91/"
+    },
+    {
+      "name": "Haunter",
+      "url": "pokemon-species/93/"
+    },
+    {
+      "name": "Gengar",
+      "url": "pokemon-species/94/"
+    },
+    {
+      "name": "Hypno",
+      "url": "pokemon-species/97/"
+    },
+    {
+      "name": "Kingler",
+      "url": "pokemon-species/99/"
+    },
+    {
+      "name": "Electrode",
+      "url": "pokemon-species/101/"
+    },
+    {
+      "name": "Exeggutor",
+      "url": "pokemon-species/103/"
+    },
+    {
+      "name": "Marowak",
+      "url": "pokemon-species/105/"
+    },
+    {
+      "name": "Hitmonlee",
+      "url": "pokemon-species/106/"
+    },
+    {
+      "name": "Hitmonchan",
+      "url": "pokemon-species/107/"
+    },
+    {
+      "name": "Weezing",
+      "url": "pokemon-species/110/"
+    },
+    {
+      "name": "Rhydon",
+      "url": "pokemon-species/112/"
+    },
+    {
+      "name": "Chansey",
+      "url": "pokemon-species/113/"
+    },
+    {
+      "name": "Seadra",
+      "url": "pokemon-species/117/"
+    },
+    {
+      "name": "Seaking",
+      "url": "pokemon-species/119/"
+    },
+    {
+      "name": "Starmie",
+      "url": "pokemon-species/121/"
+    },
+    {
+      "name": "Mr Mime",
+      "url": "pokemon-species/122/"
+    },
+    {
+      "name": "Jynx",
+      "url": "pokemon-species/124/"
+    },
+    {
+      "name": "Electabuzz",
+      "url": "pokemon-species/125/"
+    },
+    {
+      "name": "Magmar",
+      "url": "pokemon-species/126/"
+    },
+    {
+      "name": "Gyarados",
+      "url": "pokemon-species/130/"
+    },
+    {
+      "name": "Vaporeon",
+      "url": "pokemon-species/134/"
+    },
+    {
+      "name": "Jolteon",
+      "url": "pokemon-species/135/"
+    },
+    {
+      "name": "Flareon",
+      "url": "pokemon-species/136/"
+    },
+    {
+      "name": "Omastar",
+      "url": "pokemon-species/139/"
+    },
+    {
+      "name": "Kabutops",
+      "url": "pokemon-species/141/"
+    },
+    {
+      "name": "Snorlax",
+      "url": "pokemon-species/143/"
+    },
+    {
+      "name": "Dragonair",
+      "url": "pokemon-species/148/"
+    },
+    {
+      "name": "Dragonite",
+      "url": "pokemon-species/149/"
+    },
+    {
+      "name": "Mew",
+      "url": "pokemon-species/151/"
+    },
+    {
+      "name": "Ivysaur",
+      "url": "pokemon-species/2/"
+    },
+    {
+      "name": "Golem",
+      "url": "pokemon-species/76/"
+    }
+  ],
+  "types": [
+    {
+      "name": "Normal",
+      "url": "type/1/"
+    },
+    {
+      "name": "Fighting",
+      "url": "type/2/"
+    },
+    {
+      "name": "Flying",
+      "url": "type/3/"
+    },
+    {
+      "name": "Poison",
+      "url": "type/4/"
+    },
+    {
+      "name": "Ground",
+      "url": "type/5/"
+    },
+    {
+      "name": "Rock",
+      "url": "type/6/"
+    },
+    {
+      "name": "Bug",
+      "url": "type/7/"
+    },
+    {
+      "name": "Ghost",
+      "url": "type/8/"
+    },
+    {
+      "name": "Fire",
+      "url": "type/10/"
+    },
+    {
+      "name": "Water",
+      "url": "type/11/"
+    },
+    {
+      "name": "Grass",
+      "url": "type/12/"
+    },
+    {
+      "name": "Electric",
+      "url": "type/13/"
+    },
+    {
+      "name": "Psychic",
+      "url": "type/14/"
+    },
+    {
+      "name": "Ice",
+      "url": "type/15/"
+    },
+    {
+      "name": "Dragon",
+      "url": "type/16/"
+    }
+  ]
+}

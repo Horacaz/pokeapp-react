@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
 import useGetAbility from "../../hooks/useGetAbility";
 import { Container, Heading, Text, Box, Link } from "@chakra-ui/react";
-import ListOfPokemon from "../../components/ListOfPokemon";
-import Loading from "../../components/Loading";
-import ErrorMessage from "../../components/ErrorMessage";
+import { Loading, ErrorMessage, ListOfPokemon } from "../../components";
 import { IParsedPokemonAbility } from "../../types/pokemonAbility";
 
 export default function PokemonAbility() {

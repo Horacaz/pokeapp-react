@@ -1,0 +1,142 @@
+{
+  "ability": {
+    "description": "When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much regular damage.",
+    "effect": "Strengthens fire moves to inflict 1.5× damage at 1/3 max HP or less."
+  },
+  "generation": {
+    "name": "Generation Iii",
+    "url": "generation/3/"
+  },
+  "id": 66,
+  "pokemon": [
+    {
+      "name": "Charmander",
+      "url": "pokemon/4/"
+    },
+    {
+      "name": "Charmeleon",
+      "url": "pokemon/5/"
+    },
+    {
+      "name": "Charizard",
+      "url": "pokemon/6/"
+    },
+    {
+      "name": "Cyndaquil",
+      "url": "pokemon/155/"
+    },
+    {
+      "name": "Quilava",
+      "url": "pokemon/156/"
+    },
+    {
+      "name": "Typhlosion",
+      "url": "pokemon/157/"
+    },
+    {
+      "name": "Torchic",
+      "url": "pokemon/255/"
+    },
+    {
+      "name": "Combusken",
+      "url": "pokemon/256/"
+    },
+    {
+      "name": "Blaziken",
+      "url": "pokemon/257/"
+    },
+    {
+      "name": "Chimchar",
+      "url": "pokemon/390/"
+    },
+    {
+      "name": "Monferno",
+      "url": "pokemon/391/"
+    },
+    {
+      "name": "Infernape",
+      "url": "pokemon/392/"
+    },
+    {
+      "name": "Tepig",
+      "url": "pokemon/498/"
+    },
+    {
+      "name": "Pignite",
+      "url": "pokemon/499/"
+    },
+    {
+      "name": "Emboar",
+      "url": "pokemon/500/"
+    },
+    {
+      "name": "Pansear",
+      "url": "pokemon/513/"
+    },
+    {
+      "name": "Simisear",
+      "url": "pokemon/514/"
+    },
+    {
+      "name": "Fennekin",
+      "url": "pokemon/653/"
+    },
+    {
+      "name": "Braixen",
+      "url": "pokemon/654/"
+    },
+    {
+      "name": "Delphox",
+      "url": "pokemon/655/"
+    },
+    {
+      "name": "Litten",
+      "url": "pokemon/725/"
+    },
+    {
+      "name": "Torracat",
+      "url": "pokemon/726/"
+    },
+    {
+      "name": "Incineroar",
+      "url": "pokemon/727/"
+    },
+    {
+      "name": "Scorbunny",
+      "url": "pokemon/813/"
+    },
+    {
+      "name": "Raboot",
+      "url": "pokemon/814/"
+    },
+    {
+      "name": "Cinderace",
+      "url": "pokemon/815/"
+    },
+    {
+      "name": "Fuecoco",
+      "url": "pokemon/909/"
+    },
+    {
+      "name": "Crocalor",
+      "url": "pokemon/910/"
+    },
+    {
+      "name": "Skeledirge",
+      "url": "pokemon/911/"
+    },
+    {
+      "name": "Charizard Gmax",
+      "url": "pokemon/10196/"
+    },
+    {
+      "name": "Cinderace Gmax",
+      "url": "pokemon/10210/"
+    },
+    {
+      "name": "Typhlosion Hisui",
+      "url": "pokemon/10233/"
+    }
+  ],
+  "displayName": "Blaze"
+}

@@ -1,11 +1,6 @@
 import { useState } from "react";
 import useGetPokemon from "../../hooks/useGetPokemon";
-import ListOfMoves from "../../components/ListOfMoves";
-import ListOfTypes from "../../components/ListOfTypes";
-import ListOfPokemon from "../../components/ListOfPokemon";
 import { TPokemon } from "../../types/pokemon";
-import Loading from "../../components/Loading";
-import ErrorMessage from "../../components/ErrorMessage";
 import {
   Box,
   Heading,
@@ -17,6 +12,13 @@ import {
   Stack,
   HStack,
 } from "@chakra-ui/react";
+import {
+  Loading,
+  ErrorMessage,
+  ListOfTypes,
+  ListOfMoves,
+  ListOfPokemon,
+} from "../../components";
 
 type PokemonCardProps = {
   pokemon: TPokemon;

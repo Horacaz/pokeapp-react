@@ -1,13 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PokeAppProvider } from "./context/PokeAppContext";
-import PokemonAbility from "./routes/PokemonAbility";
-import PokemonGeneration from "./routes/PokemonGeneration";
-import PokemonMove from "./routes/PokemonMove";
-import PokemonType from "./routes/PokemonType";
-import PokemonPage from "./routes/PokemonPage";
-import PokemonList from "./routes/PokemonList";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { Header, Footer } from "./components";
+import {
+  PokemonList,
+  PokemonPage,
+  PokemonAbility,
+  PokemonGeneration,
+  PokemonMove,
+  PokemonType,
+} from "./routes";
 
 function App() {
   return (

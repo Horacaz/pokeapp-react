@@ -1,11 +1,13 @@
 import { Container, Heading, Text } from "@chakra-ui/react";
-import ListOfPokemon from "../../components/ListOfPokemon";
 import usePokemonList from "../../hooks/usePokemonList";
 import { useState } from "react";
-import Loading from "../../components/Loading";
-import ErrorMessage from "../../components/ErrorMessage";
 import { IParsedPokemonList } from "../../types/pokemonList";
-import Paginator from "../../components/Paginator";
+import {
+  Loading,
+  ErrorMessage,
+  ListOfPokemon,
+  Paginator,
+} from "../../components";
 
 export default function PokemonList() {
   const [offset, setOffset] = useState(0);
