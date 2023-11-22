@@ -34,7 +34,7 @@ function PokemonTypeContent(props: { data: IParsedType }) {
 
 function Header({ title }: { title: string }) {
   return (
-    <Box p={2} textAlign="center">
+    <Box p={2} textAlign="center" color={"brand.text"}>
       <Heading as="h1" size="xl">
         {title}
       </Heading>
@@ -62,6 +62,7 @@ function Information(props: { data: IParsedType }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Information
       </Heading>
@@ -102,6 +103,7 @@ function DamageModifiers(props: { data: IParsedType }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Damage Modifiers
       </Heading>
@@ -154,6 +156,7 @@ function Moves(props: { data: IParsedType }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Moves
       </Heading>
@@ -176,6 +179,7 @@ function Pokemon(props: { data: IParsedType }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Pokemon
       </Heading>

@@ -1,4 +1,4 @@
-import { IParsedPokemonSpecies } from "../types/pokemonSpecies";
+import { IParsedPokemonSpecies } from "./pokemonSpecies";
 
 interface Abilities {
   ability: { name: string; url: string };

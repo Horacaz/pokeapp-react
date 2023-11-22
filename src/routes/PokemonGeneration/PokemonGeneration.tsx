@@ -36,7 +36,7 @@ function PokemonGenerationContent(props: { data: IParsedGeneration }) {
 function Header() {
   return (
     <Box p={2} textAlign="center">
-      <Heading as="h1" size="xl">
+      <Heading as="h1" size="xl" color={"brand.text"}>
         Pokemon Generation
       </Heading>
     </Box>
@@ -62,6 +62,7 @@ function MainRegion(props: { data: IParsedGeneration }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Main Region
       </Heading>
@@ -85,6 +86,7 @@ function Types(props: { data: IParsedGeneration }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Types
       </Heading>
@@ -106,6 +108,7 @@ function Abilities() {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Abilities
       </Heading>
@@ -125,6 +128,7 @@ function Moves(props: { data: IParsedGeneration }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Moves
       </Heading>
@@ -151,6 +155,7 @@ function Pokemon(props: { data: IParsedGeneration }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Pokemon
       </Heading>

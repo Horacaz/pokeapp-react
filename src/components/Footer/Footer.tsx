@@ -1,3 +1,4 @@
+import { Text } from "@chakra-ui/react";
 export default function Footer() {
-  return <h2>Pokemon Application Footer</h2>;
+  return <Text color={"brand.text"}>Pokemon Application Footer</Text>;
 }

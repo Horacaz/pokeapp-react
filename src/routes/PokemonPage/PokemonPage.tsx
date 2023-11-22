@@ -82,12 +82,25 @@ function PokemonCard(props: PokemonCardProps) {
   return (
     <Stack>
       <Box>
-        <Heading textAlign="center" as="h3" size="lg" fontWeight="bolder" p={2}>
+        <Heading
+          textAlign="center"
+          as="h3"
+          size="lg"
+          fontWeight="bolder"
+          p={2}
+          color={"brand.text"}
+        >
           {pokemon.displayName}
         </Heading>
       </Box>
       <Box>
-        <Text textAlign="center" fontWeight="bold" p={2} mt={-4}>
+        <Text
+          textAlign="center"
+          fontWeight="bold"
+          p={2}
+          mt={-4}
+          color={"brand.text"}
+        >
           {pokemon.genus}
         </Text>
       </Box>
@@ -113,10 +126,10 @@ function PokemonCard(props: PokemonCardProps) {
       </Box>
 
       <Box>
-        <Text fontSize="xl" fontWeight="bold">
+        <Text fontSize="xl" fontWeight="bold" color={"brand.text"}>
           Generation
         </Text>
-        <Text fontSize="md" fontWeight="medium">
+        <Text fontSize="md" fontWeight="medium" color={"brand.text"}>
           <Link href={`../../${pokemon.generation.url}`}>
             {pokemon.generation.name}
           </Link>
@@ -124,19 +137,19 @@ function PokemonCard(props: PokemonCardProps) {
       </Box>
 
       <Box>
-        <Text fontSize="xl" fontWeight="bold">
+        <Text fontSize="xl" fontWeight="bold" color={"brand.text"}>
           National Pokedex Entry
         </Text>
-        <Text fontSize="md" fontWeight="medium">
+        <Text fontSize="md" fontWeight="medium" color={"brand.text"}>
           N° {pokemon.id}
         </Text>
       </Box>
 
       <Box>
-        <Text fontSize="xl" fontWeight="bold">
+        <Text fontSize="xl" fontWeight="bold" color={"brand.text"}>
           Abilities
         </Text>
-        <HStack fontSize="md" fontWeight="medium">
+        <HStack fontSize="md" fontWeight="medium" color={"brand.text"}>
           {pokemon.abilities.map((ability) => (
             <Link key={ability.name} href={`../../${ability.url}`}>
               {ability.name}
@@ -151,7 +164,13 @@ function PokemonCard(props: PokemonCardProps) {
 function PokemonSection(props: { title: string }) {
   const { title } = props;
   return (
-    <Heading display="inline" borderBottom="5px solid white" as="h2" size="xl">
+    <Heading
+      display="inline"
+      borderBottom="5px solid white"
+      as="h2"
+      size="xl"
+      color={"brand.text"}
+    >
       {title}
     </Heading>
   );
@@ -175,7 +194,7 @@ function PokemonSectionSubtitle(props: { subTitle: string }) {
 function BoldedText(props: { text: string }) {
   const { text } = props;
   return (
-    <Heading as="h3" size="md" fontWeight={600}>
+    <Heading as="h3" size="md" fontWeight={600} color={"brand.text"}>
       {text}
     </Heading>
   );
@@ -184,7 +203,13 @@ function BoldedText(props: { text: string }) {
 function PokemonInformation(props: { data: TPokemon }) {
   const { data } = props;
   return (
-    <GridItem m={2} p={2} backgroundColor={"brand.backg"} borderRadius={5}>
+    <GridItem
+      m={2}
+      p={2}
+      backgroundColor={"brand.backg"}
+      borderRadius={5}
+      color={"brand.text"}
+    >
       <PokemonSection title="Information" />
       <PokemonSectionSubtitle subTitle="Pokémon description from Pokédex" />
       <Text marginY={1} fontSize={"2xl"}>

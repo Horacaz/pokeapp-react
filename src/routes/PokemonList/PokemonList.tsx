@@ -31,9 +31,9 @@ function PokemonListContent(props: {
   const { data, offset, setOffset } = props;
   return (
     <Container m={2} p={2} maxW={"85vw"}>
-      <Heading as="h2" mb={4}>
+      <Heading as="h2" mb={4} color="brand.text">
         Currently Available Pokemon{" "}
-        <Text as="span" color="gray.500">
+        <Text as="span" color="brand.accent">
           {data.count}
         </Text>
       </Heading>

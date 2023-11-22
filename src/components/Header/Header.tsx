@@ -5,7 +5,7 @@ export default function Header() {
       <Heading
         as="h1"
         size="xl"
-        color={"grey.500"}
+        color={"brand.text"}
         p={2}
         m={2}
         display={"inline-block"}

@@ -34,7 +34,7 @@ function PokemonMoveContent(props: { data: IParsedPokemonMove }) {
 function Header({ title }: { title: string }) {
   return (
     <Box p={2} textAlign="center">
-      <Heading as="h1" size="xl">
+      <Heading as="h1" size="xl" color={"brand.text"}>
         {title}
       </Heading>
     </Box>
@@ -62,6 +62,7 @@ function Effect(props: { data: IParsedPokemonMove }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Effect
       </Heading>
@@ -81,6 +82,7 @@ function PokedexEntry(props: { data: IParsedPokemonMove }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Pokedex Entry
       </Heading>
@@ -100,6 +102,7 @@ function Generation(props: { data: IParsedPokemonMove }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Generation
       </Heading>
@@ -121,6 +124,7 @@ function Stats() {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Stats
       </Heading>
@@ -140,6 +144,7 @@ function PokemonList(props: { data: IParsedPokemonMove }) {
         display="inline-block"
         as="h2"
         size="lg"
+        color={"brand.text"}
       >
         Pokemon
       </Heading>
