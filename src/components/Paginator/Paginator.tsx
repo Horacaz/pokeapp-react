@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@chakra-ui/react";
 
+type Paginator = {
+  maxPages: number;
+  setCurrentPage: (page: number) => void;
+  currentPage: number;
+};
+
 type PaginatorButtonProps = {
   displayValue: string | number;
   onClick: () => void;
@@ -8,17 +14,32 @@ type PaginatorButtonProps = {
   isCurrent?: boolean;
 };
 
-export default function Paginator({ maxPages }: { maxPages: number }) {
+export default function Paginator({
+  maxPages,
+  setCurrentPage,
+  currentPage,
+}: Paginator) {
   const paginatorLength = 5;
-  const [currentPage, setCurrentPage] = useState(1);
   const [startingPageValue, setStartingPageValue] = useState(1);
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
+    if (currentPage === 1) {
+      setStartingPageValue(1);
+    } else if (currentPage % paginatorLength === 0) {
+      setStartingPageValue(currentPage - (paginatorLength - 1));
+    } else {
+      setStartingPageValue(currentPage - ((currentPage - 1) % paginatorLength));
+    }
   };
-
   useEffect(() => {
-    setStartingPageValue;
-  });
+    if (currentPage === 1) {
+      setStartingPageValue(1);
+    } else if (currentPage % paginatorLength === 0) {
+      setStartingPageValue(currentPage - (paginatorLength - 1));
+    } else {
+      setStartingPageValue(currentPage - ((currentPage - 1) % paginatorLength));
+    }
+  }, [currentPage]);
 
   return (
     <>
@@ -32,15 +53,13 @@ export default function Paginator({ maxPages }: { maxPages: number }) {
         isDisabled={currentPage === 1}
         onClick={() => handlePageChange(currentPage - 1)}
       />
-
       <PaginatorPages
-        initialPageValue={startingPageValue}
+        start={startingPageValue}
         length={paginatorLength}
         maxPages={maxPages}
         currentPage={currentPage}
         onClick={handlePageChange}
       />
-
       <PaginatorButton
         displayValue=">"
         isDisabled={currentPage === maxPages}
@@ -72,112 +91,31 @@ function PaginatorButton(props: PaginatorButtonProps) {
   );
 }
 
-function PaginatorPages(props: {
-  initialPageValue: number;
+type PaginatorPages = {
+  start: number;
   length: number;
   maxPages: number;
   currentPage: number;
   onClick: (page: number) => void;
-}) {
-  const { maxPages, currentPage, onClick } = props;
+};
 
-  const startingPageValue = handlePaginatorPageDisplayValue({
-    maxPages,
-    currentPage,
-    pagesToDisplay,
-  });
-  const pagesToDisplay = Array.from({ length: props.length }, (_, i) => i + 1);
-
+function PaginatorPages(props: PaginatorPages) {
+  const { maxPages, currentPage, onClick, length, start } = props;
+  const pagesToDisplay = Array.from({ length }, (_, i) => i);
   return (
     <>
-      {pagesToDisplay.map((pageIndex) => {
-        const pageValue = startingPageValue + pageIndex;
+      {pagesToDisplay.map((pageValue) => {
+        const currentPageValue = start + pageValue;
         return (
           <PaginatorButton
-            key={pageValue}
-            displayValue={pageValue}
-            isDisabled={pageValue > maxPages}
-            isCurrent={pageValue === currentPage}
-            onClick={() => onClick(pageValue)}
+            key={currentPageValue}
+            displayValue={currentPageValue}
+            isDisabled={currentPageValue > maxPages}
+            isCurrent={currentPageValue === currentPage}
+            onClick={() => onClick(currentPageValue)}
           />
         );
       })}
     </>
   );
 }
-
-type PageDisplayValue = {
-  currentPage: number;
-  pagesToDisplay: number[];
-  maxPages: number;
-};
-function handlePaginatorPageDisplayValue({
-  currentPage,
-  pagesToDisplay,
-  maxPages,
-}: PageDisplayValue) {
-  if (pagesToDisplay[0] === (currentPage && currentPage !== 1))
-    return currentPage;
-  if (pagesToDisplay[4] === (currentPage && currentPage !== maxPages))
-    return currentPage + 1;
-  return pagesToDisplay[0];
-}
-
-/*
-function PaginatorPages(props: {
-  endPage: number;
-  startPage: number;
-  maxPages: number;
-  currentPage: number;
-}) {
-  const { endPage, startPage, maxPages, currentPage } = props;
-
-
-  const pagesToDisplay = Array.from({ length: endPage - startPage + 1 }).map(
-    (_, index) => {
-      const page = startPage + index;
-
-      /*
-
-      (onNextPageClick)
-      
-      if (pagesToDisplay[4].key == currentPage){
-        const page = endPage + 1 >>>>> 5 + 1                     firstPage = 6 . . . . . .
-        setCurrentPage(page)
-      }
-
-
-      (onPreviousClick)
-      if (pagesToDisplay[0].key == currentPage && currentPage !=== 1){
-        // en el caso de 6 >  startPage - 5 === 1, 1 2 3 4 5 y currentPage seria 5.
-        const page = startPage - 5                     firstPage = 1 . . . . . .
-        setCurrentPage(startPage)
-      }
-      
-
-
-      return (
-        <PaginatorButton
-          key={page}
-          displayValue={page}
-          isDisabled={page > maxPages}
-          isCurrent={page === currentPage}
-          onClick={() => handlePageChange(page)}
-        />
-      );
-    }
-  );
-
-  if (pagesToDisplay[4].key == endPage) {
-    const page = endPage + 1;
-  }
-}
-
-
-*/
-
-/*
-const startPage = Math.max(1, currentPage - pagesPerPage + 1);
-const endPage = Math.min(maxPages, startPage + pagesPerPage - 1);
-
-*/

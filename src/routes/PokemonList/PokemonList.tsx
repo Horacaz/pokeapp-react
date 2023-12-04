@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Container, Heading, Text } from "@chakra-ui/react";
 import usePokemonList from "../../hooks/usePokemonList";
 import { useState } from "react";
@@ -12,6 +13,12 @@ import {
 export default function PokemonList() {
   const [offset, setOffset] = useState(0);
   const { data, loading, error } = usePokemonList(offset);
+  const [currentPage, setCurrentPage] = useState(1);
+  const offSetIncrement = 20;
+
+  useEffect(() => {
+    setOffset((currentPage - 1) * offSetIncrement);
+  }, [currentPage]);
 
   if (loading) return <Loading isLoading={loading} />;
 
@@ -19,16 +26,23 @@ export default function PokemonList() {
 
   if (data)
     return (
-      <PokemonListContent data={data} offset={offset} setOffset={setOffset} />
+      <PokemonListContent
+        data={data}
+        offSetIncrement={offSetIncrement}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     );
 }
 
 function PokemonListContent(props: {
   data: IParsedPokemonList;
-  offset: number;
-  setOffset: (offset: number) => void;
+  offSetIncrement: number;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
 }) {
-  const { data, offset, setOffset } = props;
+  const { data, offSetIncrement, currentPage, setCurrentPage } = props;
+  const maxPages = Math.floor(data.count / offSetIncrement);
   return (
     <Container m={2} p={2} maxW={"85vw"}>
       <Heading as="h2" mb={4} color="brand.text">
@@ -38,7 +52,11 @@ function PokemonListContent(props: {
         </Text>
       </Heading>
       <ListOfPokemon list={data.results} />
-      <Paginator maxPages={Math.floor(data.count / 20)} pagesPerPage={5} />
+      <Paginator
+        maxPages={maxPages}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
     </Container>
   );
 }

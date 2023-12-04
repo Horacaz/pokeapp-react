@@ -1,23 +1,21 @@
 import { useEffect } from "react";
 import { IParsedPokemonList } from "../types/pokemonList";
 import usePokeApp from "./usePokeApp";
-import fetchPokemonListfromApi from "../api/pokemonListFetch";
-import PokemonList from "../entities/pokemonList";
-import mapPokemonList from "../mappers/pokemonListMapper";
 
 export default function usePokemonList(pokemonOffset: number) {
-  const { state, handleLoadingAction, handleSuccessAction, handleErrorAction } =
-    usePokeApp<IParsedPokemonList>();
+  const {
+    state,
+    handleLoadingAction,
+    handleSuccessAction,
+    handleErrorAction,
+    pokemonApp,
+  } = usePokeApp<IParsedPokemonList>();
 
   useEffect(() => {
     const getPokemonList = async () => {
       handleLoadingAction();
       try {
-        const resource = await fetchPokemonListfromApi({
-          limit: 20,
-          offset: pokemonOffset,
-        });
-        const pokemonList = new PokemonList(mapPokemonList(resource));
+        const pokemonList = await pokemonApp.getPokemonList(20, pokemonOffset);
         handleSuccessAction(pokemonList);
       } catch (error) {
         handleErrorAction(error as Error);
@@ -29,6 +27,7 @@ export default function usePokemonList(pokemonOffset: number) {
     handleLoadingAction,
     handleSuccessAction,
     handleErrorAction,
+    pokemonApp,
   ]);
 
   return state;
