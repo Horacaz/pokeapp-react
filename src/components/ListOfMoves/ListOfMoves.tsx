@@ -7,7 +7,7 @@ type Move = {
 
 export default function ListOfMoves({ list }: { list: Move[] }) {
   return (
-    <Grid gridTemplateColumns="repeat(6, 1fr)" gap={2}>
+    <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={1}>
       {list.map((move, i) => (
         <MoveButton name={move.name} url={move.url} key={`${move.name}-${i}`} />
       ))}
@@ -17,16 +17,18 @@ export default function ListOfMoves({ list }: { list: Move[] }) {
 
 function MoveButton(props: Move) {
   return (
-    <Button
-      fontWeight="bold"
-      m={1}
-      p={2}
-      backgroundColor={"brand.secondary"}
-      variant="solid"
-    >
-      <Link color={"brand.background"} href={`../../${props.url}`}>
+    <Link whiteSpace={"normal"} href={`../../${props.url}`}>
+      <Button
+        _hover={{ bg: "brand.primary", color: "brand.background" }}
+        fontWeight="bold"
+        backgroundColor={"brand.accent"}
+        color={"brand.primary"}
+        variant="solid"
+        fontSize={["xs", "sm", "md"]}
+        width="100%"
+      >
         {props.name}
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 }

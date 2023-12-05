@@ -16,7 +16,7 @@ export default function PokemonAbility() {
 function PokemoAbilityContent(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <Container maxW="85vw">
+    <Container maxW="90vw">
       <Header title="Pokemon Ability" />
       <AbilityDigest data={data} />
       <Effect data={data} />
@@ -60,12 +60,17 @@ function Effect(props: { data: IParsedPokemonAbility }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Effect
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        color={"brand.text"}
+        fontSize={["sm", "md"]}
+        fontWeight={"bold"}
+      >
         {data.ability.effect}
       </Text>
     </>
@@ -80,12 +85,17 @@ function PokedexEntry(props: { data: IParsedPokemonAbility }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Pokedex Entry
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        color={"brand.text"}
+        fontSize={["sm", "md"]}
+        fontWeight={"bold"}
+      >
         {data.ability.description}
       </Text>
     </>
@@ -100,12 +110,17 @@ function Generation(props: { data: IParsedPokemonAbility }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Generation
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        color={"brand.text"}
+        fontSize={["sm", "md"]}
+        fontWeight={"bold"}
+      >
         This ability was first introduced on{" "}
         <Link color={"brand.accent"} href={`../../${data.generation.url}`}>
           {data.generation.name}
@@ -123,7 +138,7 @@ function PokemonList(props: { data: IParsedPokemonAbility }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Pokemon

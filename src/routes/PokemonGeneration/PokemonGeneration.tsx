@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Container, Heading, Text, Box } from "@chakra-ui/react";
+import { Container, Heading, Text, Box, Grid } from "@chakra-ui/react";
 import useGetGeneration from "../../hooks/useGetGeneration";
 import { IParsedGeneration } from "../../types/generation";
 import {
@@ -21,7 +21,7 @@ export default function PokemonGeneration() {
 function PokemonGenerationContent(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <Container maxW="85vw">
+    <Container maxW="90vw">
       <Header />
       <GenerationDigest data={data} />
       <MainRegion data={data} />
@@ -61,12 +61,17 @@ function MainRegion(props: { data: IParsedGeneration }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Main Region
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["sm", "md"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         The Main Region that is featured on this Generation is{" "}
         <Text as="span" color={"brand.accent"}>
           {data.mainRegion}
@@ -85,17 +90,22 @@ function Types(props: { data: IParsedGeneration }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Types
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["sm", "md"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         The following Types were introduced in this Generation.
       </Text>
-      <Box p={2}>
+      <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={1}>
         <ListOfTypes list={data.types} />
-      </Box>
+      </Grid>
     </>
   );
 }
@@ -107,12 +117,17 @@ function Abilities() {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Abilities
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["sm", "md"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         No Abilities were introduced in this Generation.
       </Text>
     </>
@@ -127,12 +142,17 @@ function Moves(props: { data: IParsedGeneration }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Moves
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["sm", "md"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         A total of{" "}
         <Text as="span" color={"brand.accent"}>
           {data.moves.length}
@@ -154,12 +174,17 @@ function Pokemon(props: { data: IParsedGeneration }) {
         borderBottom="5px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Pokemon
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["sm", "md"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         A total of{" "}
         <Text as="span" color={"brand.accent"}>
           {data.pokemonSpecies.length}

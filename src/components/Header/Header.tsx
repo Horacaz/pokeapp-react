@@ -4,7 +4,7 @@ export default function Header() {
     <Link href="/">
       <Heading
         as="h1"
-        size="xl"
+        size={["md", "lg"]}
         color={"brand.text"}
         p={2}
         m={2}

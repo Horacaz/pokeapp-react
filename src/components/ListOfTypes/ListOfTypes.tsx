@@ -53,16 +53,17 @@ export default function ListOfTypes({ list }: { list: Type[] | string }) {
 
 function TypeButton(props: Type) {
   return (
-    <Button
-      fontWeight="bold"
-      m={1}
-      p={2}
-      backgroundColor={colors[props.name]}
-      variant="solid"
-    >
-      <Link color={"brand.primary"} href={`../../${props.url}`}>
+    <Link whiteSpace={"normal"} href={`../../${props.url}`}>
+      <Button
+        fontWeight="bold"
+        fontSize={["xs", "sm"]}
+        m={1}
+        backgroundColor={colors[props.name]}
+        variant="solid"
+        width="100%"
+      >
         {props.name}
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 }

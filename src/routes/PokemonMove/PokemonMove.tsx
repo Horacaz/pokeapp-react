@@ -20,7 +20,7 @@ export default function PokemonMove() {
 function PokemonMoveContent(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <Container maxW="85vw">
+    <Container maxW={["100vw", "90vw"]}>
       <Header title="Pokemon Move" />
       <MoveDigest data={data} />
       <Effect data={data} />
@@ -33,8 +33,8 @@ function PokemonMoveContent(props: { data: IParsedPokemonMove }) {
 }
 function Header({ title }: { title: string }) {
   return (
-    <Box p={2} textAlign="center">
-      <Heading as="h1" size="xl" color={"brand.text"}>
+    <Box textAlign="center">
+      <Heading as="h1" fontSize="xl" color={"brand.text"}>
         {title}
       </Heading>
     </Box>
@@ -45,7 +45,7 @@ function MoveDigest(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
     <Box textAlign="center">
-      <Heading as="h2" size="lg" color={"brand.accent"}>
+      <Heading as="h2" py={2} fontSize={["md", "lg"]} color={"brand.accent"}>
         {data.name}
       </Heading>
       <ListOfTypes list={data.type} />
@@ -58,15 +58,20 @@ function Effect(props: { data: IParsedPokemonMove }) {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        fontSize={["lg", "xl"]}
         color={"brand.text"}
       >
         Effect
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["xs", "sm"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         {data.effect}
       </Text>
     </>
@@ -78,15 +83,20 @@ function PokedexEntry(props: { data: IParsedPokemonMove }) {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        fontSize={["lg", "xl"]}
         color={"brand.text"}
       >
         Pokedex Entry
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["xs", "sm"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         {data.description}
       </Text>
     </>
@@ -98,15 +108,20 @@ function Generation(props: { data: IParsedPokemonMove }) {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        fontSize={["lg", "xl"]}
         color={"brand.text"}
       >
         Generation
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["xs", "sm"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         This move was first introduced in{" "}
         <Link color={"brand.accent"} href={`../../${data.generation.url}`}>
           {data.generation.name}
@@ -120,15 +135,20 @@ function Stats() {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        fontSize={["lg", "xl"]}
         color={"brand.text"}
       >
         Stats
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["xs", "sm"]}
+        color={"brand.text"}
+        fontWeight={"bold"}
+      >
         Stats information
       </Text>
     </>
@@ -140,15 +160,20 @@ function PokemonList(props: { data: IParsedPokemonMove }) {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        fontSize={["lg", "xl"]}
         color={"brand.text"}
       >
         Pokemon
       </Heading>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["xs", "sm"]}
+        color={"brand.accent"}
+        fontWeight={"bold"}
+      >
         Pokemon that can learn this Move
       </Text>
       <Box>

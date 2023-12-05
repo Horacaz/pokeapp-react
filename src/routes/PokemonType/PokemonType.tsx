@@ -1,7 +1,15 @@
 import { useParams } from "react-router-dom";
 import useGetTypes from "../../hooks/useGetTypes";
 import { IParsedType } from "../../types/pokemonType";
-import { Container, Box, Heading, Text, Link } from "@chakra-ui/react";
+import {
+  Container,
+  Box,
+  Heading,
+  Text,
+  Link,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
 import {
   ErrorMessage,
   Loading,
@@ -21,13 +29,15 @@ export default function PokemonType() {
 function PokemonTypeContent(props: { data: IParsedType }) {
   const { data } = props;
   return (
-    <Container maxW="85vw">
-      <Header title="Pokemon Type" />
-      <TypeDigest data={data} />
-      <Information data={data} />
-      <DamageModifiers data={data} />
-      <Moves data={data} />
-      <Pokemon data={data} />
+    <Container maxW="100vw">
+      <Box m={2}>
+        <Header title="Pokemon Type" />
+        <TypeDigest data={data} />
+        <Information data={data} />
+        <DamageModifiers data={data} />
+        <Moves data={data} />
+        <Pokemon data={data} />
+      </Box>
     </Container>
   );
 }
@@ -35,7 +45,7 @@ function PokemonTypeContent(props: { data: IParsedType }) {
 function Header({ title }: { title: string }) {
   return (
     <Box p={2} textAlign="center" color={"brand.text"}>
-      <Heading as="h1" size="xl">
+      <Heading as="h1" size={"xl"}>
         {title}
       </Heading>
     </Box>
@@ -46,9 +56,7 @@ function TypeDigest(props: { data: IParsedType }) {
   const { data } = props;
   return (
     <Box textAlign="center">
-      <Heading as="h2" size="lg">
-        <ListOfTypes list={data.name} />
-      </Heading>
+      <ListOfTypes list={data.name} />
     </Box>
   );
 }
@@ -58,91 +66,129 @@ function Information(props: { data: IParsedType }) {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Information
       </Heading>
-      <Text py={2} color={"brand.text"} fontWeight={"bold"}>
+      <Text color={"brand.text"} fontWeight={"bold"}>
         It first introduction was on{" "}
         <Link color={"brand.accent"} href={`../../${data.generation.url}`}>
           {data.generation.name}
         </Link>
-        . There are currently{" "}
-        <Text as="span" color={"brand.accent"}>
-          {data.moves.length}
-        </Text>{" "}
-        Moves and
-        <Text as="span" color={"brand.accent"}>
-          {" "}
-          {data.pokemon.length}
-        </Text>{" "}
-        Pokemon that share this Type. Its{" "}
-        <Text as="span" color={"brand.accent"}>
-          Damage Class
-        </Text>{" "}
-        is{" "}
-        <Text as="span" color={"brand.accent"}>
-          {data.moveDamageClass.name}
-        </Text>
-        .
+      </Text>
+      <Text color={"brand.text"} fontWeight={"bold"}>
+        There are currently {data.moves.length} Moves and {data.pokemon.length}{" "}
+        Pokemon that share this Type.
+      </Text>
+      <Text color={"brand.text"} fontWeight={"bold"}>
+        Its Damage Class is {data.moveDamageClass.name}.
       </Text>
     </>
   );
 }
-
 function DamageModifiers(props: { data: IParsedType }) {
   const { data } = props;
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Damage Modifiers
       </Heading>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
-        Takes Double Damage From
-      </Text>
-      <Box p={2}>
-        <ListOfTypes list={data.damageRelations.doubleDamageFrom} />
-      </Box>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
-        Deals Double Damage to
-      </Text>
-      <Box p={2}>
-        <ListOfTypes list={data.damageRelations.doubleDamageTo} />
-      </Box>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
-        Takes Half Damage From
-      </Text>
-      <Box p={2}>
-        <ListOfTypes list={data.damageRelations.halfDamageFrom} />
-      </Box>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
-        Deals Half Damage to
-      </Text>
-      <Box p={2}>
-        <ListOfTypes list={data.damageRelations.halfDamageTo} />
-      </Box>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
-        Takes No Damage From
-      </Text>
-      <Box p={2}>
-        <ListOfTypes list={data.damageRelations.noDamageFrom} />
-      </Box>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
-        Deals No Damage to
-      </Text>
-      <Box p={2}>
-        <ListOfTypes list={data.damageRelations.noDamageTo} />
-      </Box>
+      <Grid
+        templateColumns={["repeat(1, 2fr)", "repeat(3, 1fr)"]}
+        textAlign={["start", "center"]}
+      >
+        <GridItem>
+          <Box>
+            <Text
+              py={2}
+              fontSize={["xs", "sm", "md"]}
+              color={"brand.accent"}
+              fontWeight={"bold"}
+            >
+              Takes Double Damage From
+            </Text>
+            <Box>
+              <ListOfTypes list={data.damageRelations.doubleDamageFrom} />
+            </Box>
+          </Box>
+
+          <Text
+            py={2}
+            fontSize={["xs", "sm", "md"]}
+            color={"brand.accent"}
+            fontWeight={"bold"}
+          >
+            Deals Double Damage to
+          </Text>
+          <Box>
+            <ListOfTypes list={data.damageRelations.doubleDamageTo} />
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box>
+            <Text
+              py={2}
+              fontSize={["xs", "sm", "md"]}
+              color={"brand.accent"}
+              fontWeight={"bold"}
+            >
+              Takes Half Damage From
+            </Text>
+            <Box>
+              <ListOfTypes list={data.damageRelations.halfDamageFrom} />
+            </Box>
+
+            <Text
+              py={2}
+              fontSize={["xs", "sm", "md"]}
+              color={"brand.accent"}
+              fontWeight={"bold"}
+            >
+              Deals Half Damage to
+            </Text>
+            <Box>
+              <ListOfTypes list={data.damageRelations.halfDamageTo} />
+            </Box>
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box>
+            <Text
+              py={2}
+              fontSize={["xs", "sm", "md"]}
+              color={"brand.accent"}
+              fontWeight={"bold"}
+            >
+              Takes No Damage From
+            </Text>
+            <Box>
+              <ListOfTypes list={data.damageRelations.noDamageFrom} />
+            </Box>
+
+            <Text
+              py={2}
+              fontSize={["xs", "sm", "md"]}
+              color={"brand.accent"}
+              fontWeight={"bold"}
+            >
+              Deals No Damage to
+            </Text>
+            <Box>
+              <ListOfTypes list={data.damageRelations.noDamageTo} />
+            </Box>
+          </Box>
+        </GridItem>
+      </Grid>
     </>
   );
 }
@@ -152,15 +198,20 @@ function Moves(props: { data: IParsedType }) {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Moves
       </Heading>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
+      <Text
+        py={2}
+        fontSize={["sm", "md"]}
+        color={"brand.accent"}
+        fontWeight={"bold"}
+      >
         Moves that share this type
       </Text>
       <Box p={2}>
@@ -175,10 +226,10 @@ function Pokemon(props: { data: IParsedType }) {
   return (
     <>
       <Heading
-        borderBottom="5px solid white"
+        borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        size="lg"
+        size={["md", "lg"]}
         color={"brand.text"}
       >
         Pokemon
