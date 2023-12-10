@@ -25,7 +25,7 @@ const colors: Colors = {
   Ice: "#96D9D6",
   Ghost: "#735797",
   Dragon: "#6F35FC",
-  Dark: "#141211",
+  Dark: "#1F1F1F",
   Steel: "#B7B7CE",
   Flying: "#8683FC",
   Shadow: "#3c4440",
@@ -36,7 +36,16 @@ const colors: Colors = {
 export default function ListOfTypes({ list }: { list: Type[] | string }) {
   if (typeof list === "string") {
     return (
-      <Button bg={colors[list]} fontWeight="bold" m={1} p={2} variant="solid">
+      <Button
+        bg={colors[list]}
+        cursor="default"
+        fontWeight="bold"
+        m={1}
+        p={2}
+        variant="solid"
+        fontSize={["sm", "md"]}
+        _hover={{ bg: colors[list] }}
+      >
         {list}
       </Button>
     );
@@ -53,17 +62,23 @@ export default function ListOfTypes({ list }: { list: Type[] | string }) {
 
 function TypeButton(props: Type) {
   return (
-    <Link whiteSpace={"normal"} href={`../../${props.url}`}>
-      <Button
-        fontWeight="bold"
-        fontSize={["xs", "sm"]}
-        m={1}
-        backgroundColor={colors[props.name]}
-        variant="solid"
-        width="100%"
-      >
-        {props.name}
-      </Button>
-    </Link>
+    <Button
+      as={Link}
+      href={`../../${props.url}`}
+      m={1}
+      _hover={{
+        bg: "brand.primary",
+        color: "brand.text",
+        textDecoration: "none",
+      }}
+      fontWeight="bold"
+      fontSize={["sm", "md"]}
+      backgroundColor={colors[props.name]}
+      variant="solid"
+      whiteSpace={"normal"}
+      color={"brand.background"}
+    >
+      {props.name}
+    </Button>
   );
 }

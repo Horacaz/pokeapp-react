@@ -21,7 +21,7 @@ export default function PokemonGeneration() {
 function PokemonGenerationContent(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <Container maxW="90vw">
+    <Container maxW={["100vw", "90vw"]}>
       <Header />
       <GenerationDigest data={data} />
       <MainRegion data={data} />
@@ -56,7 +56,7 @@ function GenerationDigest(props: { data: IParsedGeneration }) {
 function MainRegion(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -78,14 +78,14 @@ function MainRegion(props: { data: IParsedGeneration }) {
         </Text>
         .
       </Text>
-    </>
+    </Box>
   );
 }
 
 function Types(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -106,13 +106,13 @@ function Types(props: { data: IParsedGeneration }) {
       <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={1}>
         <ListOfTypes list={data.types} />
       </Grid>
-    </>
+    </Box>
   );
 }
 
 function Abilities() {
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -130,14 +130,14 @@ function Abilities() {
       >
         No Abilities were introduced in this Generation.
       </Text>
-    </>
+    </Box>
   );
 }
 
 function Moves(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -162,14 +162,14 @@ function Moves(props: { data: IParsedGeneration }) {
       <Box p={2}>
         <ListOfMoves list={data.moves} />
       </Box>
-    </>
+    </Box>
   );
 }
 
 function Pokemon(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -194,6 +194,6 @@ function Pokemon(props: { data: IParsedGeneration }) {
       <Box p={2}>
         <ListOfPokemon list={data.pokemonSpecies} />
       </Box>
-    </>
+    </Box>
   );
 }

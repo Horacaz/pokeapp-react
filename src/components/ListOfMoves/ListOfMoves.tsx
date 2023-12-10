@@ -7,7 +7,7 @@ type Move = {
 
 export default function ListOfMoves({ list }: { list: Move[] }) {
   return (
-    <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={1}>
+    <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={2}>
       {list.map((move, i) => (
         <MoveButton name={move.name} url={move.url} key={`${move.name}-${i}`} />
       ))}
@@ -17,18 +17,24 @@ export default function ListOfMoves({ list }: { list: Move[] }) {
 
 function MoveButton(props: Move) {
   return (
-    <Link whiteSpace={"normal"} href={`../../${props.url}`}>
-      <Button
-        _hover={{ bg: "brand.primary", color: "brand.background" }}
-        fontWeight="bold"
-        backgroundColor={"brand.accent"}
-        color={"brand.primary"}
-        variant="solid"
-        fontSize={["xs", "sm", "md"]}
-        width="100%"
-      >
-        {props.name}
-      </Button>
-    </Link>
+    <Button
+      textAlign={"center"}
+      as={Link}
+      href={`../../${props.url}`}
+      _hover={{
+        bg: "brand.primary",
+        color: "brand.text",
+        textDecoration: "none",
+      }}
+      fontWeight="bold"
+      backgroundColor={"brand.accent"}
+      color={"brand.background"}
+      variant="solid"
+      fontSize={["xs", "sm", "md"]}
+      width="100%"
+      whiteSpace={"normal"}
+    >
+      {props.name}
+    </Button>
   );
 }

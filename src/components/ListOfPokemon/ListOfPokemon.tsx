@@ -7,7 +7,7 @@ type Pokemon = {
 
 export default function ListOfPokemon({ list }: { list: Pokemon[] }) {
   return (
-    <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={1}>
+    <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={2}>
       {list.map((pokemon, i) => (
         <PokemonButton
           name={pokemon.name}
@@ -21,18 +21,24 @@ export default function ListOfPokemon({ list }: { list: Pokemon[] }) {
 
 function PokemonButton(props: Pokemon) {
   return (
-    <Link whiteSpace={"normal"} href={`../../${props.url}`}>
-      <Button
-        _hover={{ bg: "brand.background", color: "brand.primary" }}
-        fontWeight="bold"
-        backgroundColor={"brand.secondary"}
-        color={"brand.background"}
-        variant="solid"
-        fontSize={["xs", "sm"]}
-        width="100%"
-      >
-        {props.name}
-      </Button>
-    </Link>
+    <Button
+      as={Link}
+      href={`../../${props.url}`}
+      _hover={{
+        bg: "brand.primary",
+        color: "brand.text",
+        textDecoration: "none",
+      }}
+      fontWeight="bold"
+      backgroundColor="brand.secondary"
+      color="brand.background"
+      variant="solid"
+      fontSize={["xs", "sm"]}
+      width="100%"
+      whiteSpace="normal"
+      textAlign={"center"}
+    >
+      {props.name}
+    </Button>
   );
 }

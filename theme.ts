@@ -4,15 +4,15 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "#1E2022",
+        bg: "#121213",
       },
     },
   },
   colors: {
     brand: {
-      background: "#1E2022",
+      background: "#121213",
       accent: "#52616B",
-      primary: "#C9D6DF",
+      primary: "#1E2022",
       secondary: "#D9D9D9",
       text: "#F0F5F9",
     },

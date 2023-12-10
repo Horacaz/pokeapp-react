@@ -16,7 +16,7 @@ export default function PokemonAbility() {
 function PokemoAbilityContent(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <Container maxW="90vw">
+    <Container maxW={["100vw", "90vw"]}>
       <Header title="Pokemon Ability" />
       <AbilityDigest data={data} />
       <Effect data={data} />
@@ -29,33 +29,29 @@ function PokemoAbilityContent(props: { data: IParsedPokemonAbility }) {
 
 function Header({ title }: { title: string }) {
   return (
-    <>
-      <Box p={2} textAlign="center">
-        <Heading as="h1" size="xl" color={"brand.text"}>
-          {title}
-        </Heading>
-      </Box>
-    </>
+    <Box p={2} textAlign="center">
+      <Heading as="h1" size="xl" color={"brand.text"}>
+        {title}
+      </Heading>
+    </Box>
   );
 }
 
 function AbilityDigest(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <>
-      <Box textAlign="center">
-        <Heading as="h2" size="lg" color={"brand.accent"}>
-          {data.displayName}
-        </Heading>
-      </Box>
-    </>
+    <Box textAlign="center">
+      <Heading as="h2" size="lg" color={"brand.accent"}>
+        {data.displayName}
+      </Heading>
+    </Box>
   );
 }
 
 function Effect(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -73,14 +69,14 @@ function Effect(props: { data: IParsedPokemonAbility }) {
       >
         {data.ability.effect}
       </Text>
-    </>
+    </Box>
   );
 }
 
 function PokedexEntry(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -98,14 +94,14 @@ function PokedexEntry(props: { data: IParsedPokemonAbility }) {
       >
         {data.ability.description}
       </Text>
-    </>
+    </Box>
   );
 }
 
 function Generation(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -126,14 +122,14 @@ function Generation(props: { data: IParsedPokemonAbility }) {
           {data.generation.name}
         </Link>
       </Text>
-    </>
+    </Box>
   );
 }
 
 function PokemonList(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="5px solid white"
         display="inline-block"
@@ -149,6 +145,6 @@ function PokemonList(props: { data: IParsedPokemonAbility }) {
       <Box p={2}>
         <ListOfPokemon list={data.pokemon} />
       </Box>
-    </>
+    </Box>
   );
 }

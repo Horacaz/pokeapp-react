@@ -1,14 +1,16 @@
-import { Text } from "@chakra-ui/react";
+import { Box, Heading, Link } from "@chakra-ui/react";
 export default function Footer() {
   return (
-    <Text
-      size={["md", "lg"]}
-      color={"brand.text"}
-      p={2}
-      m={2}
-      display={"inline-block"}
-    >
-      Pokemon Application Footer
-    </Text>
+    <Box p={2} textAlign="center" backgroundColor={"black"}>
+      <Heading as="h3" size={["sm", "md"]} color={"brand.text"} p={2} m={2}>
+        <Link
+          textDecoration={"none"}
+          _hover={{ textDecoration: "none" }}
+          href="https://github.com/Horacaz/pokeapp-react"
+        >
+          Pokemon App by Horacio Cazavant
+        </Link>
+      </Heading>
+    </Box>
   );
 }

@@ -33,8 +33,8 @@ function PokemonMoveContent(props: { data: IParsedPokemonMove }) {
 }
 function Header({ title }: { title: string }) {
   return (
-    <Box textAlign="center">
-      <Heading as="h1" fontSize="xl" color={"brand.text"}>
+    <Box p={2} textAlign="center">
+      <Heading as="h1" size="xl" color={"brand.text"}>
         {title}
       </Heading>
     </Box>
@@ -45,7 +45,7 @@ function MoveDigest(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
     <Box textAlign="center">
-      <Heading as="h2" py={2} fontSize={["md", "lg"]} color={"brand.accent"}>
+      <Heading as="h2" py={2} size={["md", "lg"]} color={"brand.accent"}>
         {data.name}
       </Heading>
       <ListOfTypes list={data.type} />
@@ -56,69 +56,69 @@ function MoveDigest(props: { data: IParsedPokemonMove }) {
 function Effect(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        fontSize={["lg", "xl"]}
+        size={["lg", "xl"]}
         color={"brand.text"}
       >
         Effect
       </Heading>
       <Text
         py={2}
-        fontSize={["xs", "sm"]}
+        fontSize={["sm", "md"]}
         color={"brand.text"}
         fontWeight={"bold"}
       >
         {data.effect}
       </Text>
-    </>
+    </Box>
   );
 }
 
 function PokedexEntry(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        fontSize={["lg", "xl"]}
+        size={["lg", "xl"]}
         color={"brand.text"}
       >
         Pokedex Entry
       </Heading>
       <Text
         py={2}
-        fontSize={["xs", "sm"]}
+        fontSize={["sm", "md"]}
         color={"brand.text"}
         fontWeight={"bold"}
       >
         {data.description}
       </Text>
-    </>
+    </Box>
   );
 }
 
 function Generation(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        fontSize={["lg", "xl"]}
+        size={["lg", "xl"]}
         color={"brand.text"}
       >
         Generation
       </Heading>
       <Text
         py={2}
-        fontSize={["xs", "sm"]}
+        fontSize={["sm", "md"]}
         color={"brand.text"}
         fontWeight={"bold"}
       >
@@ -127,50 +127,50 @@ function Generation(props: { data: IParsedPokemonMove }) {
           {data.generation.name}
         </Link>
       </Text>
-    </>
+    </Box>
   );
 }
 
 function Stats() {
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        fontSize={["lg", "xl"]}
+        size={["lg", "xl"]}
         color={"brand.text"}
       >
         Stats
       </Heading>
       <Text
         py={2}
-        fontSize={["xs", "sm"]}
+        fontSize={["sm", "md"]}
         color={"brand.text"}
         fontWeight={"bold"}
       >
         Stats information
       </Text>
-    </>
+    </Box>
   );
 }
 
 function PokemonList(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <>
+    <Box my={2}>
       <Heading
         borderBottom="4px solid white"
         display="inline-block"
         as="h2"
-        fontSize={["lg", "xl"]}
+        size={["lg", "xl"]}
         color={"brand.text"}
       >
         Pokemon
       </Heading>
       <Text
         py={2}
-        fontSize={["xs", "sm"]}
+        fontSize={["sm", "md"]}
         color={"brand.accent"}
         fontWeight={"bold"}
       >
@@ -179,6 +179,6 @@ function PokemonList(props: { data: IParsedPokemonMove }) {
       <Box>
         <ListOfPokemon list={data?.learnedBy} />
       </Box>
-    </>
+    </Box>
   );
 }

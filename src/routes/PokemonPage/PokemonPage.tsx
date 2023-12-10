@@ -11,6 +11,7 @@ import {
   GridItem,
   Stack,
   HStack,
+  Container,
 } from "@chakra-ui/react";
 import {
   Loading,
@@ -40,7 +41,7 @@ type PokemonPageContent = {
 function PokemonPageContent(props: PokemonPageContent) {
   const { data, shiny, setShiny } = props;
   return (
-    <Box>
+    <Container maxW={["100vw", "90vw"]}>
       <Grid justifyContent={"center"}>
         <GridItem>
           <Grid templateColumns={["", "3fr 1fr"]}>
@@ -55,7 +56,7 @@ function PokemonPageContent(props: PokemonPageContent) {
         <PokemonVarieties data={data} />
         <PokemonMoves data={data} />
       </Grid>
-    </Box>
+    </Container>
   );
 }
 

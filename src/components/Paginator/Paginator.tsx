@@ -77,14 +77,15 @@ export default function Paginator({
 function PaginatorButton(props: PaginatorButtonProps) {
   return (
     <Button
-      _hover={{ bg: "brand.background", color: "brand.primary" }}
+      _hover={{ bg: "brand.secondary", color: "brand.background" }}
       fontSize={["xs", "sm"]}
       m={["1px", 1]}
       isDisabled={props.isDisabled}
-      color={props.isCurrent ? "brand.primary" : "brand.background"}
+      color={props.isCurrent ? "brand.primary" : "brand.text"}
       bgColor={props.isCurrent ? "brand.accent" : "brand.primary"}
       fontWeight="bold"
       variant="solid"
+      width={["4px", "4px", "100px"]}
       onClick={props.onClick}
     >
       {props.displayValue}
