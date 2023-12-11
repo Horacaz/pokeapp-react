@@ -3,7 +3,7 @@ import { renderHook, waitFor } from "@testing-library/react";
 import useGetGeneration from "../useGetGeneration";
 import { PokeAppProvider } from "../../context/PokeAppContext";
 import generationFixture from "../../../__fixtures__/generation.json";
-import parsedgenerationFixture from "../__fixtures__/parsedgenerationFixture.json";
+import parsedgenerationFixture from "../__fixtures__/parsedGenerationFixture.json";
 import fetchGenerationFromApi from "../../api/generationFetch";
 vi.mock("../../api/generationFetch");
 
