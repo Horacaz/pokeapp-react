@@ -1,6 +1,14 @@
 import usePokemonMove from "../../hooks/usePokemonMove";
 import { useParams } from "react-router-dom";
-import { Container, Box, Heading, Text, Link } from "@chakra-ui/react";
+import {
+  Container,
+  Box,
+  Heading,
+  Text,
+  Link,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
 import { IParsedPokemonMove } from "../../types/pokemonMove";
 import {
   Loading,
@@ -23,10 +31,17 @@ function PokemonMoveContent(props: { data: IParsedPokemonMove }) {
     <Container maxW={["100vw", "90vw"]}>
       <Header title="Pokemon Move" />
       <MoveDigest data={data} />
-      <Effect data={data} />
-      <PokedexEntry data={data} />
-      <Generation data={data} />
-      <Stats />
+      <Grid templateColumns={["", "2fr 1fr"]}>
+        <GridItem>
+          <Effect data={data} />
+          <PokedexEntry data={data} />
+          <Generation data={data} />
+        </GridItem>
+        <GridItem>
+          <Stats data={data} />
+        </GridItem>
+      </Grid>
+
       <PokemonList data={data} />
     </Container>
   );
@@ -93,11 +108,19 @@ function Generation(props: { data: IParsedPokemonMove }) {
   );
 }
 
-function Stats() {
+function Stats(props: { data: IParsedPokemonMove }) {
+  const { data } = props;
   return (
     <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
       <PokemonSection title="Stats" />
-      <PokemonSectionSubtitle subTitle="Stats information" />
+      <PokemonSectionSubtitle subTitle="Stats of this Move" />
+      <Grid templateColumns={"repeat(2, 1fr)"}>
+        <PokemonStat title="Damage Class" value={data.damageClass} />
+        <PokemonStat title="Effect Chance" value={data.effectChance} />
+        <PokemonStat title="PP" value={data.pp} />
+        <PokemonStat title="Power" value={data.power} />
+        <PokemonStat title="Accuracy" value={data.accuracy} />
+      </Grid>
     </Box>
   );
 }
@@ -136,5 +159,26 @@ function PokemonSectionSubtitle(props: { subTitle: string }) {
     >
       {props.subTitle}
     </Text>
+  );
+}
+
+function PokemonStat(props: { title: string; value: string | number | null }) {
+  return (
+    <Box key={props.title}>
+      <Text
+        fontSize={["sm", "md", "lg"]}
+        fontWeight={"bold"}
+        color={"brand.text"}
+      >
+        {props.title}
+      </Text>
+      <Text
+        fontSize={["sm", "md", "lg"]}
+        fontWeight={"bold"}
+        color={"brand.primary"}
+      >
+        {props.value === null ? "None" : props.value}
+      </Text>
+    </Box>
   );
 }

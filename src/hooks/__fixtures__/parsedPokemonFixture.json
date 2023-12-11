@@ -11,7 +11,7 @@
     }
   ],
   "baseExperience": 267,
-  "height": 17,
+  "height": 1.7,
   "id": 6,
   "moves": [
     {
@@ -560,7 +560,7 @@
       "url": "type/3/"
     }
   ],
-  "weight": 905,
+  "weight": 90.5,
   "description": "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.",
   "generation": {
     "name": "Generation I",

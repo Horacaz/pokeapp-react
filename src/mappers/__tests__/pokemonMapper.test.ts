@@ -21,7 +21,7 @@ const expectedPokemonMap: IParsedPokemon = {
   displayName: "Foo",
   abilities: [{ name: "Ability", url: "ability/1" }],
   baseExperience: 100,
-  height: 100,
+  height: 10,
   id: 0,
   moves: [{ name: "Move", url: "move/1" }],
   name: "foo",
@@ -29,7 +29,7 @@ const expectedPokemonMap: IParsedPokemon = {
   stats: [{ baseStat: 100, name: "Stat" }],
   types: [{ name: "Fire", url: "type/1" }],
   pictures: { default: "url", shiny: "url" },
-  weight: 100,
+  weight: 10,
 };
 describe("mapPokemon()", () => {
   test("is a function", () => {
