@@ -6,7 +6,6 @@ import {
   Heading,
   Text,
   Image,
-  Link,
   Grid,
   GridItem,
   Stack,

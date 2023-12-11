@@ -4,7 +4,7 @@ import PokemonList from "../pokemonList";
 const pokemonListMock: IParsedPokemonList = {
   count: 100,
   next: "url",
-  results: [{ displayName: "Foo", name: "foo", url: "url" }],
+  results: [{ name: "foo", url: "url" }],
 };
 describe("PokemonList()", () => {
   test("is a function", () => {

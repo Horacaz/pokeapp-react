@@ -1,6 +1,5 @@
 import { Mock } from "vitest";
-import { screen, render } from "@testing-library/react";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { screen } from "@testing-library/react";
 import { IParsedPokemon } from "../../../types/pokemon";
 import PokemonPage from "../PokemonPage";
 import useGetPokemon from "../../../hooks/useGetPokemon";

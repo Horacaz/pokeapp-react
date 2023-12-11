@@ -13,7 +13,7 @@ const pokemonMoveMock: IParsedPokemonMove = {
   name: "Move",
   power: 100,
   pp: 10,
-  type: { name: "Fire", url: "url" },
+  type: [{ name: "Fire", url: "url" }],
 };
 
 describe("PokemonMove", () => {

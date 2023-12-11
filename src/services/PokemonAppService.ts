@@ -9,10 +9,8 @@ import mapPokemonSpecies from "../mappers/pokemonSpeciesMapper";
 import mapPokemonList from "../mappers/pokemonListMapper";
 import { IParsedPokemonAbility } from "../types/pokemonAbility";
 import { IParsedGeneration } from "../types/generation";
-import { IParsedPokemon } from "../types/pokemon";
 import { IParsedPokemonList } from "../types/pokemonList";
 import { IParsedPokemonMove } from "../types/pokemonMove";
-import { IParsedPokemonSpecies } from "../types/pokemonSpecies";
 import { IParsedType } from "../types/pokemonType";
 
 export default class PokemonApp {
