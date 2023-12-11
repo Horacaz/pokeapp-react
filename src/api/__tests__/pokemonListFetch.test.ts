@@ -1,16 +1,9 @@
 import fetchPokemonListfromApi from "../pokemonListFetch";
 
-const fetchMock = (global.fetch = vi.fn().mockImplementation(
-  () =>
-    new Promise((resolve) => {
-      const jsonPromise = new Promise((r) => {
-        r({});
-      });
-      resolve({ json: () => jsonPromise });
-    })
-));
+import { setupFetchMock } from "../../../__utils__/testHelpers";
+const fetchMock = setupFetchMock();
 
-const expectedUrl = "https://pokeapi.co/api/v2/pokemon?$limit=10&offset=25";
+const expectedUrl = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=25";
 describe("fetchPokemonListfromApi", () => {
   test("succesfully sends a request to api with valid parameters", () => {
     fetchPokemonListfromApi({ limit: 10, offset: 25 });

@@ -1,0 +1,80 @@
+{
+  "displayName": "Bulbasaur",
+  "abilities": [
+    {
+      "name": "Overgrow",
+      "url": "ability/65/"
+    },
+    {
+      "name": "Chlorophyll",
+      "url": "ability/34/"
+    }
+  ],
+  "baseExperience": 64,
+  "height": 7,
+  "id": 1,
+  "moves": [
+    {
+      "name": "Razor Wind",
+      "url": "move/13/"
+    }
+  ],
+  "name": "bulbasaur",
+  "species": {
+    "name": "bulbasaur",
+    "url": "https://pokeapi.co/api/v2/pokemon-species/1/"
+  },
+  "pictures": {
+    "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1.png"
+  },
+  "stats": [
+    {
+      "baseStat": 45,
+      "name": "Hp"
+    },
+    {
+      "baseStat": 49,
+      "name": "Attack"
+    },
+    {
+      "baseStat": 49,
+      "name": "Defense"
+    },
+    {
+      "baseStat": 65,
+      "name": "Special Attack"
+    },
+    {
+      "baseStat": 65,
+      "name": "Special Defense"
+    },
+    {
+      "baseStat": 45,
+      "name": "Speed"
+    }
+  ],
+  "types": [
+    {
+      "name": "Grass",
+      "url": "type/12/"
+    },
+    {
+      "name": "Poison",
+      "url": "type/4/"
+    }
+  ],
+  "weight": 69,
+  "description": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON.",
+  "generation": {
+    "name": "Generation I",
+    "url": "generation/1/"
+  },
+  "genus": "Seed Pokémon",
+  "varieties": [
+    {
+      "name": "Bulbasaur",
+      "url": "pokemon/1/"
+    }
+  ]
+}

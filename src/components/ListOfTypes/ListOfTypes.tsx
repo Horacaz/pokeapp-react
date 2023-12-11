@@ -4,6 +4,11 @@ type Colors = {
   [key: string]: string;
 };
 
+type Type = {
+  name: string;
+  url: string;
+};
+
 const colors: Colors = {
   Grass: "#7AC74C",
   Fire: "#EE8130",
@@ -20,7 +25,7 @@ const colors: Colors = {
   Ice: "#96D9D6",
   Ghost: "#735797",
   Dragon: "#6F35FC",
-  Dark: "#141211",
+  Dark: "#1F1F1F",
   Steel: "#B7B7CE",
   Flying: "#8683FC",
   Shadow: "#3c4440",
@@ -28,15 +33,19 @@ const colors: Colors = {
   None: "#3a3a3a",
 };
 
-type TypeList = {
-  name: string;
-  url: string;
-}[];
-
-export default function ListOfTypes({ list }: { list: TypeList | string }) {
+export default function ListOfTypes({ list }: { list: Type[] | string }) {
   if (typeof list === "string") {
     return (
-      <Button bg={colors[list]} m={1} variant="solid">
+      <Button
+        bg={colors[list]}
+        cursor="default"
+        fontWeight="bold"
+        m={1}
+        p={2}
+        variant="solid"
+        fontSize={["sm", "md"]}
+        _hover={{ bg: colors[list] }}
+      >
         {list}
       </Button>
     );
@@ -45,18 +54,31 @@ export default function ListOfTypes({ list }: { list: TypeList | string }) {
   return (
     <>
       {list.map((list, i) => (
-        <Button
-          fontWeight="bold"
-          p={2}
-          bg={colors[list.name]}
-          m={1}
-          variant="solid"
-          key={`${list.name}-${i}`}
-        >
-          {(list.url && <Link href={`../../${list.url}`}>{list.name}</Link>) ||
-            list.name}
-        </Button>
+        <TypeButton name={list.name} url={list.url} key={`${list.name}-${i}`} />
       ))}
     </>
+  );
+}
+
+function TypeButton(props: Type) {
+  return (
+    <Button
+      as={Link}
+      href={`../../${props.url}`}
+      m={1}
+      _hover={{
+        bg: "brand.primary",
+        color: "brand.text",
+        textDecoration: "none",
+      }}
+      fontWeight="bold"
+      fontSize={["sm", "md"]}
+      backgroundColor={colors[props.name]}
+      variant="solid"
+      whiteSpace={"normal"}
+      color={"brand.background"}
+    >
+      {props.name}
+    </Button>
   );
 }

@@ -11,7 +11,7 @@ export default function mapPokemon(
     url: retrievePathFromUrl(ability.ability.url),
   }));
   const baseExperience = pokemonData.base_experience;
-  const height = pokemonData.height;
+  const height = pokemonData.height / 10;
   const id = pokemonData.id;
   const moves = pokemonData.moves.map((move) => ({
     name: capitalizeString(move.move.name),
@@ -31,7 +31,7 @@ export default function mapPokemon(
     name: capitalizeString(type.type.name),
     url: retrievePathFromUrl(type.type.url),
   }));
-  const weight = pokemonData.weight;
+  const weight = pokemonData.weight / 10;
   return {
     displayName,
     abilities,

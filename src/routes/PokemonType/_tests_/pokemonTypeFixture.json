@@ -1,0 +1,94 @@
+{
+  "damageRelations": {
+    "doubleDamageFrom": [
+      {
+        "name": "Water",
+        "url": "type/11/"
+      },
+      {
+        "name": "Grass",
+        "url": "type/12/"
+      },
+      {
+        "name": "Ice",
+        "url": "type/15/"
+      }
+    ],
+    "doubleDamageTo": [
+      {
+        "name": "Poison",
+        "url": "type/4/"
+      },
+      {
+        "name": "Rock",
+        "url": "type/6/"
+      },
+      {
+        "name": "Steel",
+        "url": "type/9/"
+      },
+      {
+        "name": "Fire",
+        "url": "type/10/"
+      },
+      {
+        "name": "Electric",
+        "url": "type/13/"
+      }
+    ],
+    "halfDamageFrom": [
+      {
+        "name": "Poison",
+        "url": "type/4/"
+      },
+      {
+        "name": "Rock",
+        "url": "type/6/"
+      }
+    ],
+    "halfDamageTo": [
+      {
+        "name": "Bug",
+        "url": "type/7/"
+      },
+      {
+        "name": "Grass",
+        "url": "type/12/"
+      }
+    ],
+    "noDamageFrom": [
+      {
+        "name": "Electric",
+        "url": "type/13/"
+      }
+    ],
+    "noDamageTo": [
+      {
+        "name": "Flying",
+        "url": "type/3/"
+      }
+    ]
+  },
+  "generation": {
+    "name": "Generation I",
+    "url": "generation/1/"
+  },
+  "id": 5,
+  "moveDamageClass": {
+    "name": "Physical",
+    "url": "move-damage-class/2/"
+  },
+  "moves": [
+    {
+      "name": "Sand Attack",
+      "url": "move/28/"
+    }
+  ],
+  "name": "Ground",
+  "pokemon": [
+    {
+      "name": "Sandshrew",
+      "url": "pokemon/27/"
+    }
+  ]
+}

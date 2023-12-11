@@ -1,0 +1,588 @@
+{
+  "displayName": "Charizard",
+  "abilities": [
+    {
+      "name": "Blaze",
+      "url": "ability/66/"
+    },
+    {
+      "name": "Solar Power",
+      "url": "ability/94/"
+    }
+  ],
+  "baseExperience": 267,
+  "height": 1.7,
+  "id": 6,
+  "moves": [
+    {
+      "name": "Mega Punch",
+      "url": "move/5/"
+    },
+    {
+      "name": "Fire Punch",
+      "url": "move/7/"
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "move/9/"
+    },
+    {
+      "name": "Scratch",
+      "url": "move/10/"
+    },
+    {
+      "name": "Swords Dance",
+      "url": "move/14/"
+    },
+    {
+      "name": "Cut",
+      "url": "move/15/"
+    },
+    {
+      "name": "Wing Attack",
+      "url": "move/17/"
+    },
+    {
+      "name": "Fly",
+      "url": "move/19/"
+    },
+    {
+      "name": "Mega Kick",
+      "url": "move/25/"
+    },
+    {
+      "name": "Headbutt",
+      "url": "move/29/"
+    },
+    {
+      "name": "Body Slam",
+      "url": "move/34/"
+    },
+    {
+      "name": "Take Down",
+      "url": "move/36/"
+    },
+    {
+      "name": "Double Edge",
+      "url": "move/38/"
+    },
+    {
+      "name": "Leer",
+      "url": "move/43/"
+    },
+    {
+      "name": "Growl",
+      "url": "move/45/"
+    },
+    {
+      "name": "Roar",
+      "url": "move/46/"
+    },
+    {
+      "name": "Ember",
+      "url": "move/52/"
+    },
+    {
+      "name": "Flamethrower",
+      "url": "move/53/"
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "move/63/"
+    },
+    {
+      "name": "Submission",
+      "url": "move/66/"
+    },
+    {
+      "name": "Counter",
+      "url": "move/68/"
+    },
+    {
+      "name": "Seismic Toss",
+      "url": "move/69/"
+    },
+    {
+      "name": "Strength",
+      "url": "move/70/"
+    },
+    {
+      "name": "Solar Beam",
+      "url": "move/76/"
+    },
+    {
+      "name": "Dragon Rage",
+      "url": "move/82/"
+    },
+    {
+      "name": "Fire Spin",
+      "url": "move/83/"
+    },
+    {
+      "name": "Earthquake",
+      "url": "move/89/"
+    },
+    {
+      "name": "Fissure",
+      "url": "move/90/"
+    },
+    {
+      "name": "Dig",
+      "url": "move/91/"
+    },
+    {
+      "name": "Toxic",
+      "url": "move/92/"
+    },
+    {
+      "name": "Rage",
+      "url": "move/99/"
+    },
+    {
+      "name": "Mimic",
+      "url": "move/102/"
+    },
+    {
+      "name": "Double Team",
+      "url": "move/104/"
+    },
+    {
+      "name": "Smokescreen",
+      "url": "move/108/"
+    },
+    {
+      "name": "Defense Curl",
+      "url": "move/111/"
+    },
+    {
+      "name": "Reflect",
+      "url": "move/115/"
+    },
+    {
+      "name": "Bide",
+      "url": "move/117/"
+    },
+    {
+      "name": "Fire Blast",
+      "url": "move/126/"
+    },
+    {
+      "name": "Swift",
+      "url": "move/129/"
+    },
+    {
+      "name": "Skull Bash",
+      "url": "move/130/"
+    },
+    {
+      "name": "Fury Swipes",
+      "url": "move/154/"
+    },
+    {
+      "name": "Rest",
+      "url": "move/156/"
+    },
+    {
+      "name": "Rock Slide",
+      "url": "move/157/"
+    },
+    {
+      "name": "Slash",
+      "url": "move/163/"
+    },
+    {
+      "name": "Substitute",
+      "url": "move/164/"
+    },
+    {
+      "name": "Snore",
+      "url": "move/173/"
+    },
+    {
+      "name": "Curse",
+      "url": "move/174/"
+    },
+    {
+      "name": "Protect",
+      "url": "move/182/"
+    },
+    {
+      "name": "Scary Face",
+      "url": "move/184/"
+    },
+    {
+      "name": "Mud Slap",
+      "url": "move/189/"
+    },
+    {
+      "name": "Outrage",
+      "url": "move/200/"
+    },
+    {
+      "name": "Sandstorm",
+      "url": "move/201/"
+    },
+    {
+      "name": "Endure",
+      "url": "move/203/"
+    },
+    {
+      "name": "False Swipe",
+      "url": "move/206/"
+    },
+    {
+      "name": "Swagger",
+      "url": "move/207/"
+    },
+    {
+      "name": "Fury Cutter",
+      "url": "move/210/"
+    },
+    {
+      "name": "Steel Wing",
+      "url": "move/211/"
+    },
+    {
+      "name": "Attract",
+      "url": "move/213/"
+    },
+    {
+      "name": "Sleep Talk",
+      "url": "move/214/"
+    },
+    {
+      "name": "Return",
+      "url": "move/216/"
+    },
+    {
+      "name": "Frustration",
+      "url": "move/218/"
+    },
+    {
+      "name": "Dynamic Punch",
+      "url": "move/223/"
+    },
+    {
+      "name": "Dragon Breath",
+      "url": "move/225/"
+    },
+    {
+      "name": "Iron Tail",
+      "url": "move/231/"
+    },
+    {
+      "name": "Metal Claw",
+      "url": "move/232/"
+    },
+    {
+      "name": "Hidden Power",
+      "url": "move/237/"
+    },
+    {
+      "name": "Twister",
+      "url": "move/239/"
+    },
+    {
+      "name": "Sunny Day",
+      "url": "move/241/"
+    },
+    {
+      "name": "Crunch",
+      "url": "move/242/"
+    },
+    {
+      "name": "Rock Smash",
+      "url": "move/249/"
+    },
+    {
+      "name": "Beat Up",
+      "url": "move/251/"
+    },
+    {
+      "name": "Heat Wave",
+      "url": "move/257/"
+    },
+    {
+      "name": "Will O Wisp",
+      "url": "move/261/"
+    },
+    {
+      "name": "Facade",
+      "url": "move/263/"
+    },
+    {
+      "name": "Focus Punch",
+      "url": "move/264/"
+    },
+    {
+      "name": "Helping Hand",
+      "url": "move/270/"
+    },
+    {
+      "name": "Brick Break",
+      "url": "move/280/"
+    },
+    {
+      "name": "Secret Power",
+      "url": "move/290/"
+    },
+    {
+      "name": "Blaze Kick",
+      "url": "move/299/"
+    },
+    {
+      "name": "Blast Burn",
+      "url": "move/307/"
+    },
+    {
+      "name": "Weather Ball",
+      "url": "move/311/"
+    },
+    {
+      "name": "Air Cutter",
+      "url": "move/314/"
+    },
+    {
+      "name": "Overheat",
+      "url": "move/315/"
+    },
+    {
+      "name": "Rock Tomb",
+      "url": "move/317/"
+    },
+    {
+      "name": "Aerial Ace",
+      "url": "move/332/"
+    },
+    {
+      "name": "Dragon Claw",
+      "url": "move/337/"
+    },
+    {
+      "name": "Dragon Dance",
+      "url": "move/349/"
+    },
+    {
+      "name": "Roost",
+      "url": "move/355/"
+    },
+    {
+      "name": "Natural Gift",
+      "url": "move/363/"
+    },
+    {
+      "name": "Tailwind",
+      "url": "move/366/"
+    },
+    {
+      "name": "Fling",
+      "url": "move/374/"
+    },
+    {
+      "name": "Flare Blitz",
+      "url": "move/394/"
+    },
+    {
+      "name": "Air Slash",
+      "url": "move/403/"
+    },
+    {
+      "name": "Dragon Pulse",
+      "url": "move/406/"
+    },
+    {
+      "name": "Focus Blast",
+      "url": "move/411/"
+    },
+    {
+      "name": "Giga Impact",
+      "url": "move/416/"
+    },
+    {
+      "name": "Shadow Claw",
+      "url": "move/421/"
+    },
+    {
+      "name": "Fire Fang",
+      "url": "move/424/"
+    },
+    {
+      "name": "Defog",
+      "url": "move/432/"
+    },
+    {
+      "name": "Captivate",
+      "url": "move/445/"
+    },
+    {
+      "name": "Ominous Wind",
+      "url": "move/466/"
+    },
+    {
+      "name": "Hone Claws",
+      "url": "move/468/"
+    },
+    {
+      "name": "Flame Burst",
+      "url": "move/481/"
+    },
+    {
+      "name": "Flame Charge",
+      "url": "move/488/"
+    },
+    {
+      "name": "Round",
+      "url": "move/496/"
+    },
+    {
+      "name": "Echoed Voice",
+      "url": "move/497/"
+    },
+    {
+      "name": "Sky Drop",
+      "url": "move/507/"
+    },
+    {
+      "name": "Incinerate",
+      "url": "move/510/"
+    },
+    {
+      "name": "Acrobatics",
+      "url": "move/512/"
+    },
+    {
+      "name": "Inferno",
+      "url": "move/517/"
+    },
+    {
+      "name": "Fire Pledge",
+      "url": "move/519/"
+    },
+    {
+      "name": "Bulldoze",
+      "url": "move/523/"
+    },
+    {
+      "name": "Dragon Tail",
+      "url": "move/525/"
+    },
+    {
+      "name": "Work Up",
+      "url": "move/526/"
+    },
+    {
+      "name": "Heat Crash",
+      "url": "move/535/"
+    },
+    {
+      "name": "Hurricane",
+      "url": "move/542/"
+    },
+    {
+      "name": "Confide",
+      "url": "move/590/"
+    },
+    {
+      "name": "Mystical Fire",
+      "url": "move/595/"
+    },
+    {
+      "name": "Power Up Punch",
+      "url": "move/612/"
+    },
+    {
+      "name": "Brutal Swing",
+      "url": "move/693/"
+    },
+    {
+      "name": "Breaking Swipe",
+      "url": "move/784/"
+    },
+    {
+      "name": "Scale Shot",
+      "url": "move/799/"
+    },
+    {
+      "name": "Dual Wingbeat",
+      "url": "move/814/"
+    },
+    {
+      "name": "Scorching Sands",
+      "url": "move/815/"
+    },
+    {
+      "name": "Tera Blast",
+      "url": "move/851/"
+    }
+  ],
+  "name": "charizard",
+  "species": {
+    "name": "charizard",
+    "url": "https://pokeapi.co/api/v2/pokemon-species/6/"
+  },
+  "pictures": {
+    "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/6.png"
+  },
+  "stats": [
+    {
+      "baseStat": 78,
+      "name": "Hp"
+    },
+    {
+      "baseStat": 84,
+      "name": "Attack"
+    },
+    {
+      "baseStat": 78,
+      "name": "Defense"
+    },
+    {
+      "baseStat": 109,
+      "name": "Special Attack"
+    },
+    {
+      "baseStat": 85,
+      "name": "Special Defense"
+    },
+    {
+      "baseStat": 100,
+      "name": "Speed"
+    }
+  ],
+  "types": [
+    {
+      "name": "Fire",
+      "url": "type/10/"
+    },
+    {
+      "name": "Flying",
+      "url": "type/3/"
+    }
+  ],
+  "weight": 90.5,
+  "description": "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.",
+  "generation": {
+    "name": "Generation I",
+    "url": "generation/1/"
+  },
+  "genus": "Flame Pokémon",
+  "varieties": [
+    {
+      "name": "Charizard",
+      "url": "pokemon/6/"
+    },
+    {
+      "name": "Charizard Mega X",
+      "url": "pokemon/10034/"
+    },
+    {
+      "name": "Charizard Mega Y",
+      "url": "pokemon/10035/"
+    },
+    {
+      "name": "Charizard Gmax",
+      "url": "pokemon/10196/"
+    }
+  ]
+}

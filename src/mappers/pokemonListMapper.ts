@@ -1,6 +1,7 @@
 import { IUnparsedPokemonList, IParsedPokemonList } from "../types/pokemonList";
 import PokemonList from "../entities/pokemonList";
 import capitalizeString from "../utils/capitalizeString";
+import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 
 export default function mapPokemonList(
   pokemonList: IUnparsedPokemonList
@@ -8,9 +9,8 @@ export default function mapPokemonList(
   const count = pokemonList.count;
   const next = pokemonList.next;
   const results = pokemonList.results.map((pokemon) => ({
-    displayName: capitalizeString(pokemon.name),
-    name: pokemon.name,
-    url: pokemon.url,
+    name: capitalizeString(pokemon.name),
+    url: retrievePathFromUrl(pokemon.url),
   }));
   return new PokemonList({ count, next, results });
 }

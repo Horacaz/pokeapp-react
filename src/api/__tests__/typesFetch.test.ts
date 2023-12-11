@@ -1,14 +1,6 @@
 import fetchTypesFromApi from "../typesFetch";
-
-const fetchMock = (global.fetch = vi.fn().mockImplementation(
-  () =>
-    new Promise((resolve) => {
-      const jsonPromise = new Promise((r) => {
-        r({});
-      });
-      resolve({ json: () => jsonPromise });
-    })
-));
+import { setupFetchMock } from "../../../__utils__/testHelpers";
+const fetchMock = setupFetchMock();
 
 const expectedUrl = "https://pokeapi.co/api/v2/type/10";
 describe("fetchTypesFromApi", () => {
