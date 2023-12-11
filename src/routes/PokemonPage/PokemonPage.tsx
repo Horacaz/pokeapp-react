@@ -41,21 +41,22 @@ type PokemonPageContent = {
 function PokemonPageContent(props: PokemonPageContent) {
   const { data, shiny, setShiny } = props;
   return (
-    <Container maxW={["100vw", "90vw"]}>
-      <Grid justifyContent={"center"}>
-        <GridItem>
-          <Grid templateColumns={["", "3fr 1fr"]}>
-            <GridItem order={[2, 1]}>
-              <PokemonInformation data={data} />
-            </GridItem>
-            <GridItem order={[1, 2]}>
-              <PokemonDigest data={data} shiny={shiny} onClick={setShiny} />
-            </GridItem>
-          </Grid>
+    <Container maxW={["100vw"]}>
+      <Grid
+        templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "2fr 1fr"]}
+        borderRadius={5}
+        gap={2}
+      >
+        <GridItem order={[2, 2, 1]}>
+          <PokemonInformation data={data} />
+          <PokemonAbilities data={data} />
         </GridItem>
-        <PokemonVarieties data={data} />
-        <PokemonMoves data={data} />
+        <GridItem order={[1, 1, 2]}>
+          <PokemonDigest data={data} shiny={shiny} onClick={setShiny} />
+        </GridItem>
       </Grid>
+      <PokemonVarieties data={data} />
+      <PokemonMoves data={data} />
     </Container>
   );
 }
@@ -68,18 +69,13 @@ type PokemonDigest = {
 function PokemonDigest(props: PokemonDigest) {
   const { data, shiny, onClick } = props;
   return (
-    <GridItem
-      mx={2}
-      px={2}
-      backgroundColor={"brand.background"}
-      borderRadius={5}
-    >
+    <Box backgroundColor={"brand.accent"} borderRadius={5} m={4} p={4}>
       <PokemonCard
         pokemon={data}
         onClick={() => onClick(!shiny)}
         isShiny={shiny}
       />
-    </GridItem>
+    </Box>
   );
 }
 
@@ -91,12 +87,12 @@ type PokemonCardProps = {
 function PokemonCard(props: PokemonCardProps) {
   const { pokemon } = props;
   return (
-    <Stack>
+    <Stack borderRadius={5} p={2} m={2}>
       <Box>
         <Heading
           textAlign="center"
           as="h3"
-          size="lg"
+          size={["lg", "xl"]}
           fontWeight="bolder"
           p={2}
           color={"brand.text"}
@@ -108,66 +104,69 @@ function PokemonCard(props: PokemonCardProps) {
         <Text
           textAlign="center"
           fontWeight="bold"
-          size="lg"
+          size={["lg", "xl"]}
           p={2}
           mt={-4}
-          color={"brand.text"}
+          color={"brand.primary"}
         >
           {pokemon.genus}
         </Text>
       </Box>
-      <Box>
+      <Box backgroundColor="brand.accent" borderRadius={5}>
         <Image
           _hover={{ cursor: "pointer" }}
           onClick={props.onClick}
-          p={2}
-          margin="auto"
-          borderRadius={10}
-          backgroundColor="gray.300"
+          margin={"auto"}
           src={
             props.isShiny ? pokemon.pictures.shiny : pokemon.pictures.default
           }
           alt={pokemon.name}
         />
       </Box>
-      <Box>
-        <Grid templateColumns="repeat(2, 1fr)">
-          <ListOfTypes list={pokemon.types} />
-        </Grid>
+      <Box textAlign={"center"}>
+        <ListOfTypes list={pokemon.types} />
       </Box>
-
-      <Box>
-        <Text fontSize="lg" fontWeight="bold" color={"brand.text"}>
-          Generation
-        </Text>
-        <Text fontSize="md" fontWeight="medium" color={"brand.text"}>
-          <Link href={`../../${pokemon.generation.url}`}>
-            {pokemon.generation.name}
-          </Link>
-        </Text>
-      </Box>
-
-      <Box>
-        <Text fontSize="lg" fontWeight="bold" color={"brand.text"}>
-          National Pokedex Entry
-        </Text>
-        <Text fontSize="md" fontWeight="medium" color={"brand.text"}>
-          N° {pokemon.id}
-        </Text>
-      </Box>
-
-      <Box>
-        <Text fontSize="lg" fontWeight="bold" color={"brand.text"}>
-          Abilities
-        </Text>
-        <HStack fontSize="md" fontWeight="medium" color={"brand.text"}>
-          {pokemon.abilities.map((ability) => (
-            <Link key={ability.name} href={`../../${ability.url}`}>
-              {ability.name}
+      <Grid templateColumns={"repeat(2, 1fr)"}>
+        <GridItem>
+          <PokemonCardTitle title="Generation" />
+          <Text
+            fontSize={["sm", "md", "md"]}
+            fontWeight="medium"
+            color={"brand.primary"}
+          >
+            <Link
+              _hover={{ textDecoration: "none" }}
+              href={`../../${pokemon.generation.url}`}
+            >
+              {pokemon.generation.name}
             </Link>
-          ))}
-        </HStack>
-      </Box>
+          </Text>
+        </GridItem>
+        <GridItem>
+          <PokemonCardTitle title="Pokedex Entry" />
+          <Text
+            fontSize={["sm", "md", "md"]}
+            fontWeight="medium"
+            color={"brand.primary"}
+          >
+            N° {pokemon.id}
+          </Text>
+        </GridItem>
+      </Grid>
+      <Grid templateColumns={"repeat(3, 1fr)"}>
+        <GridItem>
+          <PokemonCardTitle title="Weight" />
+          <PokemonCardValue value={pokemon.weight} />
+        </GridItem>
+        <GridItem>
+          <PokemonCardTitle title="Height" />
+          <PokemonCardValue value={pokemon.height} />
+        </GridItem>
+        <GridItem>
+          <PokemonCardTitle title="Experience" />
+          <PokemonCardValue value={pokemon.baseExperience} />
+        </GridItem>
+      </Grid>
     </Stack>
   );
 }
@@ -175,13 +174,7 @@ function PokemonCard(props: PokemonCardProps) {
 function PokemonSection(props: { title: string }) {
   const { title } = props;
   return (
-    <Heading
-      display="inline"
-      borderBottom="5px solid white"
-      as="h2"
-      size={["md", "lg"]}
-      color={"brand.text"}
-    >
+    <Heading display="inline" as="h2" size={["lg", "xl"]} color={"brand.text"}>
       {title}
     </Heading>
   );
@@ -191,65 +184,36 @@ function PokemonSectionSubtitle(props: { subTitle: string }) {
   const { subTitle } = props;
   return (
     <Text
-      color={"brand.accent"}
-      size={["sm", "md"]}
-      fontWeight={600}
-      paddingY={1}
-      marginY={1}
+      color={"brand.primary"}
+      fontSize={["sm", "md"]}
+      fontWeight="bold"
+      mb={1}
+      pb={1}
     >
       {subTitle}
     </Text>
   );
 }
 
-function BoldedText(props: { text: string }) {
-  const { text } = props;
-  return (
-    <Heading as="h3" size="md" fontWeight={600} color={"brand.text"}>
-      {text}
-    </Heading>
-  );
-}
-
 function PokemonInformation(props: { data: TPokemon }) {
   const { data } = props;
   return (
-    <GridItem
-      mx={2}
-      px={2}
-      backgroundColor={"brand.background"}
-      borderRadius={5}
-      color={"brand.text"}
-    >
-      <PokemonSection title="Information" />
-      <PokemonSectionSubtitle subTitle="Pokémon description from Pokédex" />
-      <Text fontSize={["md", "lg"]}>{data.description}</Text>
-      <Grid marginY={2} templateColumns={"repeat(3, 1fr)"} textAlign={"center"}>
-        <GridItem>
-          <BoldedText text="Weight" />
-          <Text fontWeight={600} p={2}>
-            {data.weight}
-          </Text>
-        </GridItem>
-        <GridItem>
-          <BoldedText text="Height" />
-          <Text fontWeight={600} p={2}>
-            {data.height}
-          </Text>
-        </GridItem>
-        <GridItem>
-          <BoldedText text="Base Experience" />
-          <Text fontWeight={600} p={2}>
-            {data.baseExperience}
-          </Text>
-        </GridItem>
-      </Grid>
-      <PokemonSection title="Stats" />
-      <PokemonSectionSubtitle subTitle="Pokémon Base Stats" />
-      <Grid templateColumns={"repeat(2, 0.3fr)"}>
-        <PokemonStats stats={data.stats} />
-      </Grid>
-    </GridItem>
+    <Box textColor={"brand.text"}>
+      <Box backgroundColor={"brand.accent"} borderRadius={5} m={4} p={4}>
+        <PokemonSection title="Information" />
+        <PokemonSectionSubtitle subTitle="Pokémon description from Pokédex" />
+        <Text fontWeight={"bold"} fontSize={["sm", "md", "lg"]}>
+          {data.description}
+        </Text>
+      </Box>
+      <Box backgroundColor={"brand.accent"} borderRadius={5} m={4} p={4}>
+        <PokemonSection title="Stats" />
+        <PokemonSectionSubtitle subTitle="Pokémon Base Stats" />
+        <Grid marginY={2} templateColumns={"repeat(2, 1fr)"}>
+          <PokemonStats stats={data.stats} />
+        </Grid>
+      </Box>
+    </Box>
   );
 }
 
@@ -259,8 +223,19 @@ function PokemonStats(props: { stats: TPokemon["stats"] }) {
     <>
       {stats.map((stat) => (
         <Box key={stat.name}>
-          <BoldedText text={stat.name} />
-          <Text size="md" fontWeight={600} paddingY={2} marginY={2}>
+          <Text
+            fontSize={["sm", "md", "lg"]}
+            fontWeight={"bold"}
+            color={"brand.text"}
+          >
+            {stat.name}
+          </Text>
+          <Text
+            fontSize={["sm", "md", "lg"]}
+            fontWeight={"bold"}
+            marginY={2}
+            color={"brand.primary"}
+          >
             {stat.baseStat}
           </Text>
         </Box>
@@ -272,21 +247,52 @@ function PokemonStats(props: { stats: TPokemon["stats"] }) {
 function PokemonMoves(props: { data: TPokemon }) {
   const { data } = props;
   return (
-    <GridItem m={2} p={2} backgroundColor={"brand.background"} borderRadius={5}>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
       <PokemonSection title="Moves" />
       <PokemonSectionSubtitle subTitle="Learnable moves" />
       <ListOfMoves list={data.moves} />
-    </GridItem>
+    </Box>
   );
 }
 
 function PokemonVarieties(props: { data: TPokemon }) {
   const { data } = props;
   return (
-    <GridItem m={2} p={2} backgroundColor={"brand.background"} borderRadius={5}>
+    <Box backgroundColor={"brand.accent"} borderRadius={5} m={4} p={4}>
       <PokemonSection title="Varieties" />
       <PokemonSectionSubtitle subTitle="Other varieties of this Pokémon" />
       <ListOfPokemon list={data.varieties} />
-    </GridItem>
+    </Box>
+  );
+}
+
+function PokemonAbilities(props: { data: TPokemon }) {
+  const { data } = props;
+  return (
+    <Box backgroundColor={"brand.accent"} borderRadius={5} m={4} p={4}>
+      <PokemonSection title="Abilities" />
+      <PokemonSectionSubtitle subTitle="Passive abilities of this Pokémon" />
+      <ListOfPokemon list={data.abilities} />
+    </Box>
+  );
+}
+
+function PokemonCardTitle(props: { title: string }) {
+  return (
+    <Text fontSize={["sm", "md", "md"]} fontWeight="bold" color={"brand.text"}>
+      {props.title}
+    </Text>
+  );
+}
+
+function PokemonCardValue(props: { value: number | string }) {
+  return (
+    <Text
+      fontSize={["sm", "md", "md"]}
+      fontWeight="bold"
+      color={"brand.primary"}
+    >
+      {props.value}
+    </Text>
   );
 }

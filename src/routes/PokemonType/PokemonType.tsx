@@ -56,20 +56,27 @@ function TypeDigest(props: { data: IParsedType }) {
 function Information(props: { data: IParsedType }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <SubHeading title="Information" />
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Information" />
       <Box p={2} borderRadius={5}>
-        <Text color={"brand.text"} fontWeight={"bold"}>
-          It first introduction was on{" "}
-          <Link color={"brand.accent"} href={`../../${data.generation.url}`}>
+        <Text fontSize={["sm", "md"]} color={"brand.text"} fontWeight={"bold"}>
+          Its first introduction was on{" "}
+          <Link color={"brand.primary"} href={`../../${data.generation.url}`}>
             {data.generation.name}
           </Link>
         </Text>
-        <Text color={"brand.text"} fontWeight={"bold"}>
-          There are currently {data.moves.length} Moves and{" "}
-          {data.pokemon.length} Pokemon that share this Type.
+        <Text fontSize={["sm", "md"]} color={"brand.text"} fontWeight={"bold"}>
+          There are currently{" "}
+          <Text as="span" color={"brand.primary"}>
+            {data.moves.length}
+          </Text>{" "}
+          Moves and{" "}
+          <Text as="span" color={"brand.primary"}>
+            {data.pokemon.length}
+          </Text>{" "}
+          Pokemon that share this Type.
         </Text>
-        <Text color={"brand.text"} fontWeight={"bold"}>
+        <Text fontSize={["sm", "md"]} color={"brand.text"} fontWeight={"bold"}>
           Its Damage Class is {data.moveDamageClass.name}.
         </Text>
       </Box>
@@ -79,10 +86,10 @@ function Information(props: { data: IParsedType }) {
 function DamageModifiers(props: { data: IParsedType }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <SubHeading title="Damage Modifiers" />
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Damage Modifiers" />
       <Box p={2} borderRadius={5}>
-        <SubText text="Takes Double Damage From" />
+        <PokemonSectionSubtitle text="Takes Double Damage From" />
         <Grid
           gridTemplateColumns={["repeat(2, 1fr)", "repeat(3, 1fr)"]}
           gap={2}
@@ -91,7 +98,7 @@ function DamageModifiers(props: { data: IParsedType }) {
         </Grid>
       </Box>
       <Box p={2} borderRadius={5}>
-        <SubText text="Deals Double Damage to" />
+        <PokemonSectionSubtitle text="Deals Double Damage to" />
         <Grid
           gridTemplateColumns={["repeat(2, 1fr)", "repeat(3, 1fr)"]}
           gap={2}
@@ -100,7 +107,7 @@ function DamageModifiers(props: { data: IParsedType }) {
         </Grid>
       </Box>
       <Box p={2} borderRadius={5}>
-        <SubText text="Takes Half Damage From" />
+        <PokemonSectionSubtitle text="Takes Half Damage From" />
         <Grid
           gridTemplateColumns={["repeat(2, 1fr)", "repeat(3, 1fr)"]}
           gap={1}
@@ -109,7 +116,7 @@ function DamageModifiers(props: { data: IParsedType }) {
         </Grid>
       </Box>
       <Box p={2} borderRadius={5}>
-        <SubText text="Deals Half Damage to" />
+        <PokemonSectionSubtitle text="Deals Half Damage to" />
         <Grid
           gridTemplateColumns={["repeat(2, 1fr)", "repeat(3, 1fr)"]}
           gap={2}
@@ -118,7 +125,7 @@ function DamageModifiers(props: { data: IParsedType }) {
         </Grid>
       </Box>
       <Box p={2} borderRadius={5}>
-        <SubText text="Takes No Damage From" />
+        <PokemonSectionSubtitle text="Takes No Damage From" />
         <Grid
           gridTemplateColumns={["repeat(2, 1fr)", "repeat(3, 1fr)"]}
           gap={2}
@@ -127,7 +134,7 @@ function DamageModifiers(props: { data: IParsedType }) {
         </Grid>
       </Box>
       <Box p={2} borderRadius={5}>
-        <SubText text="Deals No Damage to" />
+        <PokemonSectionSubtitle text="Deals No Damage to" />
         <Grid
           gridTemplateColumns={["repeat(2, 1fr)", "repeat(3, 1fr)"]}
           gap={2}
@@ -142,10 +149,10 @@ function DamageModifiers(props: { data: IParsedType }) {
 function Moves(props: { data: IParsedType }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <SubHeading title="Moves" />
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Moves" />
       <Box p={2} borderRadius={5}>
-        <SubText text="Moves that share this type" />
+        <PokemonSectionSubtitle text="Moves that share this type" />
 
         <ListOfMoves list={data.moves} />
       </Box>
@@ -156,10 +163,10 @@ function Moves(props: { data: IParsedType }) {
 function Pokemon(props: { data: IParsedType }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <SubHeading title="Pokemon" />
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Pokemon" />
       <Box p={2} borderRadius={5}>
-        <SubText text="Pokemon that share this type" />
+        <PokemonSectionSubtitle text="Pokemon that share this type" />
 
         <ListOfPokemon list={data.pokemon} />
       </Box>
@@ -167,13 +174,12 @@ function Pokemon(props: { data: IParsedType }) {
   );
 }
 
-function SubHeading(props: { title: string }) {
+function PokemonSection(props: { title: string }) {
   return (
     <Heading
-      borderBottom="4px solid white"
       display="inline-block"
       as="h2"
-      size={["md", "lg"]}
+      size={["lg", "xl"]}
       color={"brand.text"}
     >
       {props.title}
@@ -181,13 +187,13 @@ function SubHeading(props: { title: string }) {
   );
 }
 
-function SubText(props: { text: string }) {
+function PokemonSectionSubtitle(props: { text: string }) {
   const { text } = props;
   return (
     <Text
-      py={1}
+      pb={2}
       fontSize={["sm", "md"]}
-      color={"brand.accent"}
+      color={"brand.primary"}
       fontWeight={"bold"}
     >
       {text}

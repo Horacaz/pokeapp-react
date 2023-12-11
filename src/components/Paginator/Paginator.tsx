@@ -81,8 +81,8 @@ function PaginatorButton(props: PaginatorButtonProps) {
       fontSize={["xs", "sm"]}
       m={["1px", 1]}
       isDisabled={props.isDisabled}
-      color={props.isCurrent ? "brand.primary" : "brand.text"}
-      bgColor={props.isCurrent ? "brand.accent" : "brand.primary"}
+      color={props.isCurrent ? "brand.background" : "brand.text"}
+      bgColor={props.isCurrent ? "brand.secondary" : "brand.primary"}
       fontWeight="bold"
       variant="solid"
       width={["4px", "4px", "100px"]}

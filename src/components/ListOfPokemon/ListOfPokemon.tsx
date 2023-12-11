@@ -33,7 +33,7 @@ function PokemonButton(props: Pokemon) {
       backgroundColor="brand.secondary"
       color="brand.background"
       variant="solid"
-      fontSize={["xs", "sm"]}
+      fontSize={["xs", "sm", "md"]}
       width="100%"
       whiteSpace="normal"
       textAlign={"center"}

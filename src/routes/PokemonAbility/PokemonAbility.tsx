@@ -41,7 +41,7 @@ function AbilityDigest(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
     <Box textAlign="center">
-      <Heading as="h2" size="lg" color={"brand.accent"}>
+      <Heading as="h2" size="lg" color={"brand.primary"}>
         {data.displayName}
       </Heading>
     </Box>
@@ -51,16 +51,8 @@ function AbilityDigest(props: { data: IParsedPokemonAbility }) {
 function Effect(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Effect
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Effect" />
       <Text
         py={2}
         color={"brand.text"}
@@ -76,16 +68,8 @@ function Effect(props: { data: IParsedPokemonAbility }) {
 function PokedexEntry(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Pokedex Entry
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Pokedex Entry" />
       <Text
         py={2}
         color={"brand.text"}
@@ -101,16 +85,8 @@ function PokedexEntry(props: { data: IParsedPokemonAbility }) {
 function Generation(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Generation
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Generation" />
       <Text
         py={2}
         color={"brand.text"}
@@ -118,7 +94,7 @@ function Generation(props: { data: IParsedPokemonAbility }) {
         fontWeight={"bold"}
       >
         This ability was first introduced on{" "}
-        <Link color={"brand.accent"} href={`../../${data.generation.url}`}>
+        <Link color={"brand.primary"} href={`../../${data.generation.url}`}>
           {data.generation.name}
         </Link>
       </Text>
@@ -129,22 +105,38 @@ function Generation(props: { data: IParsedPokemonAbility }) {
 function PokemonList(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Pokemon
-      </Heading>
-      <Text py={2} color={"brand.accent"} fontWeight={"bold"}>
-        Pokemon that share this ability
-      </Text>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Pokemon" />
+      <PokemonSectionSubtitle subTitle="Pokemon that share this ability" />
       <Box p={2}>
         <ListOfPokemon list={data.pokemon} />
       </Box>
     </Box>
+  );
+}
+
+function PokemonSection(props: { title: string }) {
+  return (
+    <Heading
+      display="inline-block"
+      as="h2"
+      size={["lg", "xl"]}
+      color={"brand.text"}
+    >
+      {props.title}
+    </Heading>
+  );
+}
+
+function PokemonSectionSubtitle(props: { subTitle: string }) {
+  return (
+    <Text
+      pb={2}
+      fontSize={["sm", "md"]}
+      color={"brand.primary"}
+      fontWeight={"bold"}
+    >
+      {props.subTitle}
+    </Text>
   );
 }

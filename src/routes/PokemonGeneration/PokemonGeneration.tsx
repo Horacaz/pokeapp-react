@@ -47,7 +47,7 @@ function GenerationDigest(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
     <Box textAlign="center">
-      <Heading as="h2" size="lg" color={"brand.accent"}>
+      <Heading as="h2" size="lg" color={"brand.primary"}>
         Generation {data.id}
       </Heading>
     </Box>
@@ -56,16 +56,8 @@ function GenerationDigest(props: { data: IParsedGeneration }) {
 function MainRegion(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Main Region
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Main Region" />
       <Text
         py={2}
         fontSize={["sm", "md"]}
@@ -73,7 +65,7 @@ function MainRegion(props: { data: IParsedGeneration }) {
         fontWeight={"bold"}
       >
         The Main Region that is featured on this Generation is{" "}
-        <Text as="span" color={"brand.accent"}>
+        <Text as="span" color={"brand.primary"}>
           {data.mainRegion}
         </Text>
         .
@@ -85,16 +77,8 @@ function MainRegion(props: { data: IParsedGeneration }) {
 function Types(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Types
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Types" />
       <Text
         py={2}
         fontSize={["sm", "md"]}
@@ -112,16 +96,8 @@ function Types(props: { data: IParsedGeneration }) {
 
 function Abilities() {
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Abilities
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Abilities" />
       <Text
         py={2}
         fontSize={["sm", "md"]}
@@ -137,16 +113,8 @@ function Abilities() {
 function Moves(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Moves
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Moves" />
       <Text
         py={2}
         fontSize={["sm", "md"]}
@@ -154,7 +122,7 @@ function Moves(props: { data: IParsedGeneration }) {
         fontWeight={"bold"}
       >
         A total of{" "}
-        <Text as="span" color={"brand.accent"}>
+        <Text as="span" color={"brand.primary"}>
           {data.moves.length}
         </Text>{" "}
         Moves were introduced in this Generation.
@@ -169,16 +137,8 @@ function Moves(props: { data: IParsedGeneration }) {
 function Pokemon(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="5px solid white"
-        display="inline-block"
-        as="h2"
-        size={["md", "lg"]}
-        color={"brand.text"}
-      >
-        Pokemon
-      </Heading>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Pokemon" />
       <Text
         py={2}
         fontSize={["sm", "md"]}
@@ -186,7 +146,7 @@ function Pokemon(props: { data: IParsedGeneration }) {
         fontWeight={"bold"}
       >
         A total of{" "}
-        <Text as="span" color={"brand.accent"}>
+        <Text as="span" color={"brand.primary"}>
           {data.pokemonSpecies.length}
         </Text>{" "}
         Pokemon were introduced in this Generation.
@@ -195,5 +155,18 @@ function Pokemon(props: { data: IParsedGeneration }) {
         <ListOfPokemon list={data.pokemonSpecies} />
       </Box>
     </Box>
+  );
+}
+
+function PokemonSection(props: { title: string }) {
+  return (
+    <Heading
+      display="inline-block"
+      as="h2"
+      size={["lg", "xl"]}
+      color={"brand.text"}
+    >
+      {props.title}
+    </Heading>
   );
 }

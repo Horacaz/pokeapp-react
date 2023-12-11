@@ -10,7 +10,11 @@ export default function Header() {
         m={1}
         display={"inline-block"}
       >
-        <Link textDecoration={"none"} _hover={{ textDecoration: "none" }}>
+        <Link
+          textDecoration={"none"}
+          _hover={{ textDecoration: "none" }}
+          href="/"
+        >
           Pokemon Application
         </Link>
       </Heading>

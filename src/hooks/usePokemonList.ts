@@ -15,7 +15,7 @@ export default function usePokemonList(pokemonOffset: number) {
     const getPokemonList = async () => {
       handleLoadingAction();
       try {
-        const pokemonList = await pokemonApp.getPokemonList(20, pokemonOffset);
+        const pokemonList = await pokemonApp.getPokemonList(24, pokemonOffset);
         handleSuccessAction(pokemonList);
       } catch (error) {
         handleErrorAction(error as Error);

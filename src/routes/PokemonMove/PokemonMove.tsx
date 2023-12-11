@@ -45,7 +45,7 @@ function MoveDigest(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
     <Box textAlign="center">
-      <Heading as="h2" py={2} size={["md", "lg"]} color={"brand.accent"}>
+      <Heading as="h2" size={["md", "lg"]} color={"brand.primary"}>
         {data.name}
       </Heading>
       <ListOfTypes list={data.type} />
@@ -56,22 +56,9 @@ function MoveDigest(props: { data: IParsedPokemonMove }) {
 function Effect(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="4px solid white"
-        display="inline-block"
-        as="h2"
-        size={["lg", "xl"]}
-        color={"brand.text"}
-      >
-        Effect
-      </Heading>
-      <Text
-        py={2}
-        fontSize={["sm", "md"]}
-        color={"brand.text"}
-        fontWeight={"bold"}
-      >
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Effect" />
+      <Text fontSize={["sm", "md"]} color={"brand.text"} fontWeight={"bold"}>
         {data.effect}
       </Text>
     </Box>
@@ -81,22 +68,10 @@ function Effect(props: { data: IParsedPokemonMove }) {
 function PokedexEntry(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="4px solid white"
-        display="inline-block"
-        as="h2"
-        size={["lg", "xl"]}
-        color={"brand.text"}
-      >
-        Pokedex Entry
-      </Heading>
-      <Text
-        py={2}
-        fontSize={["sm", "md"]}
-        color={"brand.text"}
-        fontWeight={"bold"}
-      >
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Pokedex Entry" />
+
+      <Text fontSize={["sm", "md"]} color={"brand.text"} fontWeight={"bold"}>
         {data.description}
       </Text>
     </Box>
@@ -106,24 +81,11 @@ function PokedexEntry(props: { data: IParsedPokemonMove }) {
 function Generation(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="4px solid white"
-        display="inline-block"
-        as="h2"
-        size={["lg", "xl"]}
-        color={"brand.text"}
-      >
-        Generation
-      </Heading>
-      <Text
-        py={2}
-        fontSize={["sm", "md"]}
-        color={"brand.text"}
-        fontWeight={"bold"}
-      >
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Generation" />
+      <Text fontSize={["sm", "md"]} color={"brand.text"} fontWeight={"bold"}>
         This move was first introduced in{" "}
-        <Link color={"brand.accent"} href={`../../${data.generation.url}`}>
+        <Link color={"brand.primary"} href={`../../${data.generation.url}`}>
           {data.generation.name}
         </Link>
       </Text>
@@ -133,24 +95,9 @@ function Generation(props: { data: IParsedPokemonMove }) {
 
 function Stats() {
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="4px solid white"
-        display="inline-block"
-        as="h2"
-        size={["lg", "xl"]}
-        color={"brand.text"}
-      >
-        Stats
-      </Heading>
-      <Text
-        py={2}
-        fontSize={["sm", "md"]}
-        color={"brand.text"}
-        fontWeight={"bold"}
-      >
-        Stats information
-      </Text>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Stats" />
+      <PokemonSectionSubtitle subTitle="Stats information" />
     </Box>
   );
 }
@@ -158,27 +105,36 @@ function Stats() {
 function PokemonList(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <Box my={2}>
-      <Heading
-        borderBottom="4px solid white"
-        display="inline-block"
-        as="h2"
-        size={["lg", "xl"]}
-        color={"brand.text"}
-      >
-        Pokemon
-      </Heading>
-      <Text
-        py={2}
-        fontSize={["sm", "md"]}
-        color={"brand.accent"}
-        fontWeight={"bold"}
-      >
-        Pokemon that can learn this Move
-      </Text>
-      <Box>
-        <ListOfPokemon list={data?.learnedBy} />
-      </Box>
+    <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
+      <PokemonSection title="Pokemon" />
+      <PokemonSectionSubtitle subTitle="Pokemon that can learn this move" />
+      <ListOfPokemon list={data?.learnedBy} />
     </Box>
+  );
+}
+
+function PokemonSection(props: { title: string }) {
+  return (
+    <Heading
+      display="inline-block"
+      as="h2"
+      size={["lg", "xl"]}
+      color={"brand.text"}
+    >
+      {props.title}
+    </Heading>
+  );
+}
+
+function PokemonSectionSubtitle(props: { subTitle: string }) {
+  return (
+    <Text
+      pb={2}
+      fontSize={["sm", "md"]}
+      color={"brand.primary"}
+      fontWeight={"bold"}
+    >
+      {props.subTitle}
+    </Text>
   );
 }

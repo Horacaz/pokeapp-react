@@ -4,14 +4,14 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "#121213",
+        bg: "#000000",
       },
     },
   },
   colors: {
     brand: {
-      background: "#121213",
-      accent: "#52616B",
+      background: "#000000",
+      accent: "#9191910d",
       primary: "#1E2022",
       secondary: "#D9D9D9",
       text: "#F0F5F9",
@@ -20,3 +20,6 @@ const theme = extendTheme({
 });
 
 export default theme;
+
+// #c5b5b50d
+//"#52616B",

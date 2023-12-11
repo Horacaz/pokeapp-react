@@ -14,7 +14,7 @@ export default function PokemonList() {
   const [offset, setOffset] = useState(0);
   const { data, loading, error } = usePokemonList(offset);
   const [currentPage, setCurrentPage] = useState(1);
-  const offSetIncrement = 20;
+  const offSetIncrement = 24;
 
   useEffect(() => {
     setOffset((currentPage - 1) * offSetIncrement);
@@ -47,7 +47,7 @@ function PokemonListContent(props: {
     <Container maxW={["100vw", "90vw"]}>
       <Heading as="h2" mb={4} color="brand.text" fontSize={"2xl"}>
         Currently Available Pokemon{" "}
-        <Text as="span" color="brand.accent">
+        <Text as="span" color="brand.primary">
           {data.count}
         </Text>
       </Heading>

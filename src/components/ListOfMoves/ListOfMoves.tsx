@@ -28,7 +28,7 @@ function MoveButton(props: Move) {
       }}
       fontWeight="bold"
       backgroundColor={"brand.accent"}
-      color={"brand.background"}
+      color={"brand.text"}
       variant="solid"
       fontSize={["xs", "sm", "md"]}
       width="100%"
