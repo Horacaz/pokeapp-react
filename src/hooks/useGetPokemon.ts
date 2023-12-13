@@ -10,7 +10,6 @@ import fetchPokemonSpeciesFromApi from "../api/pokemonSpeciesFetch";
 export default function useGetPokemon(params: string) {
   const { state, handleLoadingAction, handleSuccessAction, handleErrorAction } =
     usePokeApp<TPokemon>();
-
   useEffect(() => {
     const getPokemon = async () => {
       handleLoadingAction();
