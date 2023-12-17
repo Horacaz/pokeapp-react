@@ -12,6 +12,8 @@ import { IParsedGeneration } from "../types/generation";
 import { IParsedPokemonList } from "../types/pokemonList";
 import { IParsedPokemonMove } from "../types/pokemonMove";
 import { IParsedType } from "../types/pokemonType";
+import { IParsedPokemon } from "../types/pokemon";
+import { IParsedPokemonSpecies } from "../types/pokemonSpecies";
 
 export default class PokemonApp {
   api: ApiService;
@@ -20,12 +22,13 @@ export default class PokemonApp {
     this.api = apiService;
     this.storage = storageService;
   }
-  async getPokemon(name: string) {
+  async getPokemon(name: string): Promise<IParsedPokemon> {
     try {
-      this.storage.getPokemon(name);
+      return this.storage.getPokemon(name);
     } catch (error) {
       const pokemon = mapPokemon(await this.api.getPokemon(name));
       this.storage.savePokemon(pokemon);
+      return pokemon;
     }
   }
 
@@ -69,12 +72,13 @@ export default class PokemonApp {
     }
   }
 
-  async getSpecies(name: string) {
+  async getSpecies(id: number): Promise<IParsedPokemonSpecies> {
     try {
-      this.storage.getPokemonSpecies(name);
+      return this.storage.getPokemonSpecies(id);
     } catch (error) {
-      const species = mapPokemonSpecies(await this.api.getPokemonSpecies(name));
+      const species = mapPokemonSpecies(await this.api.getPokemonSpecies(id));
       this.storage.savePokemonSpecies(species);
+      return species;
     }
   }
 

@@ -11,6 +11,7 @@ import {
   GridItem,
   Stack,
   Container,
+  Link,
 } from "@chakra-ui/react";
 import {
   Loading,
@@ -18,6 +19,7 @@ import {
   ListOfTypes,
   ListOfMoves,
   ListOfPokemon,
+  Footer,
 } from "../../components";
 
 import { useParams } from "react-router-dom";
@@ -27,7 +29,7 @@ export default function PokemonPage() {
   const { loading, data, error } = useGetPokemon(id);
 
   if (loading) return <Loading isLoading={loading} />;
-  if (error) return <ErrorMessage />;
+  if (error) return <ErrorMessage error={error} />;
   if (data)
     return <PokemonPageContent data={data} shiny={shiny} setShiny={setShiny} />;
 }
@@ -40,32 +42,35 @@ type PokemonPageContent = {
 function PokemonPageContent(props: PokemonPageContent) {
   const { data, shiny, setShiny } = props;
   return (
-    <Container maxW={["100vw"]}>
-      <Grid
-        templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "2fr 1fr"]}
-        borderRadius={5}
-        gap={2}
-        m={4}
-      >
-        <GridItem
-          order={[2, 2, 1]}
-          backgroundColor={"brand.accent"}
+    <>
+      <Container maxW={["100vw"]}>
+        <Grid
+          templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "2fr 1fr"]}
           borderRadius={5}
+          gap={2}
+          m={4}
         >
-          <PokemonInformation data={data} />
-          <PokemonAbilities data={data} />
-          <PokemonVarieties data={data} />
-        </GridItem>
-        <GridItem
-          order={[1, 1, 2]}
-          backgroundColor={"brand.accent"}
-          borderRadius={5}
-        >
-          <PokemonDigest data={data} shiny={shiny} onClick={setShiny} />
-        </GridItem>
-      </Grid>
-      <PokemonMoves data={data} />
-    </Container>
+          <GridItem
+            order={[2, 2, 1]}
+            backgroundColor={"brand.accent"}
+            borderRadius={5}
+          >
+            <PokemonInformation data={data} />
+            <PokemonAbilities data={data} />
+            <PokemonVarieties data={data} />
+          </GridItem>
+          <GridItem
+            order={[1, 1, 2]}
+            backgroundColor={"brand.accent"}
+            borderRadius={5}
+          >
+            <PokemonDigest data={data} shiny={shiny} onClick={setShiny} />
+          </GridItem>
+        </Grid>
+        <PokemonMoves data={data} />
+      </Container>
+      <Footer />
+    </>
   );
 }
 
@@ -140,14 +145,12 @@ function PokemonCard(props: PokemonCardProps) {
             <PokemonCardItem
               itemTitle="Generation"
               spanValue={pokemon.generation.name}
+              linkUrl={pokemon.generation.url}
             />
           </Box>
 
           <Box>
-            <PokemonCardItem
-              itemTitle="Pokedex Entry N°"
-              spanValue={pokemon.id}
-            />
+            <PokemonCardItem itemTitle="Entry N°" spanValue={pokemon.id} />
           </Box>
 
           <Box>
@@ -165,7 +168,7 @@ function PokemonCard(props: PokemonCardProps) {
           <Box>
             <PokemonCardItem
               itemTitle="Base Experience"
-              spanValue={pokemon.baseExperience}
+              spanValue={pokemon.baseExperience || "None"}
             />
           </Box>
         </Grid>
@@ -283,40 +286,41 @@ function PokemonAbilities(props: { data: TPokemon }) {
 function PokemonCardItem(props: {
   itemTitle: string;
   spanValue: string | number;
+  linkUrl?: string;
 }) {
   return (
     <Text
-      p={2}
+      p={1}
       borderRadius={5}
       fontSize={["sm", "md", "lg"]}
       fontWeight="bold"
       color={"brand.text"}
     >
       {props.itemTitle}{" "}
-      <Text
-        as={"span"}
-        fontSize={["sm", "md", "lg"]}
-        fontWeight="bold"
-        color={"brand.primary"}
-      >
-        {props.spanValue}
-      </Text>
+      {props.linkUrl ? (
+        <Text
+          as={"span"}
+          fontSize={["sm", "md", "lg"]}
+          fontWeight="bold"
+          color={"brand.primary"}
+        >
+          <Link
+            _hover={{ textDecoration: "none" }}
+            href={`../../${props.linkUrl}`}
+          >
+            {props.spanValue}
+          </Link>
+        </Text>
+      ) : (
+        <Text
+          as={"span"}
+          fontSize={["sm", "md", "lg"]}
+          fontWeight="bold"
+          color={"brand.primary"}
+        >
+          {props.spanValue}
+        </Text>
+      )}
     </Text>
   );
 }
-
-/* 
-
-     <Text
-              fontSize={["sm", "md", "md"]}
-              fontWeight="medium"
-              color={"brand.primary"}
-            >
-              <Link
-                _hover={{ textDecoration: "none" }}
-                href={`../../${pokemon.generation.url}`}
-              >
-                {pokemon.generation.name}
-              </Link>
-            </Text>
-*/

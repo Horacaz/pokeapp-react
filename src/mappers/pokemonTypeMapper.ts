@@ -1,5 +1,6 @@
 import { IUnparsedType, IParsedType } from "../types/pokemonType";
 import capitalizeString from "../utils/capitalizeString";
+import capitalizeGeneration from "../utils/capitalizeGeneration";
 import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import PokemonType from "../entities/pokemonType";
 
@@ -24,7 +25,7 @@ export default function mapPokemonType(typeData: IUnparsedType): IParsedType {
     noDamageTo: mapDamage(damages.no_damage_to),
   };
   const generation = {
-    name: capitalizeString(typeData.generation.name),
+    name: capitalizeGeneration(typeData.generation.name),
     url: retrievePathFromUrl(typeData.generation.url),
   };
   const id = typeData.id;

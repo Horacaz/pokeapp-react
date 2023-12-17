@@ -79,9 +79,6 @@ const expectedPokemonInstance: TPokemon = {
   weight: 100,
 };
 describe("Pokemon()", () => {
-  test("is a function", () => {
-    expect(typeof Pokemon).toEqual("function");
-  });
   test("should instance a new Pokemon when passed valid parameters", () => {
     const pokemon = new Pokemon(pokemonDataMock, pokemonSpeciesDataMock);
 

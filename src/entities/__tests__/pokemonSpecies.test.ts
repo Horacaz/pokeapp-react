@@ -10,9 +10,6 @@ const pokemonSpeciesMock: IParsedPokemonSpecies = {
   varieties: [{ name: "Mega Pokemon", url: "url" }],
 };
 describe("PokemonSpecies", () => {
-  test("is a function", () => {
-    expect(typeof PokemonSpecies).toEqual("function");
-  });
   test("when passed valid parameters it should instantiate a new PokemonSpecies", () => {
     const pokemonSpecies = new PokemonSpecies(pokemonSpeciesMock);
     expect(pokemonSpecies).toBeInstanceOf(PokemonSpecies);

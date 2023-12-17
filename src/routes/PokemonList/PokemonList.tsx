@@ -8,6 +8,7 @@ import {
   ErrorMessage,
   ListOfPokemon,
   Paginator,
+  Footer,
 } from "../../components";
 
 export default function PokemonList() {
@@ -22,16 +23,20 @@ export default function PokemonList() {
 
   if (loading) return <Loading isLoading={loading} />;
 
-  if (error) return <ErrorMessage />;
+  if (error) return <ErrorMessage error={error} />;
 
   if (data)
     return (
-      <PokemonListContent
-        data={data}
-        offSetIncrement={offSetIncrement}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      <>
+        <PokemonListContent
+          data={data}
+          offSetIncrement={offSetIncrement}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+
+        <Footer />
+      </>
     );
 }
 
@@ -44,8 +49,8 @@ function PokemonListContent(props: {
   const { data, offSetIncrement, currentPage, setCurrentPage } = props;
   const maxPages = Math.floor(data.count / offSetIncrement);
   return (
-    <Container maxW={["100vw", "90vw"]}>
-      <Heading as="h2" mb={4} color="brand.text" fontSize={"2xl"}>
+    <Container maxW={["100vw", "90vw"]} textAlign={"center"}>
+      <Heading as="h2" mb={4} color="brand.text" fontSize={["lg", "xl", "2xl"]}>
         Currently Available Pokemon{" "}
         <Text as="span" color="brand.primary">
           {data.count}

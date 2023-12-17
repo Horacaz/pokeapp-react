@@ -3,10 +3,14 @@ import SearchBar from "../SearchBar/SearchBar";
 export default function Header() {
   return (
     <Box p={1} backgroundColor={"black"}>
-      <Flex justifyContent="space-between" alignItems="center">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        flexDir={["column", "column", "column", "row"]}
+      >
         <Heading
           as="h1"
-          size={["md", "lg"]}
+          size={"xl"}
           color={"brand.text"}
           p={2}
           m={1}

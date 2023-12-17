@@ -32,11 +32,11 @@ describe("PokemonPage", () => {
     useGetPokemonMock.mockReturnValue({
       loading: false,
       data: null,
-      error: new Error("Error"),
+      error: new Error("Test Error"),
     });
     setupRouterRender({ initialEntries, routePath, element: <PokemonPage /> });
     screen.getByRole("heading", {
-      name: "An error has occured, please refresh and wait a few seconds.",
+      name: "An error has occured. Test Error",
     });
   });
   test("it should render a loading spinner if loading", () => {
@@ -46,6 +46,6 @@ describe("PokemonPage", () => {
       error: null,
     });
     setupRouterRender({ initialEntries, routePath, element: <PokemonPage /> });
-    screen.getByText("Loading...");
+    screen.getByRole("progressbar");
   });
 });

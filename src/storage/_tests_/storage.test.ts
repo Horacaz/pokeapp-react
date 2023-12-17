@@ -52,21 +52,23 @@ describe("pokemonList", () => {
 
 describe("pokemon", () => {
   test("savePokemon saves a pokemon", () => {
-    const pokemonName = "bulbasaur";
-    const mockPokemon = { name: pokemonName } as unknown as IParsedPokemon;
-    savePokemon(mockPokemon);
+    const pokemon = { name: "bulbasaur", id: 1 } as unknown as IParsedPokemon;
+    savePokemon(pokemon);
     expect(localStorage.setItem).toHaveBeenCalledWith(
-      pokemonName,
-      JSON.stringify(mockPokemon)
+      "pokemon-bulbasaur-1",
+      JSON.stringify(pokemon)
     );
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
   });
 
-  test("getPokemon is successfully called", () => {
-    const pokemonName = "bulbasaur";
-    getPokemon(pokemonName);
-    expect(localStorage.getItem).toHaveBeenCalledWith(pokemonName);
-    expect(localStorage.getItem).toHaveBeenCalledTimes(1);
+  test("getPokemon throws when key not found", () => {
+    const searchQuery = "bulbasaur";
+    expect(() => getPokemon(searchQuery)).toThrow();
+  });
+
+  test("getPokemon throws when search query is not a string or number", () => {
+    const searchQuery = undefined;
+    expect(() => getPokemon(searchQuery as unknown as string)).toThrow();
   });
 });
 
@@ -92,45 +94,48 @@ describe("pokemonType", () => {
 
 describe("pokemonSpecies", () => {
   test("savePokemonSpecies saves a pokemonSpecies", () => {
-    const speciesName = "bulbasaur";
+    const speciesId = 1;
     const mockPokemonSpecies = {
-      name: speciesName,
+      id: speciesId,
     } as unknown as IParsedPokemonSpecies;
     savePokemonSpecies(mockPokemonSpecies);
     expect(localStorage.setItem).toHaveBeenCalledWith(
-      `species-${speciesName}`,
+      `species-${speciesId}`,
       JSON.stringify(mockPokemonSpecies)
     );
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
   });
 
   test("getPokemonSpecies is successfully called", () => {
-    const speciesName = "bulbasaur";
-    getPokemonSpecies(speciesName);
-    expect(localStorage.getItem).toHaveBeenCalledWith(`species-${speciesName}`);
+    const speciesId = 1;
+    getPokemonSpecies(speciesId);
+    expect(localStorage.getItem).toHaveBeenCalledWith(`species-${speciesId}`);
     expect(localStorage.getItem).toHaveBeenCalledTimes(1);
   });
 });
 
 describe("pokemonAbility", () => {
   test("savePokemonAbility saves a pokemonAbility", () => {
-    const abilityID = 1;
     const mockPokemonAbility = {
-      id: abilityID,
+      id: 1,
+      displayName: "ability",
     } as unknown as IParsedPokemonAbility;
     savePokemonAbility(mockPokemonAbility);
     expect(localStorage.setItem).toHaveBeenCalledWith(
-      `ability-${abilityID}`,
+      `ability-${mockPokemonAbility.displayName}-${mockPokemonAbility.id}`,
       JSON.stringify(mockPokemonAbility)
     );
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
   });
 
-  test("getPokemonAbility is successfully called", () => {
-    const abilityName = "blaze";
-    getPokemonAbility(abilityName);
-    expect(localStorage.getItem).toHaveBeenCalledWith(`ability-${abilityName}`);
-    expect(localStorage.getItem).toHaveBeenCalledTimes(1);
+  test("getPokemonAbility throws when key is not found", () => {
+    const abilityId = 1;
+    expect(() => getPokemonAbility(abilityId)).toThrow();
+  });
+
+  test("getPokemonAbility throws when search query is not a string or number", () => {
+    const abilityId = undefined;
+    expect(() => getPokemonAbility(abilityId as unknown as string)).toThrow();
   });
 });
 

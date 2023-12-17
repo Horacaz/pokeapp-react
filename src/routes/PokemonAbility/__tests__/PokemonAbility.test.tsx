@@ -36,7 +36,7 @@ describe("PokemonAbility", () => {
     useGetAbilityMock.mockReturnValue({
       loading: false,
       data: null,
-      error: new Error("An error occurred"),
+      error: new Error("Test Error"),
     });
     setupRouterRender({
       initialEntries,
@@ -44,7 +44,7 @@ describe("PokemonAbility", () => {
       element: <PokemonAbility />,
     });
     screen.getByRole("heading", {
-      name: "An error has occured, please refresh and wait a few seconds.",
+      name: "An error has occured. Test Error",
     });
   });
 
@@ -59,6 +59,6 @@ describe("PokemonAbility", () => {
       routePath: routerPath,
       element: <PokemonAbility />,
     });
-    screen.getByText("Loading...");
+    screen.getByRole("progressbar");
   });
 });

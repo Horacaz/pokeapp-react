@@ -21,7 +21,7 @@ export default function SearchBar() {
   const [select, setSelect] = useState<SearchType>("pokemon");
 
   return (
-    <InputGroup maxW={["sm", "md"]} m={2}>
+    <InputGroup maxW={["xs", "sm", "md"]} m={2}>
       <InputLeftElement
         as={Link}
         to={`../../${select}/${search}`}
@@ -34,20 +34,20 @@ export default function SearchBar() {
       </InputLeftElement>
       <Input
         type="text"
-        placeholder="Search"
+        placeholder="Search by Name or ID"
         color={"brand.text"}
         onChange={(e) => setSearch(e.target.value)}
         value={search}
+        fontSize={["xs", "sm", "md"]}
       />
-      <InputRightAddon p={0}>
+      <InputRightAddon p={0} maxW={["xs", "sm", "md"]}>
         <Select
-          placeholder=""
-          maxW={"100%"}
+          p={0}
           fontWeight={"bold"}
           onChange={(e) => setSelect(e.target.value)}
           value={select}
           color={"brand.background"}
-          fontSize={["xs", "sm"]}
+          fontSize={["xs", "sm", "md"]}
         >
           <option value="pokemon">Pokemon</option>
           <option value="generation">Generation</option>

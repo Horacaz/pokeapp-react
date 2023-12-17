@@ -13,7 +13,7 @@ const pokemonSpeciesMock: IUnparsedPokemonSpecies = {
     },
   ],
   genera: [{ genus: "genus", language: { name: "en", url: "url" } }],
-  generation: { name: "generation", url: "url/v2/generation/1" },
+  generation: { name: "generation-i", url: "url/v2/generation/1" },
   id: 3,
   name: "species",
   varieties: [{ pokemon: { name: "pokemon", url: "url/v2/pokemon/1" } }],
@@ -21,16 +21,13 @@ const pokemonSpeciesMock: IUnparsedPokemonSpecies = {
 const expectedSpeciesMap: IParsedPokemonSpecies = {
   description: "Description of species",
   genus: "Genus",
-  generation: { name: "Generation", url: "generation/1" },
+  generation: { name: "Generation I", url: "generation/1" },
   id: 3,
   name: "Species",
   varieties: [{ name: "Pokemon", url: "pokemon/1" }],
 };
 
 describe("mapPokemonSpecies", () => {
-  test("is a function", () => {
-    expect(typeof mapPokemonSpecies).toEqual("function");
-  });
   test("should map a pokemonSpecies when valid arguments are passed on", () => {
     expect(mapPokemonSpecies(pokemonSpeciesMock)).toEqual(expectedSpeciesMap);
   });

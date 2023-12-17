@@ -7,9 +7,6 @@ const pokemonListMock: IParsedPokemonList = {
   results: [{ name: "foo", url: "url" }],
 };
 describe("PokemonList()", () => {
-  test("is a function", () => {
-    expect(typeof PokemonList).toEqual("function");
-  });
   test("should create an instance of Pokemon with provided arguments", () => {
     const pokemon = new PokemonList(pokemonListMock);
     expect(pokemon).toBeInstanceOf(PokemonList);

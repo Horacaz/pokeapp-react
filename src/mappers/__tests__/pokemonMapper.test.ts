@@ -32,9 +32,6 @@ const expectedPokemonMap: IParsedPokemon = {
   weight: 10,
 };
 describe("mapPokemon()", () => {
-  test("is a function", () => {
-    expect(typeof mapPokemon).toEqual("function");
-  });
   test("should correctly map a pokemon from provided data", () => {
     expect(mapPokemon(pokemonMockFixture)).toEqual(expectedPokemonMap);
   });

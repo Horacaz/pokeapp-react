@@ -4,6 +4,7 @@ import PokemonGeneration from "./PokemonGeneration";
 import PokemonMove from "./PokemonMove";
 import PokemonType from "./PokemonType";
 import PokemonPage from "./PokemonPage";
+import PageNotFound from "./PageNotFound";
 export {
   PokemonAbility,
   PokemonGeneration,
@@ -11,4 +12,5 @@ export {
   PokemonMove,
   PokemonPage,
   PokemonType,
+  PageNotFound,
 };

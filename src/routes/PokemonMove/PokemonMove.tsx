@@ -15,38 +15,41 @@ import {
   ErrorMessage,
   ListOfTypes,
   ListOfPokemon,
+  Footer,
 } from "../../components";
 export default function PokemonMove() {
   const id = Number(useParams().id);
   const { data, loading, error } = usePokemonMove(id as number);
 
   if (loading) return <Loading isLoading={loading} />;
-  if (error) return <ErrorMessage />;
+  if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemonMoveContent data={data} />;
 }
 
 function PokemonMoveContent(props: { data: IParsedPokemonMove }) {
   const { data } = props;
   return (
-    <Container maxW={["100vw", "90vw"]}>
-      <Header title="Pokemon Move" />
-      <MoveDigest data={data} />
-      <Grid templateColumns={["", "2fr 1fr"]}>
-        <GridItem>
-          <Effect data={data} />
-          <PokedexEntry data={data} />
-          <Generation data={data} />
-        </GridItem>
-        <GridItem>
-          <Stats data={data} />
-        </GridItem>
-      </Grid>
-
-      <PokemonList data={data} />
-    </Container>
+    <>
+      <Container maxW={["100vw", "90vw"]}>
+        <Title title="Pokemon Move" />
+        <MoveDigest data={data} />
+        <Grid templateColumns={["", "2fr 1fr"]}>
+          <GridItem>
+            <Effect data={data} />
+            <PokedexEntry data={data} />
+            <Generation data={data} />
+          </GridItem>
+          <GridItem>
+            <Stats data={data} />
+          </GridItem>
+        </Grid>
+        <PokemonList data={data} />
+      </Container>
+      <Footer />
+    </>
   );
 }
-function Header({ title }: { title: string }) {
+function Title({ title }: { title: string }) {
   return (
     <Box p={2} textAlign="center">
       <Heading as="h1" size="xl" color={"brand.text"}>
@@ -130,8 +133,16 @@ function PokemonList(props: { data: IParsedPokemonMove }) {
   return (
     <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
       <PokemonSection title="Pokemon" />
-      <PokemonSectionSubtitle subTitle="Pokemon that can learn this move" />
-      <ListOfPokemon list={data?.learnedBy} />
+      {data.learnedBy.length > 0 ? (
+        <>
+          <PokemonSectionSubtitle subTitle="Pokemon that can learn this move" />
+          <ListOfPokemon list={data.learnedBy} />
+        </>
+      ) : (
+        <Text fontSize={["sm", "md"]} color={"brand.text"} fontWeight={"bold"}>
+          No Pokemon can learn this move
+        </Text>
+      )}
     </Box>
   );
 }

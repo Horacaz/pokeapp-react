@@ -20,9 +20,6 @@ const expectedGenerationMap: IParsedGeneration = {
 };
 
 describe("mapGeneration()", () => {
-  test("is a function", () => {
-    expect(typeof mapGeneration).toEqual("function");
-  });
   test("when passed valid parameters returns a mapped pokemon generation", () => {
     expect(mapGeneration(generationMock)).toEqual(expectedGenerationMap);
   });

@@ -8,33 +8,37 @@ import {
   ListOfTypes,
   ListOfPokemon,
   ListOfMoves,
+  Footer,
 } from "../../components";
 export default function PokemonType() {
   const id = Number(useParams().id);
   const { loading, data, error } = useGetTypes(id);
 
   if (loading) return <Loading isLoading={loading} />;
-  if (error) return <ErrorMessage />;
+  if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemonTypeContent data={data} />;
 }
 
 function PokemonTypeContent(props: { data: IParsedType }) {
   const { data } = props;
   return (
-    <Container maxW={["100vw", "90vw"]}>
-      <Box m={2}>
-        <Header title="Pokemon Type" />
-        <TypeDigest data={data} />
-        <Information data={data} />
-        <DamageModifiers data={data} />
-        <Moves data={data} />
-        <Pokemon data={data} />
-      </Box>
-    </Container>
+    <>
+      <Container maxW={["100vw", "90vw"]}>
+        <Box m={2}>
+          <Title title="Pokemon Type" />
+          <TypeDigest data={data} />
+          <Information data={data} />
+          <DamageModifiers data={data} />
+          <Moves data={data} />
+          <Pokemon data={data} />
+        </Box>
+      </Container>
+      <Footer />
+    </>
   );
 }
 
-function Header({ title }: { title: string }) {
+function Title({ title }: { title: string }) {
   return (
     <Box p={2} textAlign="center" color={"brand.text"}>
       <Heading as="h1" size={"xl"}>
