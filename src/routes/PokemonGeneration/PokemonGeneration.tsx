@@ -14,7 +14,7 @@ export default function PokemonGeneration() {
   const id = Number(useParams().id);
   const { data, loading, error } = useGetGeneration(id as number);
 
-  if (loading) return <Loading isLoading={loading} />;
+  if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemonGenerationContent data={data} />;
 }

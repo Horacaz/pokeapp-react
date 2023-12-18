@@ -54,10 +54,10 @@ describe("ApiService", () => {
   });
 
   test("should call fetchPokemonSpeciesFromApi when getSpecies is called", async () => {
-    const speciesName = "charizard";
-    await api.getPokemonSpecies(speciesName);
+    const speciesId = 1;
+    await api.getPokemonSpecies(speciesId);
     expect(fetchPokemonSpeciesFromApi).toHaveBeenCalledTimes(1);
-    expect(fetchPokemonSpeciesFromApi).toHaveBeenCalledWith(speciesName);
+    expect(fetchPokemonSpeciesFromApi).toHaveBeenCalledWith(speciesId);
   });
 
   test("should call fetchTypeFromApi when getType is called", async () => {

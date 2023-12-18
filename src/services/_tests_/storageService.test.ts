@@ -56,9 +56,9 @@ describe("StorageService", () => {
 
   describe("pokemonSpecies", () => {
     test("getPokemonSpecies", () => {
-      const speciesName = "pikachu";
-      storage.getPokemonSpecies(speciesName);
-      expect(getPokemonSpecies).toHaveBeenCalledWith(speciesName);
+      const speciesId = 1;
+      storage.getPokemonSpecies(speciesId);
+      expect(getPokemonSpecies).toHaveBeenCalledWith(speciesId);
     });
 
     test("savePokemonSpecies", () => {

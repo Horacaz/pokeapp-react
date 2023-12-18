@@ -28,7 +28,7 @@ export default function PokemonPage() {
   const id = useParams().id as string;
   const { loading, data, error } = useGetPokemon(id);
 
-  if (loading) return <Loading isLoading={loading} />;
+  if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
   if (data)
     return <PokemonPageContent data={data} shiny={shiny} setShiny={setShiny} />;

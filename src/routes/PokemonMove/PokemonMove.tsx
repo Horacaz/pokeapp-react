@@ -21,7 +21,7 @@ export default function PokemonMove() {
   const id = Number(useParams().id);
   const { data, loading, error } = usePokemonMove(id as number);
 
-  if (loading) return <Loading isLoading={loading} />;
+  if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemonMoveContent data={data} />;
 }

@@ -21,7 +21,7 @@ export default function PokemonList() {
     setOffset((currentPage - 1) * offSetIncrement);
   }, [currentPage]);
 
-  if (loading) return <Loading isLoading={loading} />;
+  if (loading) return <Loading />;
 
   if (error) return <ErrorMessage error={error} />;
 

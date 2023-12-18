@@ -8,7 +8,7 @@ export default function PokemonAbility() {
   const id = useParams().id;
   const { loading, data, error } = useGetAbility(id as string);
 
-  if (loading) return <Loading isLoading={loading} />;
+  if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemoAbilityContent data={data} />;
 }

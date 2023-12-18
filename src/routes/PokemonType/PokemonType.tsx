@@ -14,7 +14,7 @@ export default function PokemonType() {
   const id = Number(useParams().id);
   const { loading, data, error } = useGetTypes(id);
 
-  if (loading) return <Loading isLoading={loading} />;
+  if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemonTypeContent data={data} />;
 }
