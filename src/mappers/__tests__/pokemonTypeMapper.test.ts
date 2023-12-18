@@ -11,7 +11,7 @@ const pokemonTypeMock: IUnparsedType = {
     no_damage_to: [{ name: "fire", url: "url/v2/damage/1" }],
   },
   move_damage_class: { name: "special", url: "url/v2/damageClass/1" },
-  generation: { name: "generation", url: "url/v2/generation/1" },
+  generation: { name: "generation-iii", url: "url/v2/generation/1" },
   name: "grass",
   id: 1,
   moves: [{ name: "drainers", url: "url/v2/move/1" }],
@@ -27,7 +27,7 @@ const expectTypeMap: IParsedType = {
     noDamageFrom: [{ name: "Fire", url: "damage/1" }],
     noDamageTo: [{ name: "Fire", url: "damage/1" }],
   },
-  generation: { name: "Generation", url: "generation/1" },
+  generation: { name: "Generation III", url: "generation/1" },
   id: 1,
   moveDamageClass: { name: "Special", url: "damageClass/1" },
   moves: [{ name: "Drainers", url: "move/1" }],
@@ -36,9 +36,6 @@ const expectTypeMap: IParsedType = {
 };
 
 describe("pokemonTypeMapper", () => {
-  test("is a function", () => {
-    expect(typeof mapPokemonType).toEqual("function");
-  });
   test("when passed valid parameters returns mapped pokemon type data", () => {
     expect(mapPokemonType(pokemonTypeMock)).toEqual(expectTypeMap);
   });

@@ -32,8 +32,8 @@ export default class StorageService {
     return getPokemonTypes(typeID);
   }
 
-  getPokemonSpecies(speciesName: string) {
-    return getPokemonSpecies(speciesName);
+  getPokemonSpecies(speciesId: number) {
+    return getPokemonSpecies(speciesId);
   }
 
   getGeneration(generationId: number) {

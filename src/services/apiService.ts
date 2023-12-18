@@ -5,6 +5,7 @@ import fetchPokemonFromApi from "./../api/pokemonFetch";
 import fetchTypeFromApi from "./../api/typesFetch";
 import fetchPokemonListfromApi from "./../api/pokemonListFetch";
 import fetchPokemonSpeciesFromApi from "../api/pokemonSpeciesFetch";
+import { IUnparsedPokemon } from "../types/pokemon";
 
 export default class ApiService {
   async getAbility(ability: string) {
@@ -19,7 +20,7 @@ export default class ApiService {
     return fetchMoveFromApi(moveId);
   }
 
-  async getPokemon(pokemon: string) {
+  async getPokemon(pokemon: string): Promise<IUnparsedPokemon> {
     return fetchPokemonFromApi(pokemon);
   }
 
@@ -31,7 +32,7 @@ export default class ApiService {
     return fetchPokemonListfromApi({ limit, offset });
   }
 
-  async getPokemonSpecies(species: string) {
-    return fetchPokemonSpeciesFromApi(species);
+  async getPokemonSpecies(speciesId: number) {
+    return fetchPokemonSpeciesFromApi(speciesId);
   }
 }

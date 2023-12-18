@@ -1,23 +1,31 @@
-import { Link, Heading, Box } from "@chakra-ui/react";
+import { Link, Heading, Box, Flex } from "@chakra-ui/react";
+import SearchBar from "../SearchBar/SearchBar";
 export default function Header() {
   return (
     <Box p={1} backgroundColor={"black"}>
-      <Heading
-        as="h1"
-        size={["md", "lg"]}
-        color={"brand.text"}
-        p={2}
-        m={1}
-        display={"inline-block"}
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        flexDir={["column", "column", "column", "row"]}
       >
-        <Link
-          textDecoration={"none"}
-          _hover={{ textDecoration: "none" }}
-          href="/"
+        <Heading
+          as="h1"
+          size={"xl"}
+          color={"brand.text"}
+          p={2}
+          m={1}
+          display={"inline-block"}
         >
-          Pokemon Application
-        </Link>
-      </Heading>
+          <Link
+            textDecoration={"none"}
+            _hover={{ textDecoration: "none" }}
+            href="/"
+          >
+            Pokemon Application
+          </Link>
+        </Heading>
+        <SearchBar />
+      </Flex>
     </Box>
   );
 }

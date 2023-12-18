@@ -1,7 +1,13 @@
+import FailedToFetch from "./error/failedToFetch";
 export default async function fetchTypesFromApi(typeId: number) {
   const apiURL = "https://pokeapi.co/api/v2/type";
-  const resource = await fetch(`${apiURL}/${typeId}`).then((res) =>
-    res.json().then((data) => data)
-  );
+  const response = await fetch(`${apiURL}/${typeId}`);
+
+  if (!response.ok) {
+    throw new FailedToFetch(`Failed to fetch Type ${typeId}`);
+  }
+
+  const resource = response.json().then((data) => data);
+
   return resource;
 }

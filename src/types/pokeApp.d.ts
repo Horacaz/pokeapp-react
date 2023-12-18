@@ -1,4 +1,8 @@
-export type Action<T> = LOADING_ACTION | SUCCESS_ACTION<T> | ERROR_ACTION;
+export type Action<T> =
+  | LOADING_ACTION
+  | SUCCESS_ACTION<T>
+  | ERROR_ACTION
+  | RESET_ACTION;
 
 export type State<T> = {
   loading: boolean;
@@ -30,5 +34,14 @@ type ERROR_ACTION = {
     loading: boolean;
     data: null;
     error: Error;
+  };
+};
+
+type RESET_ACTION = {
+  type: "RESET";
+  payload: {
+    loading: boolean;
+    data: null;
+    error: null;
   };
 };

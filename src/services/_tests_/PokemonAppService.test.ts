@@ -1,6 +1,7 @@
 import ApiService from "../apiService";
 import StorageService from "../storageService";
 import PokemonAppService from "../PokemonAppService";
+import { IUnparsedPokemon } from "../../types/pokemon";
 
 vi.mock("../../mappers/generationMapper");
 vi.mock("../../mappers/pokemonMapper");
@@ -51,7 +52,9 @@ describe("PokemonAppService", () => {
         throw new Error("Pokemon not found");
       });
 
-      apiMock.getPokemon = vi.fn(async () => pokemonName);
+      apiMock.getPokemon = vi.fn(
+        async () => pokemonName as unknown as IUnparsedPokemon
+      );
 
       const pokemonName = "pikachu";
       await pokemonAppService.getPokemon(pokemonName);
@@ -119,8 +122,8 @@ describe("PokemonAppService", () => {
 
   describe("getPokemonSpecies", () => {
     test("getPokemonSpecies calls service.getPokemonSpecies", async () => {
-      const speciesName = "bulbasaur";
-      await pokemonAppService.getSpecies(speciesName);
+      const speciesId = 1;
+      await pokemonAppService.getSpecies(speciesId);
       expect(storageMock.getPokemonSpecies).toHaveBeenCalledTimes(1);
     });
 
@@ -129,8 +132,8 @@ describe("PokemonAppService", () => {
         throw new Error("Species not found");
       });
 
-      const speciesName = "bulbasaur";
-      await pokemonAppService.getSpecies(speciesName);
+      const speciesId = 1;
+      await pokemonAppService.getSpecies(speciesId);
       expect(apiMock.getPokemonSpecies).toHaveBeenCalledTimes(1);
       expect(storageMock.savePokemonSpecies).toHaveBeenCalledTimes(1);
     });

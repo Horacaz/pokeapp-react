@@ -17,9 +17,6 @@ const pokemonMoveMock: IParsedPokemonMove = {
 };
 
 describe("PokemonMove", () => {
-  test("is a function", () => {
-    expect(typeof PokemonMove).toEqual("function");
-  });
   test("should generate instance of a pokemon move when passed valid arguments", () => {
     const pokemonMove = new PokemonMove(pokemonMoveMock);
     expect(pokemonMove).toBeInstanceOf(PokemonMove);

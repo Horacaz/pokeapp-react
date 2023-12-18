@@ -1,5 +1,6 @@
 import { IUnparsedPokemonMove, IParsedPokemonMove } from "../types/pokemonMove";
 import capitalizeString from "../utils/capitalizeString";
+import capitalizeGeneration from "../utils/capitalizeGeneration";
 import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import PokemonMove from "../entities/pokemonMove";
 
@@ -19,7 +20,7 @@ export default function mapPokemonMove(
   )[0];
   const description = capitalizeString(descriptionFilter.flavor_text);
   const generation = {
-    name: capitalizeString(moveData.generation.name),
+    name: capitalizeGeneration(moveData.generation.name),
     url: retrievePathFromUrl(moveData.generation.url),
   };
   const id = moveData.id;

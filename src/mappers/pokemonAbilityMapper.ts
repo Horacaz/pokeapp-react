@@ -3,6 +3,7 @@ import {
   IParsedPokemonAbility,
 } from "../types/pokemonAbility";
 import capitalizeString from "../utils/capitalizeString";
+import capitalizeGeneration from "../utils/capitalizeGeneration";
 import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import PokemonAbility from "../entities/pokemonAbility";
 
@@ -17,7 +18,7 @@ export default function mapPokemonAbility(
     effect: abilityEntries.short_effect,
   };
   const generation = {
-    name: capitalizeString(pokemonAbilityData.generation.name),
+    name: capitalizeGeneration(pokemonAbilityData.generation.name),
     url: retrievePathFromUrl(pokemonAbilityData.generation.url),
   };
   const id = pokemonAbilityData.id;

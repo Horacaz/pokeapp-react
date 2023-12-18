@@ -3,6 +3,7 @@ import {
   IParsedPokemonSpecies,
 } from "../types/pokemonSpecies";
 import capitalizeString from "../utils/capitalizeString";
+import capitalizeGeneration from "../utils/capitalizeGeneration";
 import retrievePathFromUrl from "../utils/retrievePathFromUrl";
 import PokemonSpecies from "../entities/pokemonSpecies";
 
@@ -20,7 +21,7 @@ export default function mapPokemonSpecies(
   const genus = capitalizeString(filteredGenus.genus);
 
   const generation = {
-    name: capitalizeString(speciesData.generation.name),
+    name: capitalizeGeneration(speciesData.generation.name),
     url: retrievePathFromUrl(speciesData.generation.url),
   };
   const id = speciesData.id;

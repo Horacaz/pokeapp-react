@@ -8,32 +8,36 @@ import {
   ListOfPokemon,
   ListOfMoves,
   ListOfTypes,
+  Footer,
 } from "../../components";
 export default function PokemonGeneration() {
   const id = Number(useParams().id);
   const { data, loading, error } = useGetGeneration(id as number);
 
-  if (loading) return <Loading isLoading={loading} />;
-  if (error) return <ErrorMessage />;
+  if (loading) return <Loading />;
+  if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemonGenerationContent data={data} />;
 }
 
 function PokemonGenerationContent(props: { data: IParsedGeneration }) {
   const { data } = props;
   return (
-    <Container maxW={["100vw", "90vw"]}>
-      <Header />
-      <GenerationDigest data={data} />
-      <MainRegion data={data} />
-      <Types data={data} />
-      <Abilities />
-      <Moves data={data} />
-      <Pokemon data={data} />
-    </Container>
+    <>
+      <Container maxW={["100vw", "90vw"]}>
+        <Title />
+        <GenerationDigest data={data} />
+        <MainRegion data={data} />
+        <Types data={data} />
+        <Abilities data={data} />
+        <Moves data={data} />
+        <Pokemon data={data} />
+      </Container>
+      <Footer />
+    </>
   );
 }
 
-function Header() {
+function Title() {
   return (
     <Box p={2} textAlign="center">
       <Heading as="h1" size="xl" color={"brand.text"}>
@@ -79,33 +83,68 @@ function Types(props: { data: IParsedGeneration }) {
   return (
     <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
       <PokemonSection title="Types" />
-      <Text
-        py={2}
-        fontSize={["sm", "md"]}
-        color={"brand.text"}
-        fontWeight={"bold"}
-      >
-        The following Types were introduced in this Generation.
-      </Text>
-      <Grid gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]} gap={1}>
-        <ListOfTypes list={data.types} />
-      </Grid>
+      {data.types.length > 0 ? (
+        <>
+          <Text
+            py={2}
+            fontSize={["sm", "md"]}
+            color={"brand.text"}
+            fontWeight={"bold"}
+          >
+            The following Types were introduced in this Generation.
+          </Text>
+          <Grid
+            gridTemplateColumns={["repeat(3, 1fr)", "repeat(4, 1fr)"]}
+            gap={1}
+          >
+            <ListOfTypes list={data.types} />
+          </Grid>
+        </>
+      ) : (
+        <Text
+          py={2}
+          fontSize={["sm", "md"]}
+          color={"brand.text"}
+          fontWeight={"bold"}
+        >
+          No Types were introduced in this Generation.
+        </Text>
+      )}
     </Box>
   );
 }
 
-function Abilities() {
+function Abilities(props: { data: IParsedGeneration }) {
+  const { data } = props;
   return (
     <Box backgroundColor={"brand.accent"} m={4} p={4} borderRadius={5}>
       <PokemonSection title="Abilities" />
-      <Text
-        py={2}
-        fontSize={["sm", "md"]}
-        color={"brand.text"}
-        fontWeight={"bold"}
-      >
-        No Abilities were introduced in this Generation.
-      </Text>
+      {data.abilities.length > 0 ? (
+        <>
+          <Text
+            py={2}
+            fontSize={["sm", "md"]}
+            color={"brand.text"}
+            fontWeight={"bold"}
+          >
+            A total of{" "}
+            <Text as="span" color={"brand.primary"}>
+              {data.abilities.length}
+            </Text>{" "}
+            Abilities were introduced in this Generation.
+          </Text>
+          <ListOfPokemon list={props.data.abilities} />
+        </>
+      ) : (
+        <Text
+          py={2}
+          fontSize={["sm", "md"]}
+          color={"brand.text"}
+          fontWeight={"bold"}
+        >
+          No Abilities were introduced in this Generation.
+        </Text>
+      )}
     </Box>
   );
 }

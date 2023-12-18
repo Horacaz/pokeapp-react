@@ -1,33 +1,36 @@
 import { useParams } from "react-router-dom";
 import useGetAbility from "../../hooks/useGetAbility";
 import { Container, Heading, Text, Box, Link } from "@chakra-ui/react";
-import { Loading, ErrorMessage, ListOfPokemon } from "../../components";
+import { Loading, ErrorMessage, ListOfPokemon, Footer } from "../../components";
 import { IParsedPokemonAbility } from "../../types/pokemonAbility";
 
 export default function PokemonAbility() {
   const id = useParams().id;
   const { loading, data, error } = useGetAbility(id as string);
 
-  if (loading) return <Loading isLoading={loading} />;
-  if (error) return <ErrorMessage />;
+  if (loading) return <Loading />;
+  if (error) return <ErrorMessage error={error} />;
   if (data) return <PokemoAbilityContent data={data} />;
 }
 
 function PokemoAbilityContent(props: { data: IParsedPokemonAbility }) {
   const { data } = props;
   return (
-    <Container maxW={["100vw", "90vw"]}>
-      <Header title="Pokemon Ability" />
-      <AbilityDigest data={data} />
-      <Effect data={data} />
-      <PokedexEntry data={data} />
-      <Generation data={data} />
-      <PokemonList data={data} />
-    </Container>
+    <>
+      <Container maxW={["100vw", "90vw"]}>
+        <Title title="Pokemon Ability" />
+        <AbilityDigest data={data} />
+        <Effect data={data} />
+        <PokedexEntry data={data} />
+        <Generation data={data} />
+        <PokemonList data={data} />
+      </Container>
+      <Footer />
+    </>
   );
 }
 
-function Header({ title }: { title: string }) {
+function Title({ title }: { title: string }) {
   return (
     <Box p={2} textAlign="center">
       <Heading as="h1" size="xl" color={"brand.text"}>
@@ -109,7 +112,18 @@ function PokemonList(props: { data: IParsedPokemonAbility }) {
       <PokemonSection title="Pokemon" />
       <PokemonSectionSubtitle subTitle="Pokemon that share this ability" />
       <Box p={2}>
-        <ListOfPokemon list={data.pokemon} />
+        {data.pokemon.length > 0 ? (
+          <ListOfPokemon list={data.pokemon} />
+        ) : (
+          <Text
+            py={2}
+            color={"brand.text"}
+            fontSize={["sm", "md"]}
+            fontWeight={"bold"}
+          >
+            There are no Pokemon that share this ability
+          </Text>
+        )}
       </Box>
     </Box>
   );

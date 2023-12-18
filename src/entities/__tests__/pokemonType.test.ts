@@ -18,9 +18,6 @@ const pokemonTypeMock: IParsedType = {
   pokemon: [{ name: "Bulbasaur", url: "url" }],
 };
 describe("PokemonType()", () => {
-  test("is a function", () => {
-    expect(typeof PokemonType).toEqual("function");
-  });
   test("should create an instance of PokemonType with provided arguments", () => {
     const type = new PokemonType(pokemonTypeMock);
     expect(type).toBeInstanceOf(PokemonType);

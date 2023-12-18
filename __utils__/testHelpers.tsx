@@ -15,7 +15,7 @@ export function setupFetchMock() {
         const jsonPromise = new Promise((r) => {
           r({});
         });
-        resolve({ json: () => jsonPromise });
+        resolve({ json: () => jsonPromise, ok: true });
       })
   ));
 }

@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PokeAppProvider } from "./context/PokeAppContext";
-import { Header, Footer } from "./components";
 import {
   PokemonList,
   PokemonPage,
@@ -8,8 +7,10 @@ import {
   PokemonGeneration,
   PokemonMove,
   PokemonType,
+  PageNotFound,
 } from "./routes";
 
+import { Header } from "./components";
 function App() {
   return (
     <PokeAppProvider>
@@ -22,8 +23,9 @@ function App() {
           <Route path="/move/:id" element={<PokemonMove />} />
           <Route path="/type/:id" element={<PokemonType />} />
           <Route path="/pokemon/:id" element={<PokemonPage />} />
+          <Route path="/pokemon-species/:id" element={<PokemonPage />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </PokeAppProvider>
   );

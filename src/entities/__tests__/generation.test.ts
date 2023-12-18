@@ -10,9 +10,6 @@ const expectedGenerationMock: IParsedGeneration = {
   types: [{ name: "Type", url: "url" }],
 };
 describe("Generation()", () => {
-  test("is a function", () => {
-    expect(typeof Generation).toEqual("function");
-  });
   test("should create an instance of Generation with provided arguments", () => {
     const generation = new Generation(expectedGenerationMock);
 

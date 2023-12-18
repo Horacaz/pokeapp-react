@@ -28,9 +28,6 @@ const expectedPokemonListMap: IUnparsedPokemonList = {
 };
 
 describe("mapPokemonList()", () => {
-  test("is a function", () => {
-    expect(typeof mapPokemonList).toEqual("function");
-  });
   test("When passed a list of pokemon it should return a mapped listOfPokemon", () => {
     expect(mapPokemonList(pokemonFixtureMock)).toEqual(expectedPokemonListMap);
   });

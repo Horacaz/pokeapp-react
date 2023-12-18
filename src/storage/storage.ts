@@ -25,20 +25,34 @@ export function savePokemonList({ offset, pokemonList }: PokemonList) {
   localStorage.setItem(`list-${offset}`, JSON.stringify(pokemonList));
 }
 
-export function getPokemon(pokemonName: string): IParsedPokemon {
-  if (typeof pokemonName !== "string")
-    throw new Error(`The pokemon name must be a string`);
-  const query = pokemonName;
-  const pokemon = localStorage.getItem(query);
-  if (pokemon === null)
+export function getPokemon(searchQuery: string | number): IParsedPokemon {
+  if (typeof searchQuery !== "string" && typeof searchQuery !== "number") {
+    throw new Error(`The pokemon search query must be a string or number`);
+  }
+
+  function returnPokemonKey(query: string | number): string | null {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i) as string;
+      if (key.startsWith("pokemon-") && key.includes(query.toString())) {
+        return key;
+      }
+    }
+    return null;
+  }
+
+  const pokemonData = returnPokemonKey(searchQuery);
+
+  if (pokemonData === null) {
     throw new Error(
-      `No pokemon with name ${pokemonName} was found in local storage`
+      `No pokemon with the following search query ${searchQuery} was found in local storage`
     );
-  return JSON.parse(pokemon);
+  }
+  return JSON.parse(localStorage.getItem(pokemonData) as string);
 }
 
 export function savePokemon(pokemon: IParsedPokemon) {
-  localStorage.setItem(pokemon.name, JSON.stringify(pokemon));
+  const saveQuery = `pokemon-${pokemon.name}-${pokemon.id}`;
+  localStorage.setItem(saveQuery, JSON.stringify(pokemon));
 }
 
 export function getPokemonTypes(typeID: number): IParsedType {
@@ -55,21 +69,21 @@ export function savePokemonTypes(pokemonType: IParsedType) {
   localStorage.setItem(`type-${pokemonType.id}`, JSON.stringify(pokemonType));
 }
 
-export function getPokemonSpecies(speciesName: string): IParsedPokemonSpecies {
-  if (typeof speciesName !== "string")
-    throw new Error(`The species name must be a string`);
-  const query = `species-${speciesName}`;
+export function getPokemonSpecies(speciesId: number): IParsedPokemonSpecies {
+  if (typeof speciesId !== "number")
+    throw new Error(`The species id must be a number`);
+  const query = `species-${speciesId}`;
   const pokemonSpecies = localStorage.getItem(query);
   if (pokemonSpecies === null)
     throw new Error(
-      `No pokemon species with name ${speciesName} was found in local storage`
+      `No pokemon species with id ${speciesId} was found in local storage`
     );
   return JSON.parse(pokemonSpecies);
 }
 
 export function savePokemonSpecies(pokemonSpecies: IParsedPokemonSpecies) {
   localStorage.setItem(
-    `species-${pokemonSpecies.name}`,
+    `species-${pokemonSpecies.id}`,
     JSON.stringify(pokemonSpecies)
   );
 }
@@ -107,21 +121,37 @@ export function savePokemonMoves(move: IParsedPokemonMove) {
   localStorage.setItem(`move-${move.id}`, JSON.stringify(move));
 }
 
-export function getPokemonAbility(abilityId: string): IParsedPokemonAbility {
-  if (typeof abilityId !== "string")
-    throw new Error(`The ability id must be a string`);
-  const query = `ability-${abilityId}`;
-  const ability = localStorage.getItem(query);
-  if (ability === null)
+export function getPokemonAbility(
+  abilityQuery: string | number
+): IParsedPokemonAbility {
+  if (typeof abilityQuery !== "string" && typeof abilityQuery !== "number") {
+    throw new Error(`The ability search query must be a string or number`);
+  }
+
+  function returnAbilityKey(query: string | number): string | null {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i) as string;
+      if (key.startsWith("ability-") && key.includes(query.toString())) {
+        return key;
+      }
+    }
+    return null;
+  }
+
+  const abilityData = returnAbilityKey(abilityQuery);
+
+  if (abilityData === null) {
     throw new Error(
-      `No ability with id ${abilityId} was found in local storage`
+      `No pokemon with the following search query ${abilityQuery} was found in local storage`
     );
-  return JSON.parse(ability);
+  }
+
+  return JSON.parse(localStorage.getItem(abilityData) as string);
 }
 
 export function savePokemonAbility(pokemonAbility: IParsedPokemonAbility) {
-  localStorage.setItem(
-    `ability-${pokemonAbility.id}`,
-    JSON.stringify(pokemonAbility)
-  );
+  const saveQuery = `ability-${pokemonAbility.displayName.toLowerCase()}-${
+    pokemonAbility.id
+  }`;
+  localStorage.setItem(saveQuery, JSON.stringify(pokemonAbility));
 }

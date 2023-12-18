@@ -20,6 +20,3 @@ const theme = extendTheme({
 });
 
 export default theme;
-
-// #c5b5b50d
-//"#52616B",

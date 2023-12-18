@@ -1,5 +1,5 @@
 import { Heading, Link, Button, Flex } from "@chakra-ui/react";
-export default function ErrorMessage(props: { error: Error }) {
+export default function PageNotFound() {
   return (
     <Flex
       justifyContent="center"
@@ -22,9 +22,7 @@ export default function ErrorMessage(props: { error: Error }) {
           textColor={"brand.text"}
           textAlign={"center"}
         >
-          An error has occured.
-          <br />
-          {props.error.message}
+          The requested page was not found.
         </Heading>
       </Flex>
       <Button
